@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-22 12:33:48.476509",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "elements",
+  "specified_range",
+  "mocresult",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "elements",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Elements"
+  },
+  {
+   "fieldname": "specified_range",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Specified Range"
+  },
+  {
+   "fieldname": "mocresult",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "MOC/Result"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-01-22 12:36:32.406954",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "PMI Test Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

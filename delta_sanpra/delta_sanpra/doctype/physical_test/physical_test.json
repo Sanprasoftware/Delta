@@ -1,0 +1,944 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{inward_number}/{document_id}",
+ "creation": "2026-01-28 14:37:37.447350",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_0xnn",
+  "document_id",
+  "challan_no",
+  "witness",
+  "column_break_wmjy",
+  "mrn_no",
+  "material_specification",
+  "challan_date",
+  "column_break_xbpa",
+  "ulr_no",
+  "heat_number",
+  "is_print",
+  "column_break_wckr",
+  "customer_name",
+  "test_method",
+  "customer_requirement",
+  "section_break_mdgm",
+  "column_break_qiym",
+  "child_table_id",
+  "sample_id",
+  "column_break_otco",
+  "inward_number",
+  "amended_from",
+  "column_break_ximx",
+  "test_group",
+  "group",
+  "column_break_cwlk",
+  "material_shape",
+  "discipline",
+  "section_break_ospt",
+  "tested_date",
+  "sample_location",
+  "method",
+  "column_break_fjfk",
+  "report_date",
+  "sample_preparation",
+  "location_of_test",
+  "column_break_qqao",
+  "test_completion_datetime",
+  "equipment",
+  "other_information",
+  "room_temp",
+  "description_section",
+  "customer_specification",
+  "column_break_udcp",
+  "test_description",
+  "column_break_lfma",
+  "sample_description",
+  "column_break_hyjf",
+  "material_description",
+  "section_break_foxd",
+  "type_of_test",
+  "mandrel_diameter",
+  "angle_of_rebend",
+  "width",
+  "column_break_gmzn",
+  "nominal_diameter",
+  "angle_of_bend",
+  "size_and_type_of_specimen",
+  "number_and_size_of_any_visible_cracks_in_the_bend",
+  "column_break_neav",
+  "length",
+  "condition_of_sample",
+  "thickness",
+  "radius_used_to_form_the_bend",
+  "section_break_dvhy",
+  "test_parameter_details",
+  "average_compressive_strength",
+  "section_break_jgtl",
+  "location",
+  "test",
+  "dial",
+  "column_break_fkkn",
+  "scale",
+  "load",
+  "indentor",
+  "column_break_wagr",
+  "min",
+  "max",
+  "column_break_jjif",
+  "row1",
+  "row2",
+  "row3",
+  "column_break_kwbi",
+  "row4",
+  "row5",
+  "row6",
+  "section_break_iycg",
+  "add_data",
+  "brinell_hardness_child",
+  "section_break_oero",
+  "number_of_set",
+  "number_of_pices_in_each_set",
+  "column_break_duds",
+  "dimension_of_the_specimen",
+  "type_of_notch",
+  "column_break_puwk",
+  "nominal_striking_energy_of_the_pendulum",
+  "radius_of_striker",
+  "absorbed_energy_in_joules_of_each_specimen_section",
+  "range1",
+  "column_break_yehv",
+  "range2",
+  "column_break_sevs",
+  "range3",
+  "column_break_xpzr",
+  "range4",
+  "column_break_ltbr",
+  "range5",
+  "column_break_qkic",
+  "range6",
+  "section_break_utie",
+  "average_aboserbed_energy_of_one_set",
+  "lateral_expansion",
+  "column_break_dkqw",
+  "test_temperature",
+  "fracture_appearance__shear",
+  "column_break_aart",
+  "unbroken_specimens",
+  "image_section",
+  "product_image_1",
+  "total_magnification",
+  "column_break_gvev",
+  "product_image_2",
+  "column_break_ynac",
+  "product_image_3",
+  "section_break_krzb",
+  "pdf_file",
+  "specimen_shape",
+  "column_break_oons",
+  "excel_file",
+  "section_break_gywy",
+  "test_details_physical",
+  "section_break_neoo",
+  "visual_test_table",
+  "section_break_zqad",
+  "bend_test_parameters",
+  "section_break_blav",
+  "remark",
+  "column_break_bumc",
+  "tested_by",
+  "witness_name",
+  "observation",
+  "status"
+ ],
+ "fields": [
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_0xnn",
+   "fieldtype": "Section Break",
+   "label": "Inward Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Physical Test",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "test_group",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Test Group",
+   "options": "Test Group"
+  },
+  {
+   "fieldname": "inward_number",
+   "fieldtype": "Link",
+   "label": "Inward Number",
+   "options": "Sample Inward"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "heat_number",
+   "fieldtype": "Data",
+   "label": "Heat Number"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "test_method",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Test Method",
+   "options": "Test Method"
+  },
+  {
+   "fieldname": "material_specification",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Material Specification",
+   "options": "Item"
+  },
+  {
+   "fieldname": "material_shape",
+   "fieldtype": "Link",
+   "label": "Material Shape",
+   "options": "Material Shape"
+  },
+  {
+   "fieldname": "challan_no",
+   "fieldtype": "Int",
+   "label": "Challan No",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "ulr_no",
+   "fieldtype": "Data",
+   "label": "ULR No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xbpa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "witness",
+   "fieldtype": "Select",
+   "label": "Witness",
+   "options": "\nYes\nNo"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_print",
+   "fieldtype": "Check",
+   "label": "Is Print"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Customer Name",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "challan_date",
+   "fieldtype": "Date",
+   "label": "Challan Date",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_mdgm",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "column_break_wckr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_id",
+   "fieldtype": "Data",
+   "label": "Document Id"
+  },
+  {
+   "fieldname": "column_break_qiym",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "child_table_id",
+   "fieldtype": "Data",
+   "label": "Child Table Id"
+  },
+  {
+   "fieldname": "column_break_otco",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "customer_specification",
+   "fieldtype": "Small Text",
+   "label": "Customer Specification"
+  },
+  {
+   "fieldname": "column_break_udcp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_description",
+   "fieldtype": "Small Text",
+   "label": "Test Description"
+  },
+  {
+   "fieldname": "column_break_lfma",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "sample_description",
+   "fieldtype": "Small Text",
+   "label": "Sample Description"
+  },
+  {
+   "fieldname": "column_break_hyjf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_description",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Material Description"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test)  BS EN 10164:2018\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test) ASTM A770/A770M : 03(2025)\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8/E8M : 25\" || \ndoc.test_method == \"Tensile Test ASTM B557 : 15(2023)\" ||\ndoc.test_method == \"Tensile Test ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ISO 15614-1:2017-Amd 1:2019/ISO 4136:2022\" ||\ndoc.test_method == \"Tensile Test ASME SECTION IX-2023/QW-150\" ||\ndoc.test_method == \"Tensile Test AWS D 1.1(2025)\"",
+   "fieldname": "image_section",
+   "fieldtype": "Section Break",
+   "label": "Image"
+  },
+  {
+   "fieldname": "product_image_1",
+   "fieldtype": "Attach Image",
+   "label": "Product Image 1"
+  },
+  {
+   "fieldname": "column_break_gvev",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "product_image_2",
+   "fieldtype": "Attach Image",
+   "label": "Product Image 2"
+  },
+  {
+   "fieldname": "column_break_ynac",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "product_image_3",
+   "fieldtype": "Attach Image",
+   "label": "Product Image 3"
+  },
+  {
+   "fieldname": "pdf_file",
+   "fieldtype": "Attach",
+   "label": "PDF File"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test)  BS EN 10164:2018\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test) ASTM A770/A770M : 03(2025)\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8/E8M : 25\" || \ndoc.test_method == \"Tensile Test ASTM B557 : 15(2023)\" ||\ndoc.test_method == \"Tensile Test ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ISO 15614-1:2017-Amd 1:2019/ISO 4136:2022\" ||\ndoc.test_method == \"Tensile Test ASME SECTION IX-2023/QW-150\" ||\ndoc.test_method == \"Tensile Test AWS D 1.1(2025)\"",
+   "fieldname": "section_break_krzb",
+   "fieldtype": "Section Break",
+   "label": "Test Deatils"
+  },
+  {
+   "fieldname": "test_details_physical",
+   "fieldtype": "Table",
+   "label": "Test Details Physical",
+   "options": "Test Details Physical"
+  },
+  {
+   "fieldname": "section_break_blav",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "column_break_bumc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "witness_name",
+   "fieldtype": "Data",
+   "label": "Witness Name"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Status",
+   "options": "Select Status\nClose\nIn Process\nOpen"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "fieldname": "observation",
+   "fieldtype": "Data",
+   "label": "Observation"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_method == \"Break Test AWS D1.1 (2025)\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "fieldname": "section_break_foxd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_method == \"Break Test AWS D1.1 (2025)\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "fieldname": "type_of_test",
+   "fieldtype": "Data",
+   "label": "Type of test"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\"",
+   "fieldname": "mandrel_diameter",
+   "fieldtype": "Float",
+   "label": "Mandrel Diameter"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\"",
+   "fieldname": "angle_of_rebend",
+   "fieldtype": "Float",
+   "label": "Angle of rebend"
+  },
+  {
+   "fieldname": "column_break_gmzn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\"",
+   "fieldname": "nominal_diameter",
+   "fieldtype": "Float",
+   "label": "Nominal diameter"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\"||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_method == \"Break Test AWS D1.1 (2025)\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "fieldname": "angle_of_bend",
+   "fieldtype": "Float",
+   "label": "Angle of bend"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Tensile Test ASTM E8/E8M : 25\" &&\ndoc.test_method !== \"Tensile Test IS 1608 : Part 1 : 2022\" &&\ndoc.test_method !== \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" &&\ndoc.test_method !== \"Rockwell Hardness Test ISO 6508-1 : 2023\" &&\ndoc.test_method !== \"Brinell Hardness Test ISO 6506-1 : 2014\" &&\ndoc.test_method !== \"Tensile Test ISO 6892-1 : 2019\" &&\ndoc.test_method !== \"Flattening Test ASTM A370 : 24a\" &&\ndoc.test_method !== \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" &&\ndoc.test_method !== \"Proof Load Test ASTM A370 : 24a\" &&\ndoc.test_method !== \"Compression Test ASTM E9-19(2025)e1\"",
+   "fieldname": "sample_location",
+   "fieldtype": "Data",
+   "label": "Sample Location"
+  },
+  {
+   "fieldname": "column_break_neav",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_method == \"Break Test AWS D1.1 (2025)\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length (mm)"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\"",
+   "fieldname": "condition_of_sample",
+   "fieldtype": "Data",
+   "label": "Condition of sample"
+  },
+  {
+   "fieldname": "section_break_ospt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "fieldname": "size_and_type_of_specimen",
+   "fieldtype": "Data",
+   "label": "Size and Type Of Specimen"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_method == \"Break Test AWS D1.1 (2025)\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_method == \"Break Test AWS D1.1 (2025)\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "fieldname": "thickness",
+   "fieldtype": "Float",
+   "label": "Thickness"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_method == \"Break Test AWS D1.1 (2025)\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "fieldname": "radius_used_to_form_the_bend",
+   "fieldtype": "Float",
+   "label": "Radius used to form the bend"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_method == \"Break Test AWS D1.1 (2025)\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "fieldname": "number_and_size_of_any_visible_cracks_in_the_bend",
+   "fieldtype": "Int",
+   "label": "Number and size of any visible cracks in the bend"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Rockwell Hardness Test ISO 6508-1 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test ISO 6506-1 : 2014\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test ISO 15614-1:2017-Amd 1:2019/ISO 4136:2022\" ||\ndoc.test_method == \"Brinell Hardness Test :BS EN ISO 15614-1:2017+A1:2019/BS EN ISO 9015-2:2016/BS EN ISO 6506-1:2014\" ||\ndoc.test_method == \"Vickers Hardness ISO 15614-1:2017-Amd 1:2019/ ISO 9015-1:2001(E)\"",
+   "fieldname": "test_completion_datetime",
+   "fieldtype": "Datetime",
+   "label": "Test Completion DateTime"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Brinell Hardness Test ASTM A370-24a and ASTM E10-23\" || \ndoc.test_method == \"Brinell Hardness Test ASTM E10 : 23\" ||\ndoc.test_method == \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Rockwell Hardness Test ISO 6508-1 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test ASTM A370-24a & ASTM E10-23\" ||\ndoc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Brinell Hardness Test ISO 6506-1 : 2014\" || \ndoc.test_method == \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a & Rockwell Hardness Test ASTM E18-25\" || \ndoc.test_method == \"Hardenability Test IS 3848 : 24 & Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Leeb Hardness Test ASTM A370-24a & ASTM A956/A956M : 22\" ||\ndoc.test_method == \"Vickers Hardness Test ASTM E92-23\" ||\ndoc.test_method == \"Micro-Vickers Hardness Test ASTM E384 : 22\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a\" ||\ndoc.test_method == \"Vickers Hardness Test BS EN ISO 6507-1:2023\" ||\ndoc.test_method == \"Brinell Hardness Test :BS EN ISO 15614-1:2017+A1:2019/BS EN ISO 9015-2:2016/BS EN ISO 6506-1:2014\" ||\ndoc.test_method == \"Vickers Hardness ISO 15614-1:2017-Amd 1:2019/ ISO 9015-1:2001(E)\"",
+   "fieldname": "section_break_jgtl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Data",
+   "label": "Test"
+  },
+  {
+   "fieldname": "dial",
+   "fieldtype": "Data",
+   "label": "Dial"
+  },
+  {
+   "fieldname": "column_break_fkkn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "scale",
+   "fieldtype": "Data",
+   "label": "Scale"
+  },
+  {
+   "fieldname": "load",
+   "fieldtype": "Data",
+   "label": "Load"
+  },
+  {
+   "fieldname": "indentor",
+   "fieldtype": "Data",
+   "label": "Indentor"
+  },
+  {
+   "fieldname": "column_break_wagr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "min",
+   "fieldtype": "Float",
+   "label": "Min"
+  },
+  {
+   "fieldname": "max",
+   "fieldtype": "Float",
+   "label": "Max"
+  },
+  {
+   "fieldname": "row1",
+   "fieldtype": "Float",
+   "label": "R1"
+  },
+  {
+   "fieldname": "row2",
+   "fieldtype": "Float",
+   "label": "R2"
+  },
+  {
+   "fieldname": "row3",
+   "fieldtype": "Float",
+   "label": "R3"
+  },
+  {
+   "fieldname": "column_break_kwbi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "row4",
+   "fieldtype": "Float",
+   "label": "R4"
+  },
+  {
+   "fieldname": "row5",
+   "fieldtype": "Float",
+   "label": "R5"
+  },
+  {
+   "fieldname": "row6",
+   "fieldtype": "Float",
+   "label": "R6"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Brinell Hardness Test ASTM A370-24a and ASTM E10-23\" || \ndoc.test_method == \"Brinell Hardness Test ASTM E10 : 23\" ||\ndoc.test_method == \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Rockwell Hardness Test ISO 6508-1 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test ASTM A370-24a & ASTM E10-23\" ||\ndoc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Brinell Hardness Test ISO 6506-1 : 2014\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a & Rockwell Hardness Test ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test IS 3848 : 24 & Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Leeb Hardness Test ASTM A370-24a & ASTM A956/A956M : 22\" ||\ndoc.test_method == \"Vickers Hardness Test ASTM E92-23\" ||\ndoc.test_method == \"Micro-Vickers Hardness Test ASTM E384 : 22\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a\" ||\ndoc.test_method == \"Vickers Hardness Test BS EN ISO 6507-1:2023\" ||\ndoc.test_method == \"Brinell Hardness Test :BS EN ISO 15614-1:2017+A1:2019/BS EN ISO 9015-2:2016/BS EN ISO 6506-1:2014\" ||\ndoc.test_method == \"Vickers Hardness ISO 15614-1:2017-Amd 1:2019/ ISO 9015-1:2001(E)\"",
+   "fieldname": "section_break_iycg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "add_data",
+   "fieldtype": "Button",
+   "label": "Add Data"
+  },
+  {
+   "fieldname": "brinell_hardness_child",
+   "fieldtype": "Table",
+   "label": "Brinell Hardness Child",
+   "options": "Brinell Hardness Child"
+  },
+  {
+   "depends_on": "eval:doc.test_method ==\"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" || \ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\"",
+   "fieldname": "section_break_oero",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "number_of_set",
+   "fieldtype": "Int",
+   "label": "Number of Set"
+  },
+  {
+   "fieldname": "number_of_pices_in_each_set",
+   "fieldtype": "Int",
+   "label": "Number of Pices in Each Set"
+  },
+  {
+   "fieldname": "dimension_of_the_specimen",
+   "fieldtype": "Data",
+   "label": "Dimension of the Specimen"
+  },
+  {
+   "fieldname": "column_break_puwk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_of_notch",
+   "fieldtype": "Data",
+   "label": "Type of Notch"
+  },
+  {
+   "fieldname": "radius_of_striker",
+   "fieldtype": "Data",
+   "label": "Radius of Striker"
+  },
+  {
+   "fieldname": "nominal_striking_energy_of_the_pendulum",
+   "fieldtype": "Select",
+   "label": "Nominal Striking Energy of the Pendulum",
+   "options": "Nominal Striking Energy of the Pendulum\n300J"
+  },
+  {
+   "depends_on": "eval:doc.test_method ==\"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" || \ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\"",
+   "fieldname": "absorbed_energy_in_joules_of_each_specimen_section",
+   "fieldtype": "Section Break",
+   "label": "Absorbed Energy in Joules of Each Specimen"
+  },
+  {
+   "fieldname": "range1",
+   "fieldtype": "Float",
+   "label": "Range1"
+  },
+  {
+   "fieldname": "column_break_yehv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range2",
+   "fieldtype": "Float",
+   "label": "Range2"
+  },
+  {
+   "fieldname": "column_break_sevs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range3",
+   "fieldtype": "Float",
+   "label": "Range3"
+  },
+  {
+   "fieldname": "column_break_xpzr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range4",
+   "fieldtype": "Float",
+   "label": "Range4"
+  },
+  {
+   "fieldname": "column_break_ltbr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range5",
+   "fieldtype": "Float",
+   "label": "Range5"
+  },
+  {
+   "fieldname": "column_break_qkic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range6",
+   "fieldtype": "Float",
+   "label": "Range6"
+  },
+  {
+   "depends_on": "eval:doc.test_method ==\"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" || \ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\"",
+   "fieldname": "section_break_utie",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "average_aboserbed_energy_of_one_set",
+   "fieldtype": "Float",
+   "label": "Average Aboserbed Energy of One Set"
+  },
+  {
+   "fieldname": "lateral_expansion",
+   "fieldtype": "Data",
+   "label": "Lateral Expansion"
+  },
+  {
+   "fieldname": "column_break_dkqw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fracture_appearance__shear",
+   "fieldtype": "Data",
+   "label": "Fracture Appearance (% shear)"
+  },
+  {
+   "fieldname": "unbroken_specimens",
+   "fieldtype": "Data",
+   "label": "Unbroken Specimens"
+  },
+  {
+   "fieldname": "test_temperature",
+   "fieldtype": "Data",
+   "label": "Test Temperature (\u00b0C)"
+  },
+  {
+   "fieldname": "column_break_fjfk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_aart",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_duds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Flattening Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Compression Test ASTM E9-19(2025)e1\"",
+   "fieldname": "room_temp",
+   "fieldtype": "Float",
+   "label": "Room Temp.(\u00b0C)"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Flattening Test ASTM A370 : 24a\"",
+   "fieldname": "location_of_test",
+   "fieldtype": "Data",
+   "label": "Location of Test"
+  },
+  {
+   "fieldname": "column_break_qqao",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Flattening Test ASTM A370 : 24a\"",
+   "fieldname": "equipment",
+   "fieldtype": "Data",
+   "label": "Equipment"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Flattening Test ASTM A370 : 24a\"",
+   "fieldname": "other_information",
+   "fieldtype": "Data",
+   "label": " Other Information "
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Flattening Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\"",
+   "fieldname": "section_break_neoo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "visual_test_table",
+   "fieldtype": "Table",
+   "label": "Visual Test Table",
+   "options": "Visual Test Table"
+  },
+  {
+   "fieldname": "column_break_jjif",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_magnification",
+   "fieldtype": "Data",
+   "label": "Total Magnification"
+  },
+  {
+   "fieldname": "tested_by",
+   "fieldtype": "Link",
+   "label": "Tested By",
+   "link_filters": "[[\"Employee\",\"custom_authorized_by\",\"=\",\"Tested By\"]]",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "label": "Report Date"
+  },
+  {
+   "fieldname": "tested_date",
+   "fieldtype": "Date",
+   "label": "Tested Date"
+  },
+  {
+   "fieldname": "discipline",
+   "fieldtype": "Select",
+   "label": "Discipline",
+   "options": "\nChemical\nMechanical"
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Select",
+   "label": "Group",
+   "options": "\nMechanical Properties of Metals\nMetallography\nCorrosion Tests\nMetals and Alloys"
+  },
+  {
+   "fieldname": "column_break_oons",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "excel_file",
+   "fieldtype": "Attach",
+   "label": "Excel File"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test)  BS EN 10164:2018\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test) ASTM A770/A770M : 03(2025)\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8/E8M : 25\" || \ndoc.test_method == \"Tensile Test ASTM B557 : 15(2023)\" ||\ndoc.test_method == \"Tensile Test ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ISO 15614-1:2017-Amd 1:2019/ISO 4136:2022\" ||\ndoc.test_method == \"Tensile Test ASME SECTION IX-2023/QW-150\" ||\ndoc.test_method == \"Tensile Test AWS D 1.1(2025)\"",
+   "fieldname": "section_break_gywy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "specimen_shape",
+   "fieldtype": "Select",
+   "label": "Specimen Shape",
+   "options": "\nSolid Round\nOdd Shape\nFlat\nHollow Round"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test)  BS EN 10164:2018\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test) ASTM A770/A770M : 03(2025)\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8/E8M : 25\" || \ndoc.test_method == \"Tensile Test ASTM B557 : 15(2023)\" ||\ndoc.test_method == \"Tensile Test ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ISO 15614-1:2017-Amd 1:2019/ISO 4136:2022\"",
+   "fieldname": "method",
+   "fieldtype": "Select",
+   "label": "Method",
+   "options": "\nISO\nASTM"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Guided Bend Test BS EN ISO 15614-1:2017+A1:2019/BS EN ISO 5173:2023\" ||\ndoc.test_method == \"Guided Bend Test ASME SECTION IX-2023/QW-160\" ||\ndoc.test_method == \"Guided Bend Test AWS D 1.1(2025)\"",
+   "fieldname": "section_break_zqad",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bend_test_parameters",
+   "fieldtype": "Table",
+   "label": "Bend Test Parameters",
+   "options": "Bend Test Parameters"
+  },
+  {
+   "fieldname": "column_break_wmjy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ximx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cwlk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_requirement",
+   "fieldtype": "Link",
+   "label": "Customer Requirement",
+   "options": "Customer Requirement"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Compression Test ASTM E9-19(2025)e1\"",
+   "fieldname": "section_break_dvhy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "test_parameter_details",
+   "fieldtype": "Table",
+   "label": "Test Parameter Details",
+   "options": "Test Parameter Details"
+  },
+  {
+   "fieldname": "average_compressive_strength",
+   "fieldtype": "Float",
+   "label": "Average Compressive Strength,N/mm2",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sample_preparation",
+   "fieldtype": "Select",
+   "label": "Sample Preparation",
+   "options": "Select Sample Preparation\n120 Grit Polishing\nAs Per ASTM E3\nIn-situ Metallography\nMechanical Polishing\nMechanical Polishing with Emery Papers and Disc la"
+  },
+  {
+   "fieldname": "mrn_no",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "MRN No",
+   "options": "Sample Inward",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sample_id",
+   "fieldtype": "Data",
+   "label": "Sample Id"
+  }
+ ],
+ "grid_page_length": 50,
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2026-04-01 14:28:52.506095",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Physical Test",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

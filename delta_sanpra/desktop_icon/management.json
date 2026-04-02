@@ -1,0 +1,16 @@
+{
+ "doctype": "Desktop Icon",
+ "name": "Management",
+ "label": "Management",
+ "module_name": "Delta Sanpra",
+ "icon": "settings",
+ "icon_type": "Module",
+ "link_to": "Admin",
+ "hidden": 0,
+ "standard": 1,
+ "roles": [
+  {
+   "role": "All"
+  }
+ ]
+}

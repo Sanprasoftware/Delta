@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-23 15:24:52.655180",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "test_parameters",
+  "column_break_lzbd",
+  "observed_value",
+  "column_break_pqjq",
+  "avg"
+ ],
+ "fields": [
+  {
+   "fieldname": "observed_value",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Observed Value",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_lzbd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_parameters",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Test Parameters"
+  },
+  {
+   "fieldname": "column_break_pqjq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "avg",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Avg"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-24 16:56:53.588926",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Test Parameter Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

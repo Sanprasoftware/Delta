@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-27 11:14:30.278792",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "material_specification",
+  "material_shape",
+  "new_record_flag",
+  "auto_assign",
+  "is_duplicate",
+  "column_break_sibk",
+  "heat_number",
+  "material_dimension",
+  "counter",
+  "sample_id",
+  "section_break_oiwb",
+  "sample_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "material_specification",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material Specification",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_sibk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "heat_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Heat Number"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "material_shape",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material Shape",
+   "options": "Material Shape"
+  },
+  {
+   "fieldname": "material_dimension",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Material Dimension"
+  },
+  {
+   "fieldname": "section_break_oiwb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "sample_description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Sample Description"
+  },
+  {
+   "fieldname": "counter",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Counter"
+  },
+  {
+   "default": "0",
+   "fieldname": "new_record_flag",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "New Record Flag"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_assign",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Auto Assign"
+  },
+  {
+   "default": "0",
+   "fieldname": "sample_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sample ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_duplicate",
+   "fieldtype": "Button",
+   "in_list_view": 1,
+   "label": "Manually Assign"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-28 11:12:58.657798",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Material Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

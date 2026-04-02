@@ -1,0 +1,479 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{inward_number}/{document_id}",
+ "creation": "2026-02-28 10:18:22.287822",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_7tlb",
+  "document_id",
+  "challan_no",
+  "witness",
+  "column_break_fnrw",
+  "mrn_no",
+  "material_specification",
+  "challan_date",
+  "column_break_gnmj",
+  "ulr_no",
+  "heat_number",
+  "is_print",
+  "test_description",
+  "column_break_hsvn",
+  "customer_name",
+  "test_method",
+  "customer_requirement",
+  "section_break_zvee",
+  "tested_date",
+  "column_break_jxqu",
+  "report_date",
+  "column_break_xxwx",
+  "room_temp",
+  "sample_location",
+  "column_break_jjgh",
+  "material_specifications",
+  "sample_preparation",
+  "section_break_wnpg",
+  "material_description",
+  "width",
+  "number_and_size_of_any_visible_cracks_in_the_bend",
+  "column_break_scsq",
+  "size_and_type_of_specimen",
+  "thickness",
+  "column_break_fmnj",
+  "type_of_test",
+  "radius_used_to_form_the_bend",
+  "column_break_vsgu",
+  "length",
+  "angle_of_bend",
+  "section_break_mpqo",
+  "child_table_id",
+  "column_break_zqqj",
+  "inward_number",
+  "test_group",
+  "column_break_nbnm",
+  "group",
+  "material_shape",
+  "column_break_busu",
+  "discipline",
+  "amended_from",
+  "section_break_npci",
+  "customer_specification",
+  "column_break_etgn",
+  "sample_description",
+  "column_break_tsmo",
+  "material_descriptions",
+  "section_break_apuh",
+  "test_parameter_details",
+  "average_compressive_strength",
+  "section_break_kqlr",
+  "parameters",
+  "section_break_hruu",
+  "remark",
+  "tested_by",
+  "column_break_exfw",
+  "customer_requirements",
+  "witness_name",
+  "status",
+  "observation"
+ ],
+ "fields": [
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_7tlb",
+   "fieldtype": "Section Break",
+   "label": "Inward Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Other Test",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "document_id",
+   "fieldtype": "Data",
+   "label": "Sample Id"
+  },
+  {
+   "fieldname": "challan_no",
+   "fieldtype": "Data",
+   "label": "Challan No"
+  },
+  {
+   "fieldname": "witness",
+   "fieldtype": "Select",
+   "label": "Witness",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "section_break_mpqo",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "material_specification",
+   "fieldtype": "Link",
+   "label": "Material Specification",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_fnrw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "challan_date",
+   "fieldtype": "Date",
+   "label": "Challan Date"
+  },
+  {
+   "fieldname": "column_break_gnmj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "heat_number",
+   "fieldtype": "Data",
+   "label": "Heat Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_print",
+   "fieldtype": "Check",
+   "label": "Is Print"
+  },
+  {
+   "fieldname": "column_break_hsvn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "test_method",
+   "fieldtype": "Link",
+   "label": "Test Method",
+   "options": "Test Method"
+  },
+  {
+   "fieldname": "customer_requirement",
+   "fieldtype": "Link",
+   "label": "Customer Requirement",
+   "options": "Customer Requirement"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_npci",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "child_table_id",
+   "fieldtype": "Data",
+   "label": "Child Table Id"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Select Status\nClose\nIn Process\nOpen"
+  },
+  {
+   "fieldname": "inward_number",
+   "fieldtype": "Link",
+   "label": "Inward Number",
+   "options": "Sample Inward"
+  },
+  {
+   "fieldname": "column_break_zqqj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_group",
+   "fieldtype": "Link",
+   "label": "Test Group",
+   "options": "Test Group"
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Select",
+   "label": "Group",
+   "options": "\nMechanical Properties of Metals\nMetallography\nCorrosion Tests\nMetals and Alloys"
+  },
+  {
+   "fieldname": "column_break_nbnm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_shape",
+   "fieldtype": "Link",
+   "label": "Material Shape",
+   "options": "Material Shape"
+  },
+  {
+   "fieldname": "discipline",
+   "fieldtype": "Select",
+   "label": "Discipline",
+   "options": "\nChemical\nMechanical"
+  },
+  {
+   "fieldname": "column_break_busu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_specification",
+   "fieldtype": "Small Text",
+   "label": "Customer Specification"
+  },
+  {
+   "fieldname": "column_break_etgn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sample_description",
+   "fieldtype": "Small Text",
+   "label": "Sample Description"
+  },
+  {
+   "fieldname": "material_description",
+   "fieldtype": "Data",
+   "label": "Material Description"
+  },
+  {
+   "fieldname": "section_break_hruu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "column_break_exfw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tested_by",
+   "fieldtype": "Link",
+   "label": "Tested By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "witness_name",
+   "fieldtype": "Data",
+   "label": "Witness Name"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Blank 1\" &&\ndoc.test_method !== \"Blank 2\"",
+   "fieldname": "section_break_zvee",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "tested_date",
+   "fieldtype": "Date",
+   "label": "Tested Date"
+  },
+  {
+   "fieldname": "column_break_jxqu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "label": "Report Date"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Ultrasonic Testing ASME BPVS Sec. V: 2021 - ARTICLE 23, SA-388/SA-388M\"",
+   "fieldname": "material_specifications",
+   "fieldtype": "Link",
+   "label": "Material Specification",
+   "options": "Item"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Ultrasonic Testing ASME BPVS Sec. V: 2021 - ARTICLE 23, SA-388/SA-388M\"",
+   "fieldname": "room_temp",
+   "fieldtype": "Float",
+   "label": "Room Temp.(\u00b0C)"
+  },
+  {
+   "fieldname": "column_break_xxwx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_description",
+   "fieldtype": "Data",
+   "label": "Test Description"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Ultrasonic Testing ASME BPVS Sec. V: 2021 - ARTICLE 23, SA-388/SA-388M\" &&\ndoc.test_method !== \"Blank 1\" &&\ndoc.test_method !== \"Blank 2\"",
+   "fieldname": "section_break_apuh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "test_parameter_details",
+   "fieldtype": "Table",
+   "label": "Test Parameter Details",
+   "options": "Test Parameter Details"
+  },
+  {
+   "fieldname": "average_compressive_strength",
+   "fieldtype": "Float",
+   "label": "Average Compressive Strength,N/mm2"
+  },
+  {
+   "fieldname": "customer_requirements",
+   "fieldtype": "Link",
+   "label": "Customer Requirement",
+   "options": "Customer Requirement"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Ultrasonic Testing ASME BPVS Sec. V: 2021 - ARTICLE 23, SA-388/SA-388M\"",
+   "fieldname": "sample_location",
+   "fieldtype": "Data",
+   "label": "Sample Location"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Ultrasonic Testing ASME BPVS Sec. V: 2021 - ARTICLE 23, SA-388/SA-388M\"",
+   "fieldname": "sample_preparation",
+   "fieldtype": "Select",
+   "label": "Sample Preparation",
+   "options": "Select Sample Preparation\n120 Grit Polishing\nAs Per ASTM E3\nIn-situ Metallography\nMechanical Polishing\nMechanical Polishing with Emery Papers and Disc la"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Ultrasonic Testing ASME BPVS Sec. V: 2021 - ARTICLE 23, SA-388/SA-388M\"",
+   "fieldname": "section_break_wnpg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_scsq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "size_and_type_of_specimen",
+   "fieldtype": "Data",
+   "label": "Size and Type of Specimen"
+  },
+  {
+   "fieldname": "column_break_fmnj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_of_test",
+   "fieldtype": "Data",
+   "label": "Type of Test"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length(mm)"
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width(mm)"
+  },
+  {
+   "fieldname": "column_break_vsgu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "thickness",
+   "fieldtype": "Float",
+   "label": "Thickness(mm)"
+  },
+  {
+   "fieldname": "radius_used_to_form_the_bend",
+   "fieldtype": "Data",
+   "label": "Radius used to form the bend"
+  },
+  {
+   "fieldname": "angle_of_bend",
+   "fieldtype": "Float",
+   "label": "Angle of bend"
+  },
+  {
+   "fieldname": "number_and_size_of_any_visible_cracks_in_the_bend",
+   "fieldtype": "Int",
+   "label": "Number and size of any visible cracks in the bend"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Ultrasonic Testing ASME BPVS Sec. V: 2021 - ARTICLE 23, SA-388/SA-388M\"",
+   "fieldname": "observation",
+   "fieldtype": "Data",
+   "label": "Observation"
+  },
+  {
+   "fieldname": "material_descriptions",
+   "fieldtype": "Small Text",
+   "label": "Material Description"
+  },
+  {
+   "fieldname": "column_break_tsmo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jjgh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Blank 1\" ||\ndoc.test_method == \"Blank 2\"",
+   "fieldname": "section_break_kqlr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "parameters",
+   "fieldtype": "Table",
+   "label": "Parameters",
+   "options": "Blank Method Table"
+  },
+  {
+   "fieldname": "mrn_no",
+   "fieldtype": "Link",
+   "label": "MRN No",
+   "options": "Sample Inward"
+  },
+  {
+   "fieldname": "ulr_no",
+   "fieldtype": "Data",
+   "label": "ULR No."
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-03-30 15:04:11.662489",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Other Test",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

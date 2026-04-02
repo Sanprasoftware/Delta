@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-27 15:19:17.530234",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "materials",
+  "column_break_kduy",
+  "processing_charges",
+  "column_break_vgqi",
+  "thik_dia",
+  "column_break_mcil",
+  "machining_charge",
+  "column_break_hjbf",
+  "material_type",
+  "column_break_bskc",
+  "quantity",
+  "column_break_cztn",
+  "total"
+ ],
+ "fields": [
+  {
+   "fetch_from": "materials.custom_material_types",
+   "fieldname": "material_type",
+   "fieldtype": "Link",
+   "label": "Material Type",
+   "options": "Material Type"
+  },
+  {
+   "fieldname": "column_break_kduy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "thik_dia",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Thik/Dia",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_vgqi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_mcil",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hjbf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "column_break_cztn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "processing_charges",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Processing Charges",
+   "options": "\nTensile Machining Charges\nImpact Machining Charges\nCutting Charges\nV-notch preparation charges\nWedled/Seamless pipe Cutting Thk upto 20mm\nIGC Practice E Machining\nBend Sample Preparation up to 25mm thk/Dia\nBend Sample Preparation 26 \u2013 40mm thk/Dia\nBend Sample Preparation 41 \u2013 100mm thk/Dia\nBend Sample Preparation above 101mm thk/Dia\nBend Sample Preparation of Welded samples for root/face/side bend\nWeld plate grinding\nMachining for Jominey with Grinding\nMilling Tensile 01-10mm\nMilling Tensile 11-20mm\nTensile Threading\nDrilling Charges\nHeat Treatment Charges\nMandrill Charges"
+  },
+  {
+   "fieldname": "materials",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material",
+   "options": "Item"
+  },
+  {
+   "fieldname": "machining_charge",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Machining Charge"
+  },
+  {
+   "fieldname": "column_break_bskc",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-19 18:07:10.842927",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Machining Charge",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

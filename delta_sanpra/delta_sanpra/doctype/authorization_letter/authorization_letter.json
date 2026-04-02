@@ -1,0 +1,128 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-22 11:31:18.327746",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "designation",
+  "column_break_hxjc",
+  "date",
+  "department",
+  "section_break_xkyp",
+  "select_authorization_template",
+  "authorization_template",
+  "amended_from",
+  "column_break_ivgi",
+  "select_authorization_equipment",
+  "authorization_equipment_template",
+  "section_break_oeyp",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "column_break_hxjc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_xkyp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "select_authorization_template",
+   "fieldtype": "Link",
+   "label": "Select Authorization Template ",
+   "options": "Authorization Template"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fetch_from": "select_authorization_template.authorization_template",
+   "fieldname": "authorization_template",
+   "fieldtype": "Text Editor",
+   "label": "Authorization Template "
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Authorization Letter",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_ivgi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "select_authorization_equipment",
+   "fieldtype": "Link",
+   "label": "Select Authorization Equipment",
+   "options": "Authorization Equipment"
+  },
+  {
+   "fetch_from": "select_authorization_equipment.authorization_equipment_template",
+   "fieldname": "authorization_equipment_template",
+   "fieldtype": "Text Editor",
+   "label": "Authorization Equipment Template"
+  },
+  {
+   "fieldname": "section_break_oeyp",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-06 13:43:46.834625",
+ "modified_by": "saifa@sanpra.co.in",
+ "module": "Delta Sanpra",
+ "name": "Authorization Letter",
+ "owner": "saifa@sanpra.co.in",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

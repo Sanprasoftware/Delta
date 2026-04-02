@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-03 11:09:49.298613",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "test_method",
+  "column_break_kcqs",
+  "status",
+  "column_break_covs",
+  "method_min_range",
+  "column_break_yfsw",
+  "method_max_range",
+  "section_break_zxfn",
+  "parameter",
+  "column_break_cedq",
+  "min_range",
+  "column_break_rgie",
+  "max_range",
+  "column_break_euev",
+  "value"
+ ],
+ "fields": [
+  {
+   "fieldname": "parameter",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Parameter",
+   "options": "Chemical Parameter"
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Result"
+  },
+  {
+   "fieldname": "column_break_cedq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "min_range",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Min Range",
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_rgie",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "max_range",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Max Range",
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_euev",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_method",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Test Method",
+   "options": "Test Method"
+  },
+  {
+   "fieldname": "column_break_kcqs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nNON NABL\nNABL"
+  },
+  {
+   "fieldname": "section_break_zxfn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_covs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "method_min_range",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Method Min Range",
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_yfsw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "method_max_range",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Method Max Range",
+   "precision": "3"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-25 11:29:47.422451",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Test Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

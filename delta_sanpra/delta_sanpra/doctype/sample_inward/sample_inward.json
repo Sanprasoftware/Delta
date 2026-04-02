@@ -1,0 +1,364 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-10-27 10:59:35.638413",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "party_details_tab",
+  "section_break_lkqk",
+  "sample_received_date",
+  "customer",
+  "challan_no",
+  "amended_from",
+  "sample_received",
+  "column_break_iugo",
+  "naming_series",
+  "received_by",
+  "email_id",
+  "challan_date",
+  "courier_name",
+  "quantity",
+  "section_break_rahy",
+  "wittness",
+  "column_break_cecu",
+  "inspector",
+  "column_break_znpr",
+  "client",
+  "other_information_section",
+  "other_information",
+  "column_break_zica",
+  "attach_image",
+  "section_break_fxwu",
+  "remark_for_accounts",
+  "sample_details_tab",
+  "material_details",
+  "section_break_vmzw",
+  "get_sample",
+  "section_break_jjrh",
+  "test_on_sample",
+  "process_charges_tab",
+  "cutting_charge_section",
+  "cutting_charge_table",
+  "machining_charge_section",
+  "machining_charge_table",
+  "section_break_rzce",
+  "column_break_gkjb",
+  "print_sticker",
+  "column_break_wazv",
+  "mrn_no",
+  "column_break_egly",
+  "mail_send",
+  "section_break_uczp",
+  "select_all",
+  "sticker_print"
+ ],
+ "fields": [
+  {
+   "fieldname": "party_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Party Details"
+  },
+  {
+   "fieldname": "section_break_lkqk",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sample Inward",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity",
+   "precision": "0",
+   "reqd": 1
+  },
+  {
+   "fieldname": "received_by",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Received By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "sample_received",
+   "fieldtype": "Select",
+   "label": "Sample Received",
+   "options": "\nBy Hand\nBy Courier"
+  },
+  {
+   "fieldname": "challan_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Challan No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "challan_date",
+   "fieldtype": "Date",
+   "label": "Challan Date"
+  },
+  {
+   "fieldname": "section_break_rahy",
+   "fieldtype": "Section Break",
+   "label": "Wittness By"
+  },
+  {
+   "fieldname": "column_break_cecu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_information_section",
+   "fieldtype": "Section Break",
+   "label": "Other Information"
+  },
+  {
+   "fieldname": "other_information",
+   "fieldtype": "Small Text",
+   "label": "Other Information"
+  },
+  {
+   "fieldname": "material_details",
+   "fieldtype": "Table",
+   "label": "Material Details",
+   "options": "Material Details"
+  },
+  {
+   "fieldname": "sample_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sample Details"
+  },
+  {
+   "fieldname": "test_on_sample",
+   "fieldtype": "Table",
+   "label": "Test On sample",
+   "options": "Test On sample"
+  },
+  {
+   "fieldname": "process_charges_tab",
+   "fieldtype": "Tab Break",
+   "label": "Process Charges"
+  },
+  {
+   "fieldname": "cutting_charge_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "machining_charge_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "IN/25/.##"
+  },
+  {
+   "fieldname": "get_sample",
+   "fieldtype": "Button",
+   "label": "Auto Assign Test"
+  },
+  {
+   "fieldname": "section_break_uczp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "sticker_print",
+   "fieldtype": "Table",
+   "label": "Sticker Print",
+   "options": "Sticker Print"
+  },
+  {
+   "fieldname": "section_break_jjrh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.sample_received == \"By Courier\"",
+   "fieldname": "courier_name",
+   "fieldtype": "Data",
+   "label": "Courier Name"
+  },
+  {
+   "fieldname": "column_break_zica",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach_image",
+   "fieldtype": "Attach Image",
+   "label": "Attach Image"
+  },
+  {
+   "fieldname": "section_break_rzce",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mrn_no",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "MRN No."
+  },
+  {
+   "fieldname": "column_break_egly",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "sample_received_date",
+   "fieldtype": "Date",
+   "label": "Sample Received Date"
+  },
+  {
+   "fieldname": "cutting_charge_table",
+   "fieldtype": "Table",
+   "label": "Cutting Charges",
+   "options": "Cutting Charge"
+  },
+  {
+   "fieldname": "machining_charge_table",
+   "fieldtype": "Table",
+   "label": "Machining Charges",
+   "options": "Machining Charge"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.workflow_state == \"Verified\" ||\ndoc.workflow_state == \"Approved\"",
+   "fieldname": "print_sticker",
+   "fieldtype": "Button",
+   "label": "Print Sticker"
+  },
+  {
+   "fieldname": "column_break_gkjb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wazv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "wittness",
+   "fieldtype": "Select",
+   "label": "Wittness",
+   "options": "Yes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.workflow_state == \"Verified\" ||\ndoc.workflow_state == \"Approved\"",
+   "fieldname": "select_all",
+   "fieldtype": "Button",
+   "label": "Select All"
+  },
+  {
+   "fetch_from": "customer.email_id",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.wittness == \"Yes\"",
+   "fieldname": "inspector",
+   "fieldtype": "Data",
+   "label": "Inspector"
+  },
+  {
+   "depends_on": "eval:doc.wittness == \"Yes\"",
+   "fieldname": "client",
+   "fieldtype": "Data",
+   "label": "Client"
+  },
+  {
+   "fieldname": "column_break_iugo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_znpr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fxwu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remark_for_accounts",
+   "fieldtype": "Small Text",
+   "label": "Remark For Accounts"
+  },
+  {
+   "fieldname": "section_break_vmzw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "depends_on": "eval:doc.workflow_state == \"Verified\" ||\ndoc.workflow_state == \"Approved\"",
+   "fieldname": "mail_send",
+   "fieldtype": "Check",
+   "label": "Mail Send"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-01 15:09:44.496162",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Sample Inward",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sample Approver",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "mrn_no",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

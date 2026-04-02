@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-09 16:07:15.345724",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sample_preparation_charges_section",
+  "from_range",
+  "column_break_ewea",
+  "to_range",
+  "column_break_yjtd",
+  "charges",
+  "column_break_rjir",
+  "processing_charges",
+  "is_fix"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_ewea",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yjtd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rjir",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "processing_charges",
+   "fieldtype": "Select",
+   "label": "Processing Charges",
+   "options": "\nTensile Machining Charges\nImpact Machining Charges\nCutting Charges\nV-notch preparation charges\nWedled/Seamless pipe Cutting Thk upto 20mm\nIGC Practice E Machining\nBend Sample Preparation up to 25mm thk/Dia\nBend Sample Preparation 26 \u2013 40mm thk/Dia\nBend Sample Preparation 41 \u2013 100mm thk/Dia\nBend Sample Preparation above 101mm thk/Dia\nBend Sample Preparation of Welded samples for root/face/side bend\nWeld plate grinding\nMachining for Jominey with Grinding\nMilling Tensile 01-10mm\nMilling Tensile 11-20mm\nTensile Threading\nDrilling Charges\nHeat Treatment Charges\nMandrill Charges"
+  },
+  {
+   "fieldname": "sample_preparation_charges_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "charges",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Charges"
+  },
+  {
+   "fieldname": "from_range",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "From (mm)Dia/Thik "
+  },
+  {
+   "fieldname": "to_range",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "To (mm)Dia/Thik "
+  },
+  {
+   "default": "0",
+   "fieldname": "is_fix",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Fix"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-01-23 10:25:38.781729",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Cutting Charges Items",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

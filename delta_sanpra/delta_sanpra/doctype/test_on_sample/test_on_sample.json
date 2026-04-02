@@ -1,0 +1,198 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-10-27 11:28:34.321702",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_zpwq",
+  "sample_idtest_id",
+  "heat_number",
+  "column_break_enwk",
+  "test_method",
+  "test_group",
+  "column_break_xyfw",
+  "test_description",
+  "price",
+  "column_break_pxsb",
+  "material_shape",
+  "material_specification",
+  "section_break_xmqh",
+  "column_break_wxra",
+  "sample_description",
+  "customer_requirement",
+  "section_break_rupp",
+  "test_id",
+  "sample_id",
+  "column_break_eyrk",
+  "sample_id_heat_no",
+  "column_break_fafo",
+  "naming_series",
+  "index_id"
+ ],
+ "fields": [
+  {
+   "fetch_from": "test_method.test_group",
+   "fieldname": "test_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Test Group",
+   "options": "Test Group"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "test_method",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Test Method",
+   "options": "Test Method",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "test_description",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Test Description",
+   "options": "Test Description"
+  },
+  {
+   "fieldname": "material_specification",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "label": "Material Specification",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zpwq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pxsb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "heat_number",
+   "fieldtype": "Data",
+   "label": "Heat No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "material_shape",
+   "fieldtype": "Link",
+   "label": "Material Shape",
+   "options": "Material Shape"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "price",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Price",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xmqh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_wxra",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "S/.###"
+  },
+  {
+   "fieldname": "sample_id",
+   "fieldtype": "Data",
+   "label": "Sample Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "test_id",
+   "fieldtype": "Data",
+   "label": "Test Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xyfw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_rupp",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "sample_idtest_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sample Id/Test Id",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sample_id_heat_no",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Sample Id (Heat No)"
+  },
+  {
+   "fieldname": "customer_requirement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer Requirement",
+   "options": "Customer Requirement"
+  },
+  {
+   "fieldname": "column_break_eyrk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fafo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_enwk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sample_description",
+   "fieldtype": "Small Text",
+   "label": "Sample Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "index_id",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Index ID"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-27 13:37:16.920872",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Test On sample",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

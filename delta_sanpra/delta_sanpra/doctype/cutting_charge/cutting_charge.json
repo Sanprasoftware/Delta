@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-27 15:14:40.636628",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_mcil",
+  "material",
+  "column_break_zrmb",
+  "material_type",
+  "column_break_kduy",
+  "thik_dia",
+  "column_break_vgqi",
+  "total_charges",
+  "column_break_zotp",
+  "quantity",
+  "column_break_sdqa",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "material_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material Type",
+   "options": "Material Type"
+  },
+  {
+   "fieldname": "thik_dia",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Thik/Dia",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_kduy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vgqi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_mcil",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_zrmb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zotp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "column_break_sdqa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_charges",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Charges"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-16 16:24:31.670602",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Cutting Charge",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

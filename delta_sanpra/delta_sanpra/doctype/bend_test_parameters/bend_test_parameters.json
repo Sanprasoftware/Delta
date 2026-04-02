@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-04 12:20:25.724851",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bend_test_parameters_section",
+  "parameter",
+  "sample_size",
+  "format_diameter",
+  "column_break_eafo",
+  "angle_of_bend",
+  "observation",
+  "specification_requirement",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "bend_test_parameters_section",
+   "fieldtype": "Section Break",
+   "label": "Bend Test Parameters"
+  },
+  {
+   "fieldname": "parameter",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Parameter"
+  },
+  {
+   "fieldname": "sample_size",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sample Size"
+  },
+  {
+   "fieldname": "format_diameter",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Format Diameter(mm)"
+  },
+  {
+   "fieldname": "angle_of_bend",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Angle of Bend(\u00b0)"
+  },
+  {
+   "fieldname": "column_break_eafo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "observation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Observation"
+  },
+  {
+   "fieldname": "specification_requirement",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Specification Requirement"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remark"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-04 12:25:27.669645",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Bend Test Parameters",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

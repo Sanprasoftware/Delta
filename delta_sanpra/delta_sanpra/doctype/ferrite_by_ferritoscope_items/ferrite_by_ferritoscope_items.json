@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-22 14:02:22.835001",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "measurement_1",
+  "measurement_2",
+  "measurement_3",
+  "measurement_4",
+  "measurement_5",
+  "measurement_6",
+  "avg",
+  "specimen_dimension"
+ ],
+ "fields": [
+  {
+   "fieldname": "measurement_1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Measurement-1"
+  },
+  {
+   "fieldname": "avg",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Avg."
+  },
+  {
+   "fieldname": "measurement_2",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Measurement-2"
+  },
+  {
+   "fieldname": "measurement_3",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Measurement-3"
+  },
+  {
+   "fieldname": "measurement_4",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Measurement-4"
+  },
+  {
+   "fieldname": "measurement_5",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Measurement-5"
+  },
+  {
+   "fieldname": "measurement_6",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Measurement-6"
+  },
+  {
+   "fieldname": "specimen_dimension",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Specimen Dimension"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-01-08 15:49:32.010488",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Ferrite By Ferritoscope Items",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

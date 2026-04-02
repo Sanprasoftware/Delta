@@ -1,0 +1,1779 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{inward_number}/{document_id}",
+ "creation": "2025-11-10 12:28:34.474760",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ykf0",
+  "date",
+  "inward_number",
+  "heat_number",
+  "column_break_xegu",
+  "test_group",
+  "test_method",
+  "material_specification",
+  "column_break_ixns",
+  "mrn",
+  "material_shape",
+  "customer_requirment",
+  "challan_no",
+  "column_break_wbku",
+  "ulr_no",
+  "witness",
+  "is_print",
+  "discipline",
+  "customer_name",
+  "section_break_tnui",
+  "test_started_datetime",
+  "equipment",
+  "sample_locations",
+  "date_time_of_loading",
+  "inner_diameter",
+  "total_surface_area_of_sample",
+  "intial_weight_of_sample",
+  "hot_plate_no",
+  "column_break_cuut",
+  "test_completion_datetime",
+  "date_time_of_unloading",
+  "thickness_of_sample",
+  "outer_diameter",
+  "diameter_of_sample",
+  "craddle_no",
+  "corrosion_rate_mmmonth",
+  "test_temp",
+  "column_break_hsnc",
+  "sample_preparations",
+  "location_of_test",
+  "width_of_sample",
+  "angle_of_bends",
+  "condition",
+  "other_information",
+  "case_depth",
+  "final_weight_of_sample",
+  "sensitization_treatement",
+  "column_break_chbu",
+  "portable_spectro_test_form",
+  "test_duration_hrs",
+  "results",
+  "test_methods",
+  "length_of_sample",
+  "weight_loss",
+  "corrosion_rate__milsyear",
+  "sensitization_treatement_options",
+  "room_temp",
+  "column_break_jqez",
+  "test_solution",
+  "magnification",
+  "specimen_type",
+  "specimen_degreasing",
+  "specimen_preparation",
+  "specimen_description",
+  "specimen_shape",
+  "density_of_sample",
+  "section_break_wypy",
+  "name_of_instrument",
+  "serial_number",
+  "brand_make",
+  "column_break_owfi",
+  "model",
+  "loc",
+  "column_break_yxct",
+  "calibration_date",
+  "calibration_due_date",
+  "section_break_ejdw",
+  "table_hbde",
+  "average_corrosion_rate",
+  "corrosion_rate",
+  "section_break_mnxd",
+  "table_icqf",
+  "table_ivqf",
+  "observations",
+  "section_break_dume",
+  "customer_specification",
+  "column_break_qvzk",
+  "test_description",
+  "column_break_uovz",
+  "sample_description",
+  "column_break_isbz",
+  "material_description",
+  "section_break_pbqx",
+  "add_pdf",
+  "tensile_test_table",
+  "section_break_brnx",
+  "elements",
+  "section_break_chce",
+  "document_id",
+  "column_break_kqst",
+  "child_table_id",
+  "column_break_hjwo",
+  "amended_from",
+  "image_section",
+  "product_image_1",
+  "total_magnification_1",
+  "column_break_lbzi",
+  "product_image_2",
+  "column_break_ejyo",
+  "product_image_3",
+  "section_break_ziiq",
+  "pdf_file",
+  "column_break_vdig",
+  "excel_file",
+  "section_break_sxqk",
+  "test_deatils_physical_column",
+  "test_details_physical",
+  "section_break_yehn",
+  "upload_pdf_file",
+  "column_break_bjhm",
+  "upload_excel_file",
+  "section_break_rqqz",
+  "test_details",
+  "pmi_test_table",
+  "section_break_beag",
+  "attach_excel_file",
+  "column_break_aksb",
+  "attach_pdf_file",
+  "test_details_metallography_section",
+  "test_details_metallography",
+  "section_break_ypgl",
+  "column_break_krts",
+  "sample_preparation",
+  "specimen_dimension",
+  "column_break_zyea",
+  "etchant",
+  "sample_location",
+  "column_break_mjpd",
+  "etching_condition",
+  "confidence_intervals",
+  "column_break_qkpm",
+  "type_of_method_used",
+  "section_break_yhdo",
+  "type_of_grain_determined",
+  "grain_size_analysis_method",
+  "column_break_nmhw",
+  "grain_size_index_to",
+  "reletive_accuracy",
+  "operating_conditions",
+  "column_break_lkfl",
+  "grain_size_index_from",
+  "mean_intercept",
+  "method_of_evaluation",
+  "column_break_rpgo",
+  "standard_deviations",
+  "total_intercepts",
+  "dimension_of_the_specimens",
+  "column_break_mdcg",
+  "no_of_set",
+  "no_of_pices_in_each_set",
+  "time_at_temperature",
+  "temperature_used_in_grain_size",
+  "section_break_eidj",
+  "visual_test_table",
+  "section_break_enhk",
+  "type_of_test",
+  "mandrel_diameter",
+  "size_and_type_of_specimen",
+  "angle_of_rebend",
+  "column_break_luuc",
+  "length",
+  "nominal_diameter",
+  "thickness",
+  "number_and_size_of_visible_crack",
+  "column_break_evwk",
+  "angle_of_bend",
+  "condition_of_sample",
+  "width",
+  "radius_used_to_form_the_bend",
+  "section_break_hrof",
+  "location",
+  "test",
+  "dial",
+  "column_break_mwjj",
+  "scale",
+  "load",
+  "indentor",
+  "column_break_dvvg",
+  "min",
+  "max",
+  "column_break_mjxw",
+  "row1",
+  "row2",
+  "row3",
+  "column_break_qbmd",
+  "row4",
+  "row5",
+  "row6",
+  "section_break_pudd",
+  "add_data",
+  "brinell_hardness_child",
+  "section_break_aobz",
+  "number_of_set",
+  "radius_of_striker",
+  "column_break_nckt",
+  "number_of_pices_in_each_set",
+  "data_azah",
+  "column_break_guqy",
+  "dimension_of_the_specimen",
+  "nominal_striking_energy_of_the_pendulum",
+  "section_break_tuui",
+  "range1",
+  "column_break_pbud",
+  "range2",
+  "column_break_przf",
+  "range3",
+  "column_break_unsk",
+  "range4",
+  "column_break_yejm",
+  "range5",
+  "column_break_pvii",
+  "range6",
+  "section_break_jfhb",
+  "average_aboserbed_energy_of_one_set",
+  "lateral_expansion",
+  "column_break_dlrb",
+  "test_temperature",
+  "fracture_appearance__shear",
+  "column_break_uwel",
+  "unbroken_specimens",
+  "section_break_wjvu",
+  "metallography_test_table",
+  "section_break_jzpd",
+  "no_of_fields_examinated",
+  "column_break_uczy",
+  "no_of_replicates_examined",
+  "section_break_xfcq",
+  "no_of_fields",
+  "column_break_dviw",
+  "grid_size_number_of_points",
+  "section_break_yboz",
+  "metallography_test_pp",
+  "section_break_tigz",
+  "estimated_valume_",
+  "column_break_vuir",
+  "pp_i_no_of_fields",
+  "column_break_kahe",
+  "pp_average",
+  "column_break_lkhp",
+  "frame_area",
+  "standard_deviation_section",
+  "value_1",
+  "column_break_wwwy",
+  "value_2",
+  "column_break_eqyv",
+  "value_3",
+  "column_break_fhhr",
+  "value_4",
+  "section_break_dbmo",
+  "confidence_interval_for_120_fields",
+  "relative_accuracy",
+  "column_break_jgix",
+  "relative_accuracy_for_120_fields",
+  "volume_fraction_ferrite",
+  "column_break_rvkk",
+  "volume_fraction_ferrite_for_120_fields",
+  "section_break_yvog",
+  "items",
+  "section_break_lyrn",
+  "remark",
+  "column_break_oqpn",
+  "customer_requirement",
+  "witness_name",
+  "status",
+  "observation"
+ ],
+ "fields": [
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_ykf0",
+   "fieldtype": "Section Break",
+   "label": "Inward Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Lab Analyst",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "inward_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Inward Number",
+   "options": "Sample Inward"
+  },
+  {
+   "fieldname": "heat_number",
+   "fieldtype": "Data",
+   "label": "Heat Number"
+  },
+  {
+   "fieldname": "column_break_xegu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_group",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Test Group",
+   "options": "Test Group"
+  },
+  {
+   "fieldname": "test_method",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Test Method",
+   "options": "Test Method"
+  },
+  {
+   "fieldname": "column_break_ixns",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_shape",
+   "fieldtype": "Link",
+   "label": "Material Shape",
+   "options": "Material Shape"
+  },
+  {
+   "fieldname": "customer_requirment",
+   "fieldtype": "Attach",
+   "hidden": 1,
+   "label": "Customer Requirment"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:(doc.portable_spectro_test_form == \"0\") &&\n(\n    doc.test_method !== \"Tensile Test ASTM E8/E8M : 25\" &&\n    doc.test_method !== \"IGC: ASTM A262:15(2021) Practice C\"\n    )\n",
+   "fieldname": "section_break_dume",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "customer_specification",
+   "fieldtype": "Small Text",
+   "label": "Customer Specification"
+  },
+  {
+   "fieldname": "column_break_qvzk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_description",
+   "fieldtype": "Small Text",
+   "label": "Test Description"
+  },
+  {
+   "depends_on": "eval:doc.test_group ==\"Chemical\" &&\ndoc.test_method !== \"Chemical Test ASTM E1476 : 04(2022)\" &&\ndoc.portable_spectro_test_form == \"0\" \n",
+   "fieldname": "section_break_yehn",
+   "fieldtype": "Section Break",
+   "label": "Test Details"
+  },
+  {
+   "fieldname": "sample_description",
+   "fieldtype": "Small Text",
+   "label": "Sample Description"
+  },
+  {
+   "fieldname": "child_table_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Child Table Id"
+  },
+  {
+   "fieldname": "document_id",
+   "fieldtype": "Data",
+   "label": "Document Id",
+   "unique": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uovz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.portable_spectro_test_form == \"0\" &&\ndoc.test_method !== \"Chemical Test ASTM E1476 : 04(2022)\"",
+   "fieldname": "test_details",
+   "fieldtype": "Table",
+   "label": "Test Details Chemical",
+   "options": "Test Details"
+  },
+  {
+   "fieldname": "section_break_chce",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kqst",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hjwo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_print",
+   "fieldtype": "Check",
+   "label": "Is Print"
+  },
+  {
+   "fieldname": "material_specification",
+   "fieldtype": "Link",
+   "label": "Material Specification",
+   "options": "Item"
+  },
+  {
+   "fieldname": "section_break_lyrn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "witness",
+   "fieldtype": "Select",
+   "label": "Witness",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "test_details_physical",
+   "fieldtype": "Table",
+   "label": "Test Details Physical",
+   "options": "Test Details Physical"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test)  BS EN 10164:2018\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test) ASTM A770/A770M : 03(2025)\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8/E8M : 25\" || \ndoc.test_method == \"Tensile Test ASTM B557 : 15(2023)\" ||\ndoc.test_method == \"Tensile Test ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8-25\"",
+   "fieldname": "section_break_sxqk",
+   "fieldtype": "Section Break",
+   "label": "Test Deatils"
+  },
+  {
+   "fieldname": "test_deatils_physical_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "excel_file",
+   "fieldtype": "Attach",
+   "label": "Excel File"
+  },
+  {
+   "fieldname": "column_break_wbku",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ulr_no",
+   "fieldtype": "Data",
+   "label": "ULR No."
+  },
+  {
+   "fieldname": "discipline",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Discipline"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "challan_no",
+   "fieldtype": "Data",
+   "label": "Challan No"
+  },
+  {
+   "fieldname": "witness_name",
+   "fieldtype": "Data",
+   "label": "Witness Name"
+  },
+  {
+   "fieldname": "column_break_oqpn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_requirement",
+   "fieldtype": "Data",
+   "label": "Customer Requirement"
+  },
+  {
+   "depends_on": "eval: doc.test_group == \"Metallography Test\"",
+   "fieldname": "test_details_metallography_section",
+   "fieldtype": "Section Break",
+   "label": "Test Details"
+  },
+  {
+   "fieldname": "attach_excel_file",
+   "fieldtype": "Attach",
+   "label": "Attach Excel File"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test)  BS EN 10164:2018\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test) ASTM A770/A770M : 03(2025)\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8/E8M : 25\" || \ndoc.test_method == \"Tensile Test ASTM B557 : 15(2023)\" ||\ndoc.test_method == \"Tensile Test ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8-25\"",
+   "fieldname": "image_section",
+   "fieldtype": "Section Break",
+   "label": "Image"
+  },
+  {
+   "fieldname": "product_image_1",
+   "fieldtype": "Attach Image",
+   "label": "Product Image 1"
+  },
+  {
+   "fieldname": "column_break_lbzi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "product_image_2",
+   "fieldtype": "Attach Image",
+   "label": "Product Image 2"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Metallography Test\"",
+   "fieldname": "total_magnification_1",
+   "fieldtype": "Data",
+   "label": "Total Magnification "
+  },
+  {
+   "depends_on": "eval:doc.test_method ==\"Inclusion content Analysis ASTM E45 : 25 Method A\" || \ndoc.test_method == \"Inclusion content Analysis DIN 50602 : 1985 Method K3\" ||\ndoc.test_method == \"Inclusion content Analysis ASTM E45 : 25 Method D\" ||\ndoc.test_method == \"Determination of Non-Metallic Inclusions IS 4163 : 2021 ( ISO 4967:2013)\"",
+   "fieldname": "section_break_wjvu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "metallography_test_table",
+   "fieldtype": "Table",
+   "label": "Metallography Test Table",
+   "options": "Metallography Test Table"
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Data",
+   "label": "Test"
+  },
+  {
+   "fieldname": "scale",
+   "fieldtype": "Data",
+   "label": "Scale"
+  },
+  {
+   "fieldname": "load",
+   "fieldtype": "Data",
+   "label": "Load"
+  },
+  {
+   "fieldname": "indentor",
+   "fieldtype": "Data",
+   "label": "Indentor"
+  },
+  {
+   "fieldname": "column_break_ejyo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "product_image_3",
+   "fieldtype": "Attach Image",
+   "label": "Product Image 3"
+  },
+  {
+   "depends_on": "eval:( doc.test_method !== \"Ferrite By Ferritoscope ASTM A800/A800M : 20\" && \ndoc.test_method !== \"MacroTech Test ASTM E381 : 22 & JDQ89\") &&\n(doc.test_method == \"IGC: ASTM A262:15(2021) Practice A\" ||\ndoc.test_group == \"Metallography Test\" )",
+   "fieldname": "section_break_ypgl",
+   "fieldtype": "Section Break",
+   "label": "Microstructure Analysis"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Oxalic Acid Spot Test : MIL-DTL-13924F\"",
+   "fieldname": "specimen_dimension",
+   "fieldtype": "Data",
+   "label": "Specimen Dimension"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Decarburization Depth Analysis ASTM E1077 : 14(2021)\" &&\ndoc.test_method !== \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E562 : 19e1\" &&\ndoc.test_method !== \"Microstructure Analysis ASTM A262 : 15(2021) Practice A\" &&\ndoc.test_method !== \"Grain size Analysis ASTM E112 : 2025\" && \ndoc.test_method !== \"Inclusion content Analysis ASTM E45 : 25 Method D\" &&\ndoc.test_method !== \"MacroTech Test ASTM E381 : 22 & JDQ89\" &&\ndoc.test_method !== \"Coating Thickness Measurement IS 3203 : 1982 (Reaffirmed Year : 2021 )\" &&\ndoc.test_method !== \"Oxalic Acid Spot Test : MIL-DTL-13924F\"",
+   "fieldname": "sample_location",
+   "fieldtype": "Data",
+   "label": "Sample Location"
+  },
+  {
+   "depends_on": "eval: doc.test_method !== \"Inclusion content Analysis DIN 50602 : 1985 Method K3\" && \r\ndoc.test_method !== \"Inclusion content Analysis ASTM E45 : 25 Method A\" &&\r\ndoc.test_method !== \"Inclusion content Analysis ASTM E45 : 25 Method D\" &&\r\n      doc.test_method !== \"Determination of Non-Metallic Inclusions IS 4163 : 2021 ( ISO 4967:2013)\"",
+   "fieldname": "etching_condition",
+   "fieldtype": "Select",
+   "label": "Etching Condition",
+   "options": "\nSelect Etching Condition\n70-80 Degree Centigrade about 15-30 Min.\nElectrolytic etching, 3V for 6 to 8 seconds\nElectrolytic etching, 6V for 1-3 minutes\nElectrolytic etching, 6V for 10-30 seconds\nElectrolytic etching,3V for 8-10seconds\nElectrolytic etching,6V for 15-20seconds\nElectrolytic etching,6V for 5-10seconds\nElectrolytic etching,6V for 5-60seconds\nElectrolytic etching,6V for 9-10seconds\nElectrolytic Etching: 1Amp/cm2 for 90 seconds\nImmersion at room temperature for 30-120s\nImmersion etching\nImmersion etching for 1 to 5 min.\nSwab etching\nSwabbing\nUnetched Condition"
+  },
+  {
+   "fieldname": "column_break_zyea",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Oxalic Acid Spot Test : MIL-DTL-13924F\"",
+   "fieldname": "sample_preparation",
+   "fieldtype": "Select",
+   "label": "Sample Preparation",
+   "options": "\nSelect Sample Preparation\n120 Grit Polishing\nAs Per ASTM E3\nIn-situ Metallography\nMechanical Polishing\nMechanical Polishing with Emery Papers and Disc la"
+  },
+  {
+   "depends_on": "eval: doc.test_method !== \"Inclusion content Analysis DIN 50602 : 1985 Method K3\" &&\r\n      doc.test_method !== \"Inclusion content Analysis ASTM E45 : 25 Method A\" &&\r\n      doc.test_method !== \"Inclusion content Analysis ASTM E45 : 25 Method D\" &&\r\n      doc.test_method !== \"Determination of Non-Metallic Inclusions IS 4163 : 2021 ( ISO 4967:2013)\"      ",
+   "fieldname": "etchant",
+   "fieldtype": "Select",
+   "label": "Etchant",
+   "options": "\nSelect Etchant\n0.5% HF\n10% Ammonium Persulfate\n10% Chromic Acid\n10% NaOH\n10% Oxalic Acid\n2% Nital\n20% NaOH\n4% Nital\n40% KOH\n40%NaOH\n50ml conc. HCL + 50ml Water\nAcetic Glycergia\nAqua Regia\nBeraha's\nBeraha's Tint Etchant\nFecl3+HCL+H2O+Ethanol\nGlyceregia\nKeller's Reagent\nMarble's Reagent\nVilella's Reagent"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Select Status\nClose\nIn Process\nOpen"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Brinell Hardness Test ASTM A370-24a and ASTM E10-23\" || \ndoc.test_method == \"Brinell Hardness Test ASTM E10-23\" ||\ndoc.test_method == \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Rockwell Hardness Test ISO 6508-1 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test ASTM A370-24a & ASTM E10-23\" ||\ndoc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Brinell Hardness Test ISO 6506-1 : 2014\" || \ndoc.test_method == \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a & Rockwell Hardness Test ASTM E18-25\" || \ndoc.test_method == \"Hardenability Test IS 3848 : 24 & Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Leeb Hardness Test ASTM A370-24a & ASTM A956/A956M : 22\" ||\ndoc.test_method == \"Vickers Hardness Test ASTM E92-23\" ||\ndoc.test_method == \"Micro-Vickers Hardness Test ASTM E384 : 22\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a\" ||\ndoc.test_method == \"Vickers Hardness Test BS EN ISO 6507-1:2023\"",
+   "fieldname": "section_break_hrof",
+   "fieldtype": "Section Break",
+   "label": "Brinell Hardness"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "min",
+   "fieldtype": "Data",
+   "label": "Min"
+  },
+  {
+   "fieldname": "column_break_dvvg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dial",
+   "fieldtype": "Data",
+   "label": "Dial"
+  },
+  {
+   "fieldname": "max",
+   "fieldtype": "Data",
+   "label": "Max"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Brinell Hardness Test ASTM A370-24a and ASTM E10-23\" || \ndoc.test_method == \"Brinell Hardness Test ASTM E10-23\" ||\ndoc.test_method == \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Rockwell Hardness Test ISO 6508-1 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test ASTM A370-24a & ASTM E10-23\" ||\ndoc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Brinell Hardness Test ISO 6506-1 : 2014\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a & Rockwell Hardness Test ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test IS 3848 : 24 & Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Leeb Hardness Test ASTM A370-24a & ASTM A956/A956M : 22\" ||\ndoc.test_method == \"Vickers Hardness Test ASTM E92-23\" ||\ndoc.test_method == \"Micro-Vickers Hardness Test ASTM E384 : 22\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a\" ||\ndoc.test_method == \"Vickers Hardness Test BS EN ISO 6507-1:2023\"",
+   "fieldname": "section_break_pudd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "brinell_hardness_child",
+   "fieldtype": "Table",
+   "label": "Brinell Hardness Child",
+   "options": "Brinell Hardness Child"
+  },
+  {
+   "fieldname": "column_break_mjpd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_mjxw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "add_data",
+   "fieldtype": "Button",
+   "label": "Add Data"
+  },
+  {
+   "depends_on": "eval:doc.test_method ==\"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" || \ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\"",
+   "fieldname": "section_break_aobz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "number_of_set",
+   "fieldtype": "Int",
+   "label": "Number of Set"
+  },
+  {
+   "fieldname": "dimension_of_the_specimen",
+   "fieldtype": "Data",
+   "label": "Dimension of the Specimen"
+  },
+  {
+   "fieldname": "data_azah",
+   "fieldtype": "Data",
+   "label": "Type of Notch"
+  },
+  {
+   "fieldname": "column_break_guqy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_of_pices_in_each_set",
+   "fieldtype": "Int",
+   "label": "Number of Pices in Each Set"
+  },
+  {
+   "fieldname": "radius_of_striker",
+   "fieldtype": "Data",
+   "label": "Radius of Striker"
+  },
+  {
+   "depends_on": "eval:doc.test_method ==\"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" || \ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\"",
+   "fieldname": "section_break_tuui",
+   "fieldtype": "Section Break",
+   "label": "Absorbed Energy in Joules of Each Specimen"
+  },
+  {
+   "fieldname": "column_break_nckt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method ==\"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" || \ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\"",
+   "fieldname": "section_break_jfhb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "average_aboserbed_energy_of_one_set",
+   "fieldtype": "Float",
+   "label": "Average Aboserbed Energy of One Set",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lateral_expansion",
+   "fieldtype": "Data",
+   "label": "Lateral Expansion"
+  },
+  {
+   "fieldname": "column_break_dlrb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_temperature",
+   "fieldtype": "Data",
+   "label": "Test Temperature"
+  },
+  {
+   "fieldname": "fracture_appearance__shear",
+   "fieldtype": "Data",
+   "label": "Fracture Appearance (% shear)"
+  },
+  {
+   "fieldname": "column_break_uwel",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "unbroken_specimens",
+   "fieldtype": "Data",
+   "label": "Unbroken Specimens"
+  },
+  {
+   "depends_on": "eval:(\ndoc.test_method ==\"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" || \ndoc.test_group == \"Chemical\" || \ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" || \ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Chemical Test ASTM E1251:25\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_method == \"Break Test AWS D1.1 (2025)\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method A\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\"\n) && (\ndoc.portable_spectro_test_form == \"0\" &&\ndoc.test_method !== \"Chemical Test ASTM E1476 : 04(2022)\"\n)",
+   "fieldname": "sample_locations",
+   "fieldtype": "Data",
+   "label": "Sample Location"
+  },
+  {
+   "fieldname": "row1",
+   "fieldtype": "Float",
+   "label": "R1",
+   "precision": "1"
+  },
+  {
+   "fieldname": "row2",
+   "fieldtype": "Float",
+   "label": "R2",
+   "precision": "1"
+  },
+  {
+   "fieldname": "row3",
+   "fieldtype": "Float",
+   "label": "R3",
+   "precision": "1"
+  },
+  {
+   "fieldname": "row4",
+   "fieldtype": "Float",
+   "label": "R4",
+   "precision": "1"
+  },
+  {
+   "fieldname": "row5",
+   "fieldtype": "Float",
+   "label": "R5",
+   "precision": "1"
+  },
+  {
+   "fieldname": "row6",
+   "fieldtype": "Float",
+   "label": "R6",
+   "precision": "1"
+  },
+  {
+   "fieldname": "no_of_replicates_examined",
+   "fieldtype": "Int",
+   "label": "No of Replicates Examined"
+  },
+  {
+   "fieldname": "no_of_fields_examinated",
+   "fieldtype": "Int",
+   "label": "No of Fields Examinated"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Volume Fraction Analysis ASTM E562 : 19e1\" ||\ndoc.test_method == \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E562 : 19e1\"",
+   "fieldname": "section_break_tigz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "estimated_valume_",
+   "fieldtype": "Float",
+   "label": "Estimated Valume (%)"
+  },
+  {
+   "fieldname": "frame_area",
+   "fieldtype": "Data",
+   "label": "Frame Area"
+  },
+  {
+   "fieldname": "pp_average",
+   "fieldtype": "Float",
+   "label": "Pp Average",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_lkhp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grid_size_number_of_points",
+   "fieldtype": "Int",
+   "label": "Grid Size (Number of points)"
+  },
+  {
+   "fieldname": "no_of_fields",
+   "fieldtype": "Int",
+   "label": "No Of Fields"
+  },
+  {
+   "fieldname": "pp_i_no_of_fields",
+   "fieldtype": "Float",
+   "label": "PP i no. of fields",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Volume Fraction Analysis ASTM E562 : 19e1\" ||\ndoc.test_method == \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E562 : 19e1\"",
+   "fieldname": "section_break_dbmo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jgix",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Volume Fraction Analysis ASTM E562 : 19e1\" ||\ndoc.test_method == \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E562 : 19e1\"",
+   "fieldname": "section_break_yboz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mrn",
+   "fieldtype": "Data",
+   "label": "MRN"
+  },
+  {
+   "fieldname": "metallography_test_pp",
+   "fieldtype": "Table",
+   "label": "Metallography Test Pp",
+   "options": "Metallography Test PP Table"
+  },
+  {
+   "depends_on": "eval: doc.test_group == \"Metallography Test\"",
+   "fieldname": "test_details_metallography",
+   "fieldtype": "Table",
+   "label": "Test Details Metallography",
+   "options": "Metallography Items"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Coating Weight Measurement IS 3618 : 1966     (Reaffirmed Year : 2021 )\" || \ndoc.test_method == \"Ferrite By Ferritoscope ASTM A800/A800M : 20\" ||\ndoc.test_method == \"Flattening Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Visual Test IS 3618 : 1966     (Reaffirmed Year : 2021 )\"",
+   "fieldname": "location_of_test",
+   "fieldtype": "Data",
+   "label": "Location of Test"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Coating Weight Measurement IS 3618 : 1966     (Reaffirmed Year : 2021 )\" ||\ndoc.test_method == \"Flattening Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Visual Test IS 3618 : 1966     (Reaffirmed Year : 2021 )\"",
+   "fieldname": "equipment",
+   "fieldtype": "Data",
+   "label": "Equipment"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Coating Weight Measurement IS 3618 : 1966     (Reaffirmed Year : 2021 )\" ||\ndoc.test_method == \"Flattening Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Visual Test IS 3618 : 1966     (Reaffirmed Year : 2021 )\"",
+   "fieldname": "other_information",
+   "fieldtype": "Data",
+   "label": "Other Information"
+  },
+  {
+   "depends_on": "eval:( doc.test_method == \"Ferrite By Ferritoscope ASTM A800/A800M : 20\" ||\ndoc.portable_spectro_test_form == \"1\" ||\ndoc.test_method == \"Chemical Test ASTM E1476 : 04(2022)\") && (\n    doc.test_group !== \"Metallography Test\"\n    )",
+   "fieldname": "section_break_wypy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Chemical Test ASTM E1476 : 04(2022)\"",
+   "fieldname": "name_of_instrument",
+   "fieldtype": "Data",
+   "label": "Name of Instrument"
+  },
+  {
+   "fieldname": "column_break_yxct",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model "
+  },
+  {
+   "fieldname": "calibration_date",
+   "fieldtype": "Date",
+   "label": "Calibration Date"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Ferrite By Ferritoscope ASTM A800/A800M : 20\"",
+   "fieldname": "section_break_yvog",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Ferrite By Ferritoscope Items"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Coating Thickness Measurement IS 3203 : 1982 (Reaffirmed Year : 2021 )\" || \ndoc.test_method == \"Case Depth Measurement IS 6416 : 2022\" &&\ndoc.test_method !== \"Inclusion content Analysis ASTM E45 : 25 Method D\"",
+   "fieldname": "type_of_method_used",
+   "fieldtype": "Data",
+   "label": "Type of Method Used"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Case Depth Measurement IS 6416 : 2022\"",
+   "fieldname": "case_depth",
+   "fieldtype": "Data",
+   "label": "Case Depth"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Grain size Analysis IS 4748 : 2021 ( ISO 643:2019)\" ||\ndoc.test_method == \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E112 : 2025\" ||\ndoc.test_method == \"Grain size Analysis ASTM E112 : 2025\"",
+   "fieldname": "section_break_yhdo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "type_of_grain_determined",
+   "fieldtype": "Data",
+   "label": "Type of Grain Determined"
+  },
+  {
+   "fieldname": "grain_size_analysis_method",
+   "fieldtype": "Data",
+   "label": "Grain Size Analysis Method"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E112 : 2025\" &&\ndoc.test_method !== \"Grain size Analysis ASTM E112 : 2025\"",
+   "fieldname": "operating_conditions",
+   "fieldtype": "Data",
+   "label": "Operating Conditions"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E112 : 2025\" && \ndoc.test_method !== \"Grain size Analysis ASTM E112 : 2025\"",
+   "fieldname": "method_of_evaluation",
+   "fieldtype": "Data",
+   "label": "Method of Evaluation"
+  },
+  {
+   "fieldname": "grain_size_index_to",
+   "fieldtype": "Float",
+   "label": "Grain Size Index To"
+  },
+  {
+   "fieldname": "grain_size_index_from",
+   "fieldtype": "Float",
+   "label": "Grain Size Index From"
+  },
+  {
+   "fieldname": "column_break_nmhw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mean_intercept",
+   "fieldtype": "Data",
+   "label": "Mean Intercept"
+  },
+  {
+   "fieldname": "standard_deviations",
+   "fieldtype": "Data",
+   "label": "Standard Deviations"
+  },
+  {
+   "fieldname": "column_break_rpgo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_intercepts",
+   "fieldtype": "Int",
+   "label": "Total Intercepts"
+  },
+  {
+   "depends_on": "eval: (doc.test_group == \"Chemical\" || \ndoc.test_method == \"Coating Weight Measurement IS 3618 : 1966     (Reaffirmed Year : 2021 )\" || \ndoc.test_method == \"Ferrite By Ferritoscope ASTM A800/A800M : 20\" || \ndoc.test_method == \"Flattening Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Chemical Test ASTM E1251:25\" ||\ndoc.test_method == \"Visual Test IS 3618 : 1966     (Reaffirmed Year : 2021 )\" ||\ndoc.test_method == \"Salt Spray Test-ISO 9227:2022 (Amd 1:2024)\" ||\ndoc.test_method == \"Salt Spray Test - ASTM B117-25\") &&\n(\ndoc.test_method !== \"Chemical Test ASTM E1476 : 04(2022)\" &&\ndoc.portable_spectro_test_form == \"0\" \n)",
+   "fieldname": "room_temp",
+   "fieldtype": "Float",
+   "label": "Room Temp.(\u00b0C)"
+  },
+  {
+   "depends_on": "eval: doc.portable_spectro_test_form == \"0\"\n",
+   "fieldname": "brand_make",
+   "fieldtype": "Data",
+   "label": "Brand/Make"
+  },
+  {
+   "fieldname": "column_break_lkfl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qkpm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_mwjj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qbmd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vuir",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "confidence_interval_for_120_fields",
+   "fieldtype": "Float",
+   "label": "95 % confidence interval for 120 fields"
+  },
+  {
+   "fieldname": "relative_accuracy",
+   "fieldtype": "Float",
+   "label": "% Relative Accuracy"
+  },
+  {
+   "fieldname": "relative_accuracy_for_120_fields",
+   "fieldtype": "Float",
+   "label": "% Relative accuracy for 120 fields"
+  },
+  {
+   "fieldname": "column_break_rvkk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Volume Fraction Analysis ASTM E562 : 19e1\" || \ndoc.test_method == \"Volume Fraction Analysis ASTM E562 : 19e1\" || doc.test_method == \"Grain size Analysis IS 4748 : 2021 ( ISO 643:2019)\" ||\ndoc.test_method == \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E562 : 19e1\" ||\ndoc.test_method == \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E112 : 2025\"",
+   "fieldname": "confidence_intervals",
+   "fieldtype": "Float",
+   "label": "95% Confidence Interval"
+  },
+  {
+   "fieldname": "volume_fraction_ferrite",
+   "fieldtype": "Float",
+   "label": "Volume fraction (Ferrite %)"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E112 : 2025\" &&\ndoc.test_method !== \"Grain size Analysis ASTM E112 : 2025\"",
+   "fieldname": "no_of_set",
+   "fieldtype": "Int",
+   "label": "Number of Set"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E112 : 2025\" &&\ndoc.test_method !== \"Grain size Analysis ASTM E112 : 2025\"",
+   "fieldname": "no_of_pices_in_each_set",
+   "fieldtype": "Int",
+   "label": "Number of Pices in Each Set"
+  },
+  {
+   "fieldname": "column_break_mdcg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E112 : 2025\" &&\ndoc.test_method !== \"Grain size Analysis ASTM E112 : 2025\"",
+   "fieldname": "dimension_of_the_specimens",
+   "fieldtype": "Data",
+   "label": "Dimension of the Specimen"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Rebend Test IS 1786 Amd. 4 : 2019\"",
+   "fieldname": "size_and_type_of_specimen",
+   "fieldtype": "Data",
+   "label": "Size and type of specimen"
+  },
+  {
+   "fieldname": "type_of_test",
+   "fieldtype": "Data",
+   "label": "Type of test"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Rebend Test IS 1786 Amd. 4 : 2019\"",
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Rebend Test IS 1786 Amd. 4 : 2019\"",
+   "fieldname": "thickness",
+   "fieldtype": "Float",
+   "label": "Thickness"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Rebend Test IS 1786 Amd. 4 : 2019\"",
+   "fieldname": "radius_used_to_form_the_bend",
+   "fieldtype": "Float",
+   "label": "Radius used to form the bend"
+  },
+  {
+   "fieldname": "angle_of_bend",
+   "fieldtype": "Int",
+   "label": "Angle of bend"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\" ||\ndoc.test_method == \"Bend Test BS EN ISO 5173:2010+A1:2011\" ||\ndoc.test_method == \"Bend Test IS 3600 : Part 1 : 2022\" ||\ndoc.test_metthod == \"Bend Test IS 3600 : Part 1 : 2022\"",
+   "fieldname": "section_break_enhk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_luuc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_evwk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Bend Test IS 1599 : 2023\" &&\ndoc.test_method !== \"Flattening Test IS 2328 : 2018\" &&\ndoc.test_method !== \"Bend Test BS EN ISO 5173:2010+A1:2011\" &&\ndoc.test_method !== \"Bend Test IS 3600 : Part 1 : 2022\" &&\ndoc.test_method !== \"Bend Test ASTM A370-24a & ASTM E290 : 22\"",
+   "fieldname": "nominal_diameter",
+   "fieldtype": "Float",
+   "label": "Nominal diameter"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Bend Test IS 1599 : 2023\" &&\ndoc.test_method !== \"Bend Test BS EN ISO 5173:2010+A1:2011\" &&\ndoc.test_method !== \"Bend Test IS 3600 : Part 1 : 2022\"",
+   "fieldname": "mandrel_diameter",
+   "fieldtype": "Float",
+   "label": "Mandrel Diameter"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Bend Test IS 1599 : 2023\" &&\ndoc.test_method !== \"Flattening Test IS 2328 : 2018\" &&\ndoc.test_method !== \"Bend Test BS EN ISO 5173:2010+A1:2011\" &&\ndoc.test_method !== \"Bend Test IS 3600 : Part 1 : 2022\" &&\ndoc.test_method !== \"Bend Test ASTM A370-24a & ASTM E290 : 22\"",
+   "fieldname": "condition_of_sample",
+   "fieldtype": "Data",
+   "label": "Condition of sample"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Bend Test IS 1599 : 2023\" &&\ndoc.test_method !== \"Flattening Test IS 2328 : 2018\" &&\ndoc.test_method !== \"Bend Test BS EN ISO 5173:2010+A1:2011\" &&\ndoc.test_method !== \"Bend Test IS 3600 : Part 1 : 2022\" &&\ndoc.test_method !== \"Bend Test ASTM A370-24a & ASTM E290 : 22\"",
+   "fieldname": "angle_of_rebend",
+   "fieldtype": "Float",
+   "label": "Angle of rebend"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Coating Weight Measurement IS 3618 : 1966     (Reaffirmed Year : 2021 )\" ||\ndoc.test_method == \"Visual Test IS 3618 : 1966     (Reaffirmed Year : 2021 )\" ||\ndoc.test_method == \"Flattening Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Flattening Test IS 2328 : 2018\"",
+   "fieldname": "section_break_eidj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "visual_test_table",
+   "fieldtype": "Table",
+   "label": "Visual Test Table",
+   "options": "Visual Test Table"
+  },
+  {
+   "depends_on": "eval:doc.test_method ==\"Inclusion content Analysis ASTM E45 : 25 Method A\" || \ndoc.test_method == \"Inclusion content Analysis DIN 50602 : 1985 Method K3\" ||\ndoc.test_method == \"Inclusion content Analysis ASTM E45 : 25 Method D\" ||\ndoc.test_method == \"Determination of Non-Metallic Inclusions IS 4163 : 2021 ( ISO 4967:2013)\"",
+   "fieldname": "section_break_jzpd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_uczy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Select Sample Preparation",
+   "depends_on": "eval: (\r\n  doc.test_group !== \"Metallography Test\" &&\r\n  doc.test_group !== \"Chemical\" &&\r\n  doc.test_method !== \"Rebend Test IS 1786 Amd. 4 :  2019\" &&\r\n  doc.test_method !== \"Tensile Test ASTM E8/E8M : 25\" &&\r\n  doc.test_method !== \"IGC: ASTM A262:15(2021) Practice A\" &&\r\n  doc.test_method !== \"Salt Spray Test-ISO 9227:2022 (Amd 1:2024)\"\r\n    \r\n) ||\r\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\"",
+   "fieldname": "sample_preparations",
+   "fieldtype": "Select",
+   "label": "Sample Preparation",
+   "options": "Select Sample Preparation\n120 Grit Polishing\nAs Per ASTM E3\nIn-situ Metallography\nMechanical Polishing\nMechanical Polishing with Emery Papers and Disc la"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Microstructure Analysis ASTM A262 : 15(2021) Practice A\" ||\n      doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n      doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\n      doc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\n      doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n      doc.test_method == \"IGC: ASTM A262:15(2021) Practice A\"",
+   "fieldname": "sensitization_treatement",
+   "fieldtype": "Select",
+   "label": "Sensitization Treatement",
+   "options": "No\nYes"
+  },
+  {
+   "default": "Select Sensitization Treatement",
+   "depends_on": "eval: doc.sensitization_treatement == \"Yes\" &&\n     (\n       doc.test_method == \"Microstructure Analysis ASTM A262 : 15(2021) Practice A\" ||\n       doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n       doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\n       doc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\n       doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n       doc.test_method == \"IGC: ASTM A262:15(2021) Practice A\"\n     )",
+   "fieldname": "sensitization_treatement_options",
+   "fieldtype": "Select",
+   "label": "Sensitization Treatement Options",
+   "options": "Select Sensitization Treatement\n1 Hour at 675 degree Celsius\n1 Hour at 675 degrees\n700 degrees for 30 minutes"
+  },
+  {
+   "fieldname": "column_break_isbz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_description",
+   "fieldtype": "Small Text",
+   "label": "Material Description"
+  },
+  {
+   "depends_on": "eval: doc.test_method !== \"Grain size Analysis IS 4748 : 2021 ( ISO 643:2019)\"",
+   "fieldname": "time_at_temperature",
+   "fieldtype": "Time",
+   "label": "Time at Temperature used in Establishing The Grain Size"
+  },
+  {
+   "depends_on": "eval: doc.test_method !== \"Grain size Analysis IS 4748 : 2021 ( ISO 643:2019)\"\n",
+   "fieldname": "temperature_used_in_grain_size",
+   "fieldtype": "Data",
+   "label": "Temperature used in Establishing The Grain Size"
+  },
+  {
+   "fieldname": "reletive_accuracy",
+   "fieldtype": "Data",
+   "label": "% Reletive Accuracy"
+  },
+  {
+   "depends_on": "eval:doc.test_method !== \"Rebend Test IS 1786 Amd. 4 : 2019\"",
+   "fieldname": "number_and_size_of_visible_crack",
+   "fieldtype": "Int",
+   "label": "Number and size of any visible cracks in the bend"
+  },
+  {
+   "fieldname": "column_break_krts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Volume Fraction Analysis ASTM E562 : 19e1\" ||\ndoc.test_method == \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E562 : 19e1\"",
+   "fieldname": "section_break_xfcq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_dviw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kahe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.test_method == \"Volume Fraction Analysis ASTM E562 : 19e1\" ||\ndoc.test_method == \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E562 : 19e1\"",
+   "fieldname": "standard_deviation_section",
+   "fieldtype": "Section Break",
+   "label": "Standard Deviation"
+  },
+  {
+   "fieldname": "value_1",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "column_break_wwwy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "value_2",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "column_break_eqyv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "value_3",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "column_break_fhhr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "value_4",
+   "fieldtype": "Float"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test)  BS EN 10164:2018\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test) ASTM A770/A770M : 03(2025)\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8/E8M : 25\" || \ndoc.test_method == \"Tensile Test ASTM B557 : 15(2023)\" ||\ndoc.test_method == \"Tensile Test ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8-25\"",
+   "fieldname": "section_break_ziiq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_vdig",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pdf_file",
+   "fieldtype": "Attach",
+   "label": "PDF File"
+  },
+  {
+   "depends_on": "eval:doc.test_group == \"Metallography Test\"",
+   "fieldname": "section_break_beag",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_aksb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach_pdf_file",
+   "fieldtype": "Attach",
+   "label": "Attach PDF File"
+  },
+  {
+   "fieldname": "upload_excel_file",
+   "fieldtype": "Attach",
+   "label": "Upload Excel File"
+  },
+  {
+   "fieldname": "upload_pdf_file",
+   "fieldtype": "Attach",
+   "label": "Upload PDF File"
+  },
+  {
+   "fieldname": "column_break_bjhm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_group ==\"Chemical\"",
+   "fieldname": "section_break_rqqz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_tnui",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_cuut",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hsnc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: (\n        doc.test_method == \"ISO 3651-2:1998 Method A\"\n      ) &&\n      doc.test_method !== \"Banding Microstructure Analysis ASTM E1268 : 19\" &&\n      doc.test_method !== \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E112 : 2025\" &&\n      doc.test_method !== \"Determination of Non-Metallic Inclusions IS 4163 : 2021 ( ISO 4967:2013)\"",
+   "fieldname": "observation",
+   "fieldtype": "Data",
+   "label": "Observation"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Charpy Impact Test ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\"",
+   "fieldname": "test_methods",
+   "fieldtype": "Data",
+   "label": "Test Method"
+  },
+  {
+   "fieldname": "range1",
+   "fieldtype": "Float",
+   "label": "Range1"
+  },
+  {
+   "fieldname": "column_break_pbud",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range2",
+   "fieldtype": "Float",
+   "label": "Range2"
+  },
+  {
+   "fieldname": "column_break_przf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range3",
+   "fieldtype": "Float",
+   "label": "Range3"
+  },
+  {
+   "fieldname": "column_break_unsk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range4",
+   "fieldtype": "Float",
+   "label": "Range4"
+  },
+  {
+   "fieldname": "column_break_yejm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range5",
+   "fieldtype": "Float",
+   "label": "Range5"
+  },
+  {
+   "fieldname": "column_break_pvii",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range6",
+   "fieldtype": "Float",
+   "label": "Range6"
+  },
+  {
+   "fieldname": "nominal_striking_energy_of_the_pendulum",
+   "fieldtype": "Select",
+   "label": "Nominal Striking Energy of the Pendulum",
+   "options": "Nominal Striking Energy of the Pendulum\n300J"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Salt Spray Test-ISO 9227:2022 (Amd 1:2024)\" ||\ndoc.test_method == \"Salt Spray Test - ASTM B117-25\"",
+   "fieldname": "date_time_of_loading",
+   "fieldtype": "Datetime",
+   "label": "Date & Time Of Loading"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Salt Spray Test-ISO 9227:2022 (Amd 1:2024)\" ||\ndoc.test_method == \"Salt Spray Test - ASTM B117-25\"",
+   "fieldname": "date_time_of_unloading",
+   "fieldtype": "Datetime",
+   "label": "Date & Time Of Unloading"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Salt Spray Test-ISO 9227:2022 (Amd 1:2024)\" ||\ndoc.test_method == \"Salt Spray Test - ASTM B117-25\"",
+   "fieldname": "condition",
+   "fieldtype": "Data",
+   "label": "Condition"
+  },
+  {
+   "fieldname": "column_break_chbu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Salt Spray Test-ISO 9227:2022 (Amd 1:2024)\" ||\ndoc.test_method == \"Salt Spray Test - ASTM B117-25\"",
+   "fieldname": "section_break_mnxd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_icqf",
+   "fieldtype": "Table",
+   "label": "Name of Equipment used",
+   "options": "Name of Equipment used"
+  },
+  {
+   "fieldname": "table_ivqf",
+   "fieldtype": "Table",
+   "label": "Test Conditions",
+   "options": "Test Conditions"
+  },
+  {
+   "fieldname": "observations",
+   "fieldtype": "Table",
+   "label": "Observation",
+   "options": "Observation"
+  },
+  {
+   "depends_on": "eval:\n(\n    doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n    doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice A\" ||\n    doc.test_method == \"ASTM G28 : 24 Method A\" ||\n    doc.test_method == \"ASTM G48 : 25 Method A\"\n    ) &&\ndoc.test_group !== \"Chemical\"\n",
+   "fieldname": "test_started_datetime",
+   "fieldtype": "Datetime",
+   "label": "Test Started DateTime"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"ISO 3651-2:1998 Method A\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\" ||\ndoc.test_method == \"ASTM G48 : 25 Method A\"",
+   "fieldname": "test_solution",
+   "fieldtype": "Select",
+   "label": "Test Solution",
+   "options": "Select Test Solution\n10% Ferric chloride(Fecl3)\n10% Ferric chloride(Fecl3) by mass\n5% FeCl3 and 1% NaNO3 by weight\n6 % FeCl (Fecl3)by mass and 1 % HCl (acidified ferric chloride)\n6% Ferric Chloride with pH 1.3\n6% Ferric Chloride(Fecl3)\n6% Ferric Chloride(Fecl3) by mass\n6% Ferric Chloride(Fecl3) by mass with pH value 1\n65% Boiling Nitric Acid\nCopper-Copper Sulphate-16% Sulphuric Acid\nCopper\u2013Copper Sulfate-50% Sulphuric Acid\nFerric Sulphate-50% Sulphuric Acid"
+  },
+  {
+   "depends_on": "eval:\n    doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n    doc.test_method == \"ASTM G28 : 24 Method A\" ||\n    doc.test_method == \"ASTM G48 : 25 Method A\"\n",
+   "fieldname": "test_duration_hrs",
+   "fieldtype": "Float",
+   "label": "Test Duration Hrs",
+   "precision": "1"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"ISO 3651-2:1998 Method A\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice B\"",
+   "fieldname": "specimen_preparation",
+   "fieldtype": "Select",
+   "label": "Specimen Preparation",
+   "options": "Select Specimen Preparation\n120 Grit Polishing\n120 Grit Pollishing\n1200 Grit Polishing\n1200 Grit Pollishing"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"ISO 3651-2:1998 Method A\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "specimen_degreasing",
+   "fieldtype": "Select",
+   "label": "Specimen Degreasing",
+   "options": "Select Specimen Degreasing\nImmersion in Acetone"
+  },
+  {
+   "depends_on": "eval:\n    doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n        doc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "thickness_of_sample",
+   "fieldtype": "Data",
+   "label": "Thickness of Sample (cm)"
+  },
+  {
+   "depends_on": "eval:\n    doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n        doc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "length_of_sample",
+   "fieldtype": "Data",
+   "label": "Length of Sample (cm)"
+  },
+  {
+   "depends_on": "eval:\n    doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\"",
+   "fieldname": "inner_diameter",
+   "fieldtype": "Data",
+   "label": "Inner Diameter (cm)"
+  },
+  {
+   "depends_on": "eval:\n    doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\"",
+   "fieldname": "outer_diameter",
+   "fieldtype": "Data",
+   "label": "Outer Diameter (cm)"
+  },
+  {
+   "depends_on": "eval:\n    doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n    doc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "width_of_sample",
+   "fieldtype": "Float",
+   "label": "Width of Sample (cm)"
+  },
+  {
+   "depends_on": "eval:\n    doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\"",
+   "fieldname": "angle_of_bends",
+   "fieldtype": "Int",
+   "label": "Angle of Bend"
+  },
+  {
+   "depends_on": "eval:\n    doc.test_method == \"ISO 3651-2:1998 Method A\"",
+   "fieldname": "results",
+   "fieldtype": "Data",
+   "label": "Result"
+  },
+  {
+   "depends_on": "eval:\n    doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice A\"",
+   "fieldname": "magnification",
+   "fieldtype": "Data",
+   "label": "Magnification"
+  },
+  {
+   "depends_on": "eval:\n(\n    doc.test_method == \"ISO 3651-2:1998 Method A\" ||\n    doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n    doc.test_method == \"IGC: ASTM A262:15(2021) Practice A\" ||\n    doc.test_method == \"ASTM G28 : 24 Method A\" ||\n    doc.test_method == \"ASTM G48 : 25 Method A\"\n    ) &&\ndoc.test_group !== \"Chemical\"\n",
+   "fieldname": "test_completion_datetime",
+   "fieldtype": "Datetime",
+   "label": "Test Completion DateTime"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.test_method == \"Chemical Test ASTM E415-21\" ||\ndoc.test_method == \"Chemical Test ASTM E1086-22\"",
+   "fieldname": "portable_spectro_test_form",
+   "fieldtype": "Check",
+   "label": "Portable Spectro Test Form"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Chemical Test ASTM E1476 : 04(2022)\"",
+   "fieldname": "calibration_due_date",
+   "fieldtype": "Date",
+   "label": "Calibration Due Date"
+  },
+  {
+   "depends_on": "eval:doc.portable_spectro_test_form == \"1\"\n",
+   "fieldname": "pmi_test_table",
+   "fieldtype": "Table",
+   "label": "PMI Test Table",
+   "options": "PMI Test Table"
+  },
+  {
+   "fieldname": "column_break_owfi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Chemical Test ASTM E1476 : 04(2022)\"",
+   "fieldname": "serial_number",
+   "fieldtype": "Int",
+   "label": " Serial Number"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Chemical Test ASTM E1476 : 04(2022)\"",
+   "fieldname": "loc",
+   "fieldtype": "Data",
+   "label": "LOC"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Chemical Test ASTM E1476 : 04(2022)\"",
+   "fieldname": "section_break_brnx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "elements",
+   "fieldtype": "Table",
+   "label": "Elements",
+   "options": "Elements for ASTM 1476"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\"",
+   "fieldname": "specimen_shape",
+   "fieldtype": "Select",
+   "label": "Specimen Shape",
+   "options": "Solid Round"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\"",
+   "fieldname": "specimen_type",
+   "fieldtype": "Data",
+   "label": "Specimen Type"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\"",
+   "fieldname": "specimen_description",
+   "fieldtype": "Data",
+   "label": "Specimen Description"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test)  BS EN 10164:2018\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test) ASTM A770/A770M : 03(2025)\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8/E8M : 25\" || \ndoc.test_method == \"Tensile Test ASTM B557 : 15(2023)\" ||\ndoc.test_method == \"Tensile Test ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8-25\"",
+   "fieldname": "section_break_pbqx",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "add_pdf",
+   "fieldtype": "Attach",
+   "label": "Add PDF"
+  },
+  {
+   "fieldname": "tensile_test_table",
+   "fieldtype": "Table",
+   "label": "Tensile Test Table",
+   "options": "Tensile Test"
+  },
+  {
+   "fieldname": "column_break_jqez",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice C\"",
+   "fieldname": "diameter_of_sample",
+   "fieldtype": "Float",
+   "label": "Diameter Of Sample (cm)"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\n    doc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "total_surface_area_of_sample",
+   "fieldtype": "Float",
+   "label": "Total Surface Area Of Sample (cm2)"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\n    doc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "intial_weight_of_sample",
+   "fieldtype": "Float",
+   "label": "Intial Weight of Sample (gm)"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n    doc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "density_of_sample",
+   "fieldtype": "Float",
+   "label": "Density of Sample (g/cm3)"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice C\"",
+   "fieldname": "section_break_ejdw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "average_corrosion_rate",
+   "fieldtype": "Float",
+   "label": "Average Corrosion Rate (mm/month)"
+  },
+  {
+   "fieldname": "corrosion_rate",
+   "fieldtype": "Float",
+   "label": "Corrosion Rate (Mils per year)"
+  },
+  {
+   "fieldname": "table_hbde",
+   "fieldtype": "Table",
+   "options": "IGC-ASTM A262"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "hot_plate_no",
+   "fieldtype": "Int",
+   "label": "Hot Plate No"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "craddle_no",
+   "fieldtype": "Int",
+   "label": "Craddle No"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n    doc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "final_weight_of_sample",
+   "fieldtype": "Float",
+   "label": "Final Weight of Sample (gm)"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "weight_loss",
+   "fieldtype": "Float",
+   "label": "Weight Loss"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\"",
+   "fieldname": "corrosion_rate_mmmonth",
+   "fieldtype": "Float",
+   "label": "Corrosion Rate (mm/month)"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\n    doc.test_method == \"ASTM G28 : 24 Method A\"",
+   "fieldname": "corrosion_rate__milsyear",
+   "fieldtype": "Float",
+   "label": "Corrosion Rate  (Mils/Year)"
+  },
+  {
+   "depends_on": "eval:doc.test_method == \"ASTM G28 : 24 Method A\" ||\ndoc.test_method == \"ASTM G48 : 25 Method A\"",
+   "fieldname": "test_temp",
+   "fieldtype": "Float",
+   "label": "Test Temp.(\u00b0C)"
+  },
+  {
+   "fieldname": "volume_fraction_ferrite_for_120_fields",
+   "fieldtype": "Float",
+   "label": "Volume fraction (Ferrite %) for 120 fields"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-02 10:00:31.122246",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Lab Analyst",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

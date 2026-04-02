@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-29 10:38:15.344159",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_pxsb",
+  "test_group",
+  "column_break_jpmv",
+  "test_method",
+  "column_break_wxra",
+  "discipline",
+  "column_break_whfl",
+  "group",
+  "section_break_ecxr",
+  "test_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_pxsb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Test Group",
+   "options": "Test Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jpmv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_method",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Test Method",
+   "options": "Test Method",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wxra",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Group",
+   "options": "\nMechanical Properties of Metals\nMetallography\nCorrosion Tests\nMetals and Alloys"
+  },
+  {
+   "fieldname": "discipline",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Discipline",
+   "options": "\nChemical\nMechanical"
+  },
+  {
+   "fieldname": "column_break_whfl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ecxr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "test_description",
+   "fieldtype": "Link",
+   "label": "Test Description",
+   "options": "Test Description"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-04 13:38:15.631975",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Material Sample Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

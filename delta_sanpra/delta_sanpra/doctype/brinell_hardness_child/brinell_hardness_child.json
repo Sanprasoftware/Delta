@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-17 12:35:35.793710",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "location",
+  "test",
+  "scale",
+  "load",
+  "dial",
+  "indentor",
+  "min",
+  "max",
+  "r1",
+  "r2",
+  "r3",
+  "r4",
+  "r5",
+  "r6",
+  "avg"
+ ],
+ "fields": [
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Location"
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Test"
+  },
+  {
+   "fieldname": "scale",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Scale"
+  },
+  {
+   "fieldname": "load",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Load"
+  },
+  {
+   "fieldname": "dial",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Dial"
+  },
+  {
+   "fieldname": "indentor",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Indentor"
+  },
+  {
+   "fieldname": "min",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Min"
+  },
+  {
+   "fieldname": "max",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Max"
+  },
+  {
+   "fieldname": "r1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "R1"
+  },
+  {
+   "fieldname": "r2",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "R2"
+  },
+  {
+   "fieldname": "r3",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "R3"
+  },
+  {
+   "fieldname": "r4",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "R4"
+  },
+  {
+   "fieldname": "r5",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "R5"
+  },
+  {
+   "fieldname": "r6",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "R6"
+  },
+  {
+   "fieldname": "avg",
+   "fieldtype": "Float",
+   "label": "Avg",
+   "precision": "1"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-12-17 16:03:50.075167",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Brinell Hardness Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

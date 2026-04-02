@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-10 20:28:16.220537",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_zpwq",
+  "print_this",
+  "material_specification",
+  "column_break_pxsb",
+  "sample_id",
+  "column_break_efmn",
+  "test_id",
+  "section_break_xmqh",
+  "column_break_jpmv",
+  "test_method",
+  "column_break_wxra",
+  "test_description",
+  "column_break_lmtc",
+  "heat_number",
+  "section_break_hchn",
+  "column_break_pgpo",
+  "customer_requirement",
+  "column_break_oyeg",
+  "sample_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_zpwq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_specification",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material Specification",
+   "options": "Item",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pxsb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sample_id",
+   "fieldtype": "Data",
+   "label": "Sample Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_efmn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_id",
+   "fieldtype": "Data",
+   "label": "Test Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xmqh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jpmv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_method",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Test Method",
+   "options": "Test Method",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wxra",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_description",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Test Description",
+   "options": "Test Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_lmtc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_hchn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "heat_number",
+   "fieldtype": "Data",
+   "label": "Heat Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_oyeg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sample_description",
+   "fieldtype": "Small Text",
+   "label": "Sample Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pgpo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_requirement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer Requirement",
+   "options": "Customer Requirement",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "print_this",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Print This"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-27 11:39:40.649772",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Sticker Print",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
