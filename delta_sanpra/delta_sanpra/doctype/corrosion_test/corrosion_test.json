@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": " format:{inward_number}/{document_id}",
+ "autoname": "format:{inward_number}/{document_id}",
  "creation": "2026-01-28 14:33:50.180425",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,7 +10,6 @@
   "document_id",
   "challan_no",
   "witness",
-  "customer_requirement",
   "column_break_watc",
   "mrn_no",
   "material_specification",
@@ -36,17 +35,18 @@
   "section_break_inoo",
   "test_solution",
   "column_break_oiud",
-  "test_duration_hrs",
-  "column_break_afmg",
   "test_started_datetime",
-  "column_break_hbno",
+  "column_break_afmg",
   "test_completion_datetime",
+  "column_break_hbno",
+  "section_break_yvkg",
+  "customer_requirement",
   "section_break_qaex",
-  "sample_location",
+  "specimen_preparation",
   "column_break_ckas",
   "sample_preparation",
   "column_break_vubw",
-  "specimen_preparation",
+  "sample_location",
   "etchants",
   "column_break_lqzr",
   "etchant_conditions",
@@ -160,7 +160,6 @@
   "column_break_iqby",
   "witness_name",
   "observation",
-  "status",
   "micro_e407_section",
   "etchant",
   "location",
@@ -174,14 +173,8 @@
   "column_break_qtrm",
   "img_2",
   "section_break_adtz",
-  "return",
-  "amendment_remark",
-  "column_break_odtm",
-  "approved",
-  "column_break_fqpn",
   "tested_by",
-  "column_break_xnyo",
-  "authorized_by"
+  "amendment_remark"
  ],
  "fields": [
   {
@@ -371,12 +364,6 @@
    "label": "Witness Name"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Select Status\nClose\nIn Process\nOpen"
-  },
-  {
    "depends_on": "eval:doc.test_method == \"ISO 3651-2:1998 Method B\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Z\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice W\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method A\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice A\"",
    "fieldname": "observation",
    "fieldtype": "Data",
@@ -402,7 +389,7 @@
    "depends_on": "eval:doc.test_method !== \"IGC: ASTM A262:15(2021) Practice C\" &&\ndoc.test_method !== \"IGC: ASTM A262:15(2021) Practice A\"",
    "fieldname": "test_started_datetime",
    "fieldtype": "Datetime",
-   "label": "Test Started DateTime"
+   "label": "Test Started Date & Time"
   },
   {
    "fieldname": "column_break_afmg",
@@ -412,17 +399,11 @@
    "depends_on": "eval:doc.test_method !== \"IGC: ASTM A262:15(2021) Practice C\"",
    "fieldname": "test_completion_datetime",
    "fieldtype": "Datetime",
-   "label": "Test Completion DateTime"
+   "label": "Test Completion Date & Time"
   },
   {
    "fieldname": "column_break_hbno",
    "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:doc.test_method !== \"IGC: ASTM A262:15(2021) Practice A\"",
-   "fieldname": "test_duration_hrs",
-   "fieldtype": "Data",
-   "label": "Test Duration Hrs"
   },
   {
    "depends_on": "eval:doc.test_method == \"ASTM G48 : 25 Method F\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method B\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method A\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Y\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Z\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice X\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice W\" ||\ndoc.test_method == \"ASTM G28 : 24 Method D\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice F\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice A\" ||\ndoc.test_method == \"ASTM G28 : 24 Method B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\" ||\ndoc.test_method == \"ASTM G48 : 25 Method B\" ||\ndoc.test_method == \"ASTM A 923 : 25 Method C\" ||\ndoc.test_method == \"ASTM G48 : 25 Method A\"",
@@ -474,7 +455,7 @@
    "label": "No. of Duplicated Specimen Tested"
   },
   {
-   "depends_on": "eval:doc.test_method == \"ASTM G48 : 25 Method F\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Y\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method B\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Z\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method A\" ||\ndoc.test_method == \"ASTM G28 : 24 Method D\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice F\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\" ||\ndoc.test_method == \"ASTM G48 : 25 Method B\" ||\ndoc.test_method == \"ASTM A 923 : 25 Method C\" ||\ndoc.test_method == \"ASTM G48 : 25 Method A\"",
+   "depends_on": "eval:\n(doc.test_method == \"ASTM G48 : 25 Method F\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Y\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method B\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Z\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method A\" ||\ndoc.test_method == \"ASTM G28 : 24 Method D\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice F\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\" ||\ndoc.test_method == \"ASTM G48 : 25 Method B\" ||\ndoc.test_method == \"ASTM A 923 : 25 Method C\" ||\ndoc.test_method == \"ASTM G48 : 25 Method A\" \n)&&\ndoc.material_shapes !== \"Round\"",
    "fieldname": "length_of_sample",
    "fieldtype": "Float",
    "label": "Length Of Sample(cm)"
@@ -581,7 +562,7 @@
    "label": "Surface Condition"
   },
   {
-   "depends_on": "eval:doc.test_method == \"ASTM G48 : 25 Method F\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method B\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Z\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice X\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Y\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method A\" ||\ndoc.test_method == \"ASTM G28 : 24 Method D\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice F\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\" ||\ndoc.test_method == \"ASTM G48 : 25 Method B\" ||\ndoc.test_method == \"ASTM A 923 : 25 Method C\" ||\ndoc.test_method == \"ASTM G48 : 25 Method A\"",
+   "depends_on": "eval:\n(doc.test_method == \"ASTM G48 : 25 Method F\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method B\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Z\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice X\" ||\ndoc.test_method == \"IGC: ASTM A763: 15(2025) Practice Y\" ||\ndoc.test_method == \"ISO 3651-2:1998 Method A\" ||\ndoc.test_method == \"ASTM G28 : 24 Method D\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice F\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice E\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method B\" ||\ndoc.test_method == \"ASTM G28 : 24 Method A\" ||\ndoc.test_method == \"ASTM G48 : 25 Method B\" ||\ndoc.test_method == \"ASTM A 923 : 25 Method C\" ||\ndoc.test_method == \"ASTM G48 : 25 Method A\"\n)&&\ndoc.material_shapes !== \"Round\"",
    "fieldname": "width_of_sample",
    "fieldtype": "Float",
    "label": "Width Of Sample(cm)"
@@ -972,7 +953,7 @@
    "label": "Outer Diameter"
   },
   {
-   "depends_on": "eval:doc.test_method == \"IGC: ASTM A763: 15(2025) Practice X\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\"",
+   "depends_on": "eval:doc.test_method == \"IGC: ASTM A763: 15(2025) Practice X\" ||\ndoc.test_method == \"IGC: ASTM A262:15(2021) Practice C\" ||\ndoc.material_shapes == \"Round\"",
    "fieldname": "diameter_of_sample",
    "fieldtype": "Float",
    "label": "Diameter of Sample"
@@ -1086,12 +1067,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "default": "0",
-   "fieldname": "return",
-   "fieldtype": "Check",
-   "label": "Return"
-  },
-  {
    "fieldname": "tested_by",
    "fieldtype": "Link",
    "label": "Tested By",
@@ -1102,31 +1077,6 @@
    "fieldname": "amendment_remark",
    "fieldtype": "Data",
    "label": "Amendment Remark"
-  },
-  {
-   "fieldname": "column_break_fqpn",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "approved",
-   "fieldtype": "Check",
-   "label": "Approved"
-  },
-  {
-   "fieldname": "authorized_by",
-   "fieldtype": "Link",
-   "label": "Authorized By",
-   "link_filters": "[[\"Employee\",\"custom_authorized_by\",\"=\",\"Authorized By\"]]",
-   "options": "Employee"
-  },
-  {
-   "fieldname": "column_break_odtm",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_xnyo",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "discipline",
@@ -1169,6 +1119,10 @@
    "fieldname": "sample_id",
    "fieldtype": "Data",
    "label": "Sample Id"
+  },
+  {
+   "fieldname": "section_break_yvkg",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
@@ -1176,11 +1130,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-02 10:31:34.591103",
+ "modified": "2026-04-06 17:21:51.016818",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Corrosion Test",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "saifa@sanpra.co.in",
  "permissions": [
   {

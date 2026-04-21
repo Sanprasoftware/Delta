@@ -35,13 +35,6 @@ class ChemicalTest(Document):
 				except:
 					colors[row.name] = ""
 		return colors
-	#***************************************************************************
-	@frappe.whitelist()
-	def get_test_method(self, test_method):
-		test_method_doc = frappe.get_doc("Test Method", test_method)
-		parameters = [row.parameter for row in test_method_doc.chemical_details]
-		# frappe.msgprint(str(parameters))
-		return parameters
 	#*************************************************************************************
 	@frappe.whitelist()
 	def get_minmax_range(self, test_method=None, parameter=None, material_specification=None):

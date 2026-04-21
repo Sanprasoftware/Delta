@@ -1,0 +1,57 @@
+{
+ "app": "delta_sanpra",
+ "charts": [],
+ "content": "[{\"id\":\"NPK_AfSLQ2\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 20px;\\\"><b>Corrosion Test</b></span>\",\"col\":12}},{\"id\":\"a-bu-hMKBl\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open\",\"col\":3}},{\"id\":\"UOtaFNZ4LR\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Inprocess\",\"col\":3}},{\"id\":\"A52hOviZ4J\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Closed\",\"col\":3}},{\"id\":\"ONgyJiT1wf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved\",\"col\":3}}]",
+ "creation": "2026-04-03 11:46:27.176661",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "integration",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Other_Test",
+ "link_type": "DocType",
+ "links": [],
+ "modified": "2026-04-03 11:46:39.375022",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Other_Test",
+ "number_cards": [
+  {
+   "label": "Open",
+   "number_card_name": "Corrosion Test (Open)"
+  },
+  {
+   "label": "Inprocess",
+   "number_card_name": "Corrosion Test (Inprocess)"
+  },
+  {
+   "label": "Closed",
+   "number_card_name": "Corrosion Test (Closed)"
+  },
+  {
+   "label": "Approved",
+   "number_card_name": "Corrosion Test (Approved)"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "Corrosion Test"
+  },
+  {
+   "role": "Admin"
+  }
+ ],
+ "sequence_id": 55.0,
+ "shortcuts": [],
+ "title": "Other_Test",
+ "type": "Workspace"
+}

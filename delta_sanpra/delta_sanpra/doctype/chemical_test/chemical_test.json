@@ -11,18 +11,16 @@
   "heat_number",
   "customer_requirement",
   "witness",
-  "challan_no",
   "column_break_ynrg",
   "mrn_no",
   "ulr_no",
   "material_specification",
-  "test_method",
-  "challan_date",
+  "challan_no",
   "column_break_opdj",
-  "sample_description",
   "test_description",
   "is_print",
   "customer_name",
+  "challan_date",
   "section_break_ffts",
   "test_group",
   "child_table_id",
@@ -34,7 +32,6 @@
   "column_break_ojvo",
   "amended_from",
   "discipline",
-  "status",
   "section_break_rpzr",
   "report_date",
   "sample_location",
@@ -43,6 +40,7 @@
   "portable_spectro_test_form",
   "column_break_wweu",
   "room_tempc",
+  "test_method",
   "section_break_dwqy",
   "serial_number",
   "name_of_instrument",
@@ -57,6 +55,8 @@
   "column_break_yyqi",
   "customer_specification",
   "column_break_kiqv",
+  "sample_description",
+  "column_break_jqqz",
   "material_description",
   "section_break_gqor",
   "upload_excel_file",
@@ -69,10 +69,11 @@
   "pmi_test_table",
   "section_break_ikot",
   "remark",
-  "tested_by",
   "column_break_qtps",
+  "tested_by",
   "witness_name",
   "observation",
+  "section_break_eqov",
   "amendment_remark"
  ],
  "fields": [
@@ -234,12 +235,6 @@
    "label": "Witness Name"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Select Status\nClose\nIn Process\nOpen"
-  },
-  {
    "fieldname": "observation",
    "fieldtype": "Data",
    "hidden": 1,
@@ -294,6 +289,7 @@
    "label": "Portable Spectro Test Form"
   },
   {
+   "default": "22",
    "depends_on": "eval: (\n    doc.test_group == \"Chemical\"\n) && (\n    doc.test_method !== \"Chemical Test ASTM E1476 : 04(2022)\" &&\n    doc.portable_spectro_test_form == \"0\"\n)",
    "fieldname": "room_tempc",
    "fieldtype": "Float",
@@ -449,13 +445,21 @@
    "fieldtype": "Link",
    "label": "MRN No",
    "options": "Sample Inward"
+  },
+  {
+   "fieldname": "section_break_eqov",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jqqz",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-30 15:07:33.850997",
+ "modified": "2026-04-03 17:15:56.894672",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Chemical Test",

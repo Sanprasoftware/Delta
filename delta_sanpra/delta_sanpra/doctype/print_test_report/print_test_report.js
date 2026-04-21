@@ -1,9 +1,7 @@
 // Copyright (c) 2026, Sanpra Software Solution and contributors
 // For license information, please see license.txt
-
 frappe.ui.form.on("Print Test Report", {
     refresh(frm) {
-        // non enbl table filter
         frm.set_query("sample_id__test_id", "non_enbl__ysuts_table", function () {
             return {
                 filters: {
@@ -35,7 +33,6 @@ frappe.ui.form.on("Print Test Report", {
         });
     },
 });
-
 function generate_ulr(frm, fieldname, label) {
     if (frm.doc[fieldname]) {
         frappe.msgprint(`${label} ULR already generated`);

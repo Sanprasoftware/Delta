@@ -5,7 +5,6 @@ import frappe
 from frappe.model.document import Document
 from frappe.utils import get_link_to_form
 
-
 class PrintTestReport(Document):
     def before_save(self):
         self.check_non_enbl_status_chemical()
@@ -15,7 +14,6 @@ class PrintTestReport(Document):
 
     def _validate_ulr_uniqueness_on_save(self):
         ulr_values = [value for value in [self.enbl_ulr_no] if value]
-
         for ulr_no in ulr_values:
             duplicate = frappe.get_all(
                 "Print Test Report",
@@ -31,9 +29,9 @@ class PrintTestReport(Document):
             )
             if duplicate:
                 frappe.throw(
-                    f"ULR No. {ulr_no} already exists in Print Test Report {duplicate[0].name}. Please Refresh form to get letest ULR No."
+                    f"ULR No. {ulr_no} already exists in Print Test Report {duplicate[0].name}"
                 )
-
+#***********************************************************************************************
     def _sync_ulr_counter_before_save(self):
         increments_needed = self._get_new_ulr_count()
         if increments_needed <= 0:
@@ -43,12 +41,11 @@ class PrintTestReport(Document):
         last = frappe.db.get_value("Company", company_name, "custom_ulr_counter") or 0
         updated = int(last) + increments_needed
         frappe.db.set_value("Company", company_name, "custom_ulr_counter", updated)
-
+#*******************************************************************************************
     def _get_new_ulr_count(self):
         current_count = int(bool(self.enbl_ulr_no))
         if current_count == 0:
             return 0
-
         saved_count = 0
         if not self.is_new():
             saved_doc = frappe.db.get_value(
@@ -60,16 +57,13 @@ class PrintTestReport(Document):
             if saved_doc:
                 saved_count = int(bool(saved_doc.enbl_ulr_no)) 
         return max(0, current_count - saved_count)
-
+#*******************************************************************************************
     @frappe.whitelist()
     def get_data(self):
-
         if not self.sample_inward:
             frappe.throw("Please select MRN NO")
-
         self.set("items", [])
         self.set("non_enbl__ysuts_table", [])
-
         test_doctypes = [
             "Chemical Test",
             "Physical Test",
@@ -77,9 +71,7 @@ class PrintTestReport(Document):
             "Metallography Test",
             "Other Test"
         ]
-
         for dt in test_doctypes:
-
             filters = {
                 "inward_number": self.sample_inward
             }
@@ -91,8 +83,6 @@ class PrintTestReport(Document):
                 filters["test_group"] = self.test_group
             if self.test_method:
                 filters["test_method"] = self.test_method
-            if self.status:
-                filters["status"] = self.status 
             records = frappe.get_all(
                 dt,
                 filters=filters,
@@ -109,16 +99,10 @@ class PrintTestReport(Document):
                     "status",
                     "workflow_state",
                     "witness_name"
-                ]
-            )
-
-
+                ])
             for d in records:
-
-                # 🔥 Skip if test_group empty
                 if not d.test_group:
                     continue
-
                 move_to_non_enbl = False
                 # -------- Chemical Test NON NABL --------
                 if dt == "Chemical Test":
@@ -127,7 +111,6 @@ class PrintTestReport(Document):
                         if row.status == "NON NABL":
                             move_to_non_enbl = True
                             break
-                        
                 # -------- Physical Test YS/UTS --------
                 if dt == "Physical Test":
                     physical_doc = frappe.get_doc("Physical Test", d.name)
@@ -141,7 +124,6 @@ class PrintTestReport(Document):
                         "test_group": d.test_group,
                         "test_method": d.test_method,
                         "test_group_id": d.name,
-                        # "status": d.status,
                         "status" : d.workflow_state,
                         "customer_name": d.customer_name,
                         "challan_no": d.challan_no,
@@ -157,7 +139,6 @@ class PrintTestReport(Document):
                         "test_group": d.test_group,
                         "test_method": d.test_method,
                         "test_group_id": d.name,
-                        # "status": d.status,
                         "status" : d.workflow_state,
                         "customer_name": d.customer_name,
                         "challan_no": d.challan_no,
@@ -167,9 +148,8 @@ class PrintTestReport(Document):
                         "sample_id__test_id": d.document_id,
                         "witness": d.witness_name or ""
                     })
-
         return
-    
+#*******************************************************************************************
     @frappe.whitelist()
     def check_non_enbl_status_chemical(self):
         for item in self.items:
@@ -178,9 +158,9 @@ class PrintTestReport(Document):
                 for row in chemical_test_doc.test_details_chemical:
                     if row.status == "NON NABL":
                         item.status = "NON NABL"
-                        frappe.throw(f"In {item.form_name} {item.test_group_id} has NON NABL status")
-                
+                        frappe.throw(f"In {item.form_name} {item.test_group_id} has NON NABL status")  
         return
+#******************************************************************************************************
     @frappe.whitelist()
     def check_non_enbl_status_physical(self):
         for item in self.items:
@@ -189,44 +169,35 @@ class PrintTestReport(Document):
                 for row in physical_test_doc.test_details_physical:
                     if row.parameter == "YS/UTS":
                         item.parameter = "YS/UTS"
-                        frappe.throw(f"In {item.form_name} {item.test_group_id} has YS/UTS parameter")
-                
+                        frappe.throw(f"In {item.form_name} {item.test_group_id} has YS/UTS parameter") 
         return
+#********************************************************************************************************
     @frappe.whitelist()
     def get_non_enbl__ysuts_rows(self, selected_rows):
-
         import json
-
         if isinstance(selected_rows, str):
             selected_rows = json.loads(selected_rows)
-
         for row in selected_rows:
-
             # Chemical Test
             if row.get("form_name") == "Chemical Test":
                 chemical_doc = frappe.get_doc("Chemical Test", row.get("test_group_id"))
-
                 found = False
                 for d in chemical_doc.test_details_chemical:
                     if d.status == "NON NABL":
                         self.append("non_enbl__ysuts_table", row)
                         found = True
                         break
-
-
             # Physical Test
             if row.get("form_name") == "Physical Test":
                 physical_doc = frappe.get_doc("Physical Test", row.get("test_group_id"))
-
                 found = False
                 for d in physical_doc.test_details_physical:
                     if d.parameter == "YS/UTS":
                         self.append("non_enbl__ysuts_table", row)
                         found = True
                         break
-
         return
-    
+#*****************************************************************************************
     @frappe.whitelist()
     def set_ulr_counter(self):
         company_name = "DELTAA METALLIX SOLUTIONS PRIVATE LIMITED"
@@ -234,7 +205,7 @@ class PrintTestReport(Document):
         count = int(last) + 1
         frappe.db.set_value("Company", company_name, "custom_ulr_counter", count)
         return count
-
+#********************************************************************************************
     @frappe.whitelist()
     def get_next_ulr_counter(self):
         company_name = "DELTAA METALLIX SOLUTIONS PRIVATE LIMITED"

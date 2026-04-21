@@ -52,8 +52,25 @@ frappe.ui.form.on("Sample Inward", {
                 });
             }, "Create"); 
         }
+// ************************************************************************
+// add row ka button hide
         frm.get_field("sticker_print").grid.cannot_add_rows = true;
+        frm.get_field("test_on_sample").grid.cannot_add_rows = true;
+// ************************************************************************
+// duplicate row ka button hide karne ka code 
+        setTimeout(() => {
+            let grid = frm.get_field("material_details").grid;
+            // hide bottom duplicate button
+            grid.wrapper.find('.grid-duplicate-rows').hide();
+            // also hide when checkbox selected
+            grid.wrapper.on("change", ".grid-row-check", function () {
+                grid.wrapper.find('.grid-duplicate-rows').hide();
+            });
+
+        }, 300);
+// ************************************************************************
         frm.refresh_field("sticker_print");
+        frm.refresh_field("test_on_sample");
         capture_material_idx_snapshot(frm);
         frm.set_query("material_specification", "test_on_sample", function () {
             return {

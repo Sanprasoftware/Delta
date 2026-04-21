@@ -149,7 +149,8 @@
   "tested_by",
   "witness_name",
   "observation",
-  "status"
+  "section_break_fask",
+  "amendment_remark"
  ],
  "fields": [
   {
@@ -379,13 +380,6 @@
    "fieldname": "witness_name",
    "fieldtype": "Data",
    "label": "Witness Name"
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Status",
-   "options": "Select Status\nClose\nIn Process\nOpen"
   },
   {
    "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
@@ -908,6 +902,15 @@
    "fieldname": "sample_id",
    "fieldtype": "Data",
    "label": "Sample Id"
+  },
+  {
+   "fieldname": "section_break_fask",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amendment_remark",
+   "fieldtype": "Data",
+   "label": "Amendment Remark"
   }
  ],
  "grid_page_length": 50,
@@ -916,7 +919,7 @@
  "is_submittable": 1,
  "links": [],
  "make_attachments_public": 1,
- "modified": "2026-04-01 14:28:52.506095",
+ "modified": "2026-04-03 11:27:44.263473",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Physical Test",

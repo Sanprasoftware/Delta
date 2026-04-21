@@ -136,17 +136,11 @@
   "section_break_mhaw",
   "remark",
   "column_break_sgvx",
+  "tested_by",
   "witness_name",
   "observation",
   "section_break_ixly",
-  "return",
-  "amendment_remark",
-  "column_break_lmol",
-  "approved",
-  "column_break_ggyb",
-  "tested_by",
-  "column_break_zjds",
-  "authorized_by"
+  "amendment_remark"
  ],
  "fields": [
   {
@@ -819,46 +813,15 @@
    "fieldtype": "Section Break"
   },
   {
-   "default": "0",
-   "fieldname": "return",
-   "fieldtype": "Check",
-   "label": "Return"
-  },
-  {
    "fieldname": "amendment_remark",
    "fieldtype": "Data",
    "label": "Amendment Remark"
-  },
-  {
-   "fieldname": "column_break_lmol",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "approved",
-   "fieldtype": "Check",
-   "label": "Approved"
-  },
-  {
-   "fieldname": "column_break_ggyb",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "tested_by",
    "fieldtype": "Link",
    "label": "Tested By",
    "link_filters": "[[\"Employee\",\"custom_authorized_by\",\"=\",\"Tested By\"]]",
-   "options": "Employee"
-  },
-  {
-   "fieldname": "column_break_zjds",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "authorized_by",
-   "fieldtype": "Link",
-   "label": "Authorized By",
-   "link_filters": "[[\"Employee\",\"custom_authorized_by\",\"=\",\"Authorized By\"]]",
    "options": "Employee"
   },
   {
@@ -899,7 +862,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-30 15:07:50.544300",
+ "modified": "2026-04-03 11:25:58.216896",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Metallography Test",

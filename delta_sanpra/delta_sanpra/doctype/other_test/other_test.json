@@ -70,12 +70,13 @@
   "parameters",
   "section_break_hruu",
   "remark",
-  "tested_by",
   "column_break_exfw",
+  "tested_by",
   "customer_requirements",
   "witness_name",
-  "status",
-  "observation"
+  "observation",
+  "section_break_iygf",
+  "amendment_remark"
  ],
  "fields": [
   {
@@ -178,12 +179,6 @@
    "fieldname": "child_table_id",
    "fieldtype": "Data",
    "label": "Child Table Id"
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Select Status\nClose\nIn Process\nOpen"
   },
   {
    "fieldname": "inward_number",
@@ -444,13 +439,22 @@
    "fieldname": "ulr_no",
    "fieldtype": "Data",
    "label": "ULR No."
+  },
+  {
+   "fieldname": "section_break_iygf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amendment_remark",
+   "fieldtype": "Data",
+   "label": "Amendment Remark"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-30 15:04:11.662489",
+ "modified": "2026-04-03 12:17:51.444624",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Other Test",

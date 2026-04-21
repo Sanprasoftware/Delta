@@ -77,11 +77,6 @@
    "options": "Test Method"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Data",
-   "label": "Status"
-  },
-  {
    "fieldname": "section_break_ecwk",
    "fieldtype": "Section Break"
   },
@@ -129,12 +124,18 @@
    "fieldname": "sample_id__test_id",
    "fieldtype": "Data",
    "label": "Sample Id / Test Id"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nOpen\nInProcess\nClosed\nApproved"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-01 13:45:38.175269",
+ "modified": "2026-04-03 15:50:21.654024",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Print Test Report",

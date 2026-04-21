@@ -146,31 +146,17 @@ class SampleInward(Document):
         )
         return cstr(test_description or "").strip()
 
-    # def _resolve_test_description_and_rate(
-    #     self, item_code, test_method, default_test_description=""
-    # ):
-    #     test_method = cstr(test_method or "").strip()
-    #     if not test_method:
-    #         return cstr(default_test_description or "").strip(), 0
+    def _get_test_description_text(self, test_description):
+        test_description = cstr(test_description or "").strip()
+        if not test_description:
+            return ""
 
-    #     # Priority 1: customer-specific test description by test_method.
-    #     if self.customer:
-    #         customer_desc = frappe.db.get_value(
-    #             "Test Description",
-    #             {"test_method": test_method, "customer_name": self.customer},
-    #             ["name", "rate"],
-    #             as_dict=True,
-    #         )
-    #         if customer_desc and customer_desc.name:
-    #             return customer_desc.name, customer_desc.rate or 0
+        actual_description = frappe.db.get_value(
+            "Test Description", test_description, "test_description"
+        )
+        return cstr(actual_description or test_description).strip()
 
-    #     # Priority 2: item master (custom_material_sample_details) by test_method.
-    #     item_test_description = self._get_item_test_description_by_method(
-    #         item_code, test_method
-    #     )
-    #     test_name = item_test_description or cstr(default_test_description or "").strip()
-    #     test_rate = frappe.db.get_value("Test Description", test_name, "rate") or 0 if test_name else 0
-    #     return test_name, test_rate
+
     def _resolve_test_description_and_rate(
         self, item_code, test_method, default_test_description=""
     ):
@@ -217,131 +203,7 @@ class SampleInward(Document):
         test_rate = frappe.db.get_value("Test Description", test_name, "rate") or 0 if test_name else 0
 
         return test_name, test_rate
-
-
-
-   
-#**************************************************************************************************
-    # @frappe.whitelist()
-    # def get_material_details(self):
-    #     company = "DELTAA METALLIX SOLUTIONS PRIVATE LIMITED"
-
-    #     # Get company counters
-    #     counters = frappe.db.get_value(
-    #         "Company", company, ["custom_sample_counter", "custom_test_counter"], as_dict=True
-    #     )
-
-    #     def sample_num(sample_value):
-    #         value = str(sample_value or "S0")
-    #         if value.startswith("S"):
-    #             value = value[1:]
-    #         return cint(value)
-
-    #     company_sample_counter = sample_num(counters.custom_sample_counter)
-    #     company_test_counter = int(counters.custom_test_counter or 0)
-
-    #     existing_sample_numbers = []
-    #     existing_test_counter = 0
-    #     for row in self.test_on_sample:
-    #         s_num = sample_num(row.sample_id)
-    #         if s_num:
-    #             existing_sample_numbers.append(s_num)
-    #         existing_test_counter = max(existing_test_counter, cint(row.test_id))
-
-    #     # Keep sample-id base stable inside the same document (example: S6,S7,S8 -> delete middle -> S6,S7).
-    #     base_sample_counter = min(existing_sample_numbers) if existing_sample_numbers else (company_sample_counter + 1)
-    #     test_counter = max(company_test_counter, existing_test_counter)
-
-    #     # If same counter is repeated in material_details, keep first one and force
-    #     # subsequent duplicates to behave as new rows (new unique sample_id on append).
-    #     seen_counters = set()
-    #     for material in self.material_details:
-    #         if material.counter and material.counter in seen_counters:
-    #             material.counter = None
-    #             material.new_record_flag = 0
-    #         elif material.counter:
-    #             seen_counters.add(material.counter)
-
-    #     old_to_new_sample_id = {}
-    #     sample_id_to_index_id = {}
-    #     for idx, material in enumerate(self.material_details):
-    #         new_sample_id = f"S{base_sample_counter + idx}"
-    #         if material.counter:
-    #             old_to_new_sample_id[material.counter] = new_sample_id
-    #         material.counter = new_sample_id
-    #         sample_id_to_index_id[new_sample_id] = cint(material.idx) or (idx + 1)
-
-    #     # Remove deleted material rows from test table and remap existing sample_ids to compact sequence.
-    #     if self.test_on_sample:
-    #         remapped_rows = []
-    #         valid_old_ids = set(old_to_new_sample_id.keys())
-    #         for row in self.test_on_sample:
-    #             if not row.sample_id:
-    #                 continue
-    #             if row.sample_id not in valid_old_ids:
-    #                 continue
-
-    #             d = row.as_dict()
-    #             d.sample_id = old_to_new_sample_id.get(row.sample_id, row.sample_id)
-    #             d.sample_idtest_id = f"{d.sample_id}/{d.test_id}" if d.test_id else d.sample_id
-    #             d.index_id = sample_id_to_index_id.get(d.sample_id)
-    #             remapped_rows.append(d)
-
-    #         self.set("test_on_sample", [])
-    #         for d in remapped_rows:
-    #             self.append("test_on_sample", d)
-
-    #     for material in self.material_details:
-    #         if cint(material.new_record_flag) == 1:
-    #             continue
-    #         appended_for_material = False
-    #         sample_id = material.counter
-    #         # Get tests for this material
-    #         tests = frappe.get_all(
-    #             "Material Sample Details",
-    #             {"parent": material.material_specification},
-    #             ["test_group", "test_method", "test_description"],
-    #             order_by="idx asc"
-    #         )
-
-    #         for test in tests:
-    #             # Get test rate and description
-    #             desc = frappe.db.get_value(
-    #                 "Test Description",
-    #                 {"test_method": test.test_method, "customer_name": self.customer},
-    #                 ["name", "rate"], as_dict=True
-    #             )
-    #             test_name = desc.name if desc else test.test_description
-    #             test_rate = desc.rate if desc else frappe.db.get_value("Test Description", test_name, "rate") or 0
-
-    #             # Generate IDs
-    #             test_counter += 1
-    #             test_id = test_counter
-    #             sample_idtest_id = f"{sample_id}/{test_id}"  
     
-    #             # Append to child table
-    #             row = self.append("test_on_sample", {})
-    #             row.sample_id = sample_id
-    #             row.test_id = test_id
-    #             row.sample_idtest_id = sample_idtest_id
-    #             row.material_specification = material.material_specification
-    #             row.heat_number = material.heat_number
-    #             row.material_shape = material.material_shape
-    #             row.test_group = test.test_group
-    #             row.test_method = test.test_method
-    #             row.sample_description = material.sample_description
-    #             row.test_description = test_name
-    #             row.price = test_rate
-    #             row.index_id = cint(material.idx)
-    #             appended_for_material = True
-
-    #         if appended_for_material:
-    #             material.counter = sample_id
-    #             material.new_record_flag = 1
-
-
-    #     return {"row_count": len(self.material_details), "counters": counters}
-
       
 #******************************************************************************************
 
@@ -579,11 +441,13 @@ class SampleInward(Document):
     def create_other_tests(self):
         for row in self.test_on_sample:
             if row.test_group == "Other":
+                test_description_text = self._get_test_description_text(row.test_description)
                 existing = frappe.db.exists("Other Test",{"child_table_id": row.name})
                 if existing:
                     other_doc = frappe.get_doc("Other Test", existing)
                     other_doc.heat_number = row.heat_number
                     other_doc.test_method = row.test_method
+                    other_doc.test_description = test_description_text
                     other_doc.sample_description = row.sample_description
                     other_doc.save()
                 else:
@@ -594,7 +458,7 @@ class SampleInward(Document):
                     other_doc.material_shape = row.material_shape
                     other_doc.heat_number = row.heat_number
                     other_doc.test_method = row.test_method
-                    other_doc.test_description = row.test_description
+                    other_doc.test_description = test_description_text
                     other_doc.sample_description = row.sample_description
                     other_doc.material_specification = row.material_specification
                     other_doc.customer_requirement = row.customer_requirement
@@ -621,11 +485,13 @@ class SampleInward(Document):
     def create_metallography_tests(self):
         for row in self.test_on_sample:
             if row.test_group == "Metallography":
+                test_description_text = self._get_test_description_text(row.test_description)
                 existing = frappe.db.exists("Metallography Test",{"child_table_id": row.name})
                 if existing:
                     meta_doc = frappe.get_doc("Metallography Test", existing)
                     meta_doc.heat_number = row.heat_number
                     meta_doc.test_method = row.test_method
+                    meta_doc.test_description = test_description_text
                     meta_doc.sample_description = row.sample_description
                     meta_doc.save()
                 else:
@@ -636,7 +502,7 @@ class SampleInward(Document):
                     meta_doc.material_shape = row.material_shape
                     meta_doc.heat_number = row.heat_number
                     meta_doc.test_method = row.test_method
-                    meta_doc.test_description = row.test_description
+                    meta_doc.test_description = test_description_text
                     meta_doc.sample_description = row.sample_description
                     meta_doc.material_specification = row.material_specification
                     meta_doc.customer_requirement = row.customer_requirement
@@ -664,11 +530,13 @@ class SampleInward(Document):
     def create_corrosion_tests(self):
         for row in self.test_on_sample:
             if row.test_group == "Corrosion":
+                test_description_text = self._get_test_description_text(row.test_description)
                 existing = frappe.db.exists("Corrosion Test",{"child_table_id": row.name})
                 if existing:
                     corro_doc = frappe.get_doc("Corrosion Test", existing)
                     corro_doc.test_method = row.test_method
                     corro_doc.heat_number = row.heat_number
+                    corro_doc.test_description = test_description_text
                     corro_doc.customer_requirement = row.customer_requirement
                     corro_doc.save()
                 else:
@@ -679,7 +547,7 @@ class SampleInward(Document):
                     corro_doc.material_shape = row.material_shape
                     corro_doc.heat_number = row.heat_number
                     corro_doc.test_method = row.test_method
-                    corro_doc.test_description = row.test_description
+                    corro_doc.test_description = test_description_text
                     corro_doc.sample_description = row.sample_description
                     corro_doc.material_specification = row.material_specification
                     corro_doc.customer_requirement = row.customer_requirement
@@ -704,40 +572,105 @@ class SampleInward(Document):
                     else:
                         corro_doc.save()
 #******************************************Chemical Test*********************************************
+    # def create_chemical_tests(self):
+    #     for row in self.test_on_sample:
+    #         if row.test_group == "Chemical":
+    #             existing = frappe.db.exists("Chemical Test",{"child_table_id": row.name})
+    #             if existing:
+    #                 chem_doc = frappe.get_doc("Chemical Test", existing)
+
+    #                 chem_doc.heat_number = row.heat_number
+    #                 chem_doc.sample_description = row.sample_description
+
+    #                 # 🔥 CHECK IF TEST METHOD CHANGED
+    #                 method_changed = chem_doc.test_method != row.test_method
+    #                 chem_doc.test_method = row.test_method
+
+    #                 if method_changed:
+    #                     chem_doc.set("test_details_chemical", [])
+    #                     item_doc = frappe.get_doc("Item", row.material_specification)
+    #                     for item_chem in item_doc.custom_chemical_detail:
+    #                         chem_doc.append("test_details_chemical", {
+    #                             "test_method": row.test_method,
+    #                             "parameter": item_chem.parameter,
+    #                             "min_range": item_chem.min_range,
+    #                             "max_range": item_chem.max_range
+    #                         })
+    #                 chem_doc.save(ignore_permissions=True, ignore_version=True)
+    #             else:
+    #                 chem_doc = frappe.new_doc("Chemical Test")
+    #                 chem_doc.inward_number = self.name
+    #                 chem_doc.child_table_id = row.name
+    #                 chem_doc.test_group = row.test_group
+    #                 chem_doc.material_shape = row.material_shape
+    #                 chem_doc.heat_number = row.heat_number
+    #                 chem_doc.test_method = row.test_method
+    #                 chem_doc.test_description = row.test_description
+    #                 chem_doc.sample_description = row.sample_description
+    #                 chem_doc.material_specification = row.material_specification
+    #                 chem_doc.customer_requirement = row.customer_requirement
+    #                 chem_doc.challan_no = self.challan_no
+    #                 chem_doc.customer_name = self.customer
+    #                 chem_doc.document_id = row.sample_idtest_id
+    #                 chem_doc.material_description = row.material_specification
+    #                 chem_doc.challan_date = self.challan_date
+    #                 chem_doc.discipline = row.discipline
+    #                 chem_doc.group = row.group
+    #                 chem_doc.mrn_no = self.name
+    #                 chem_doc.sample_id = row.sample_id
+
+    #                 # Witness
+    #                 if self.client:
+    #                     chem_doc.witness = "Yes"
+    #                     chem_doc.witness_name = self.client
+    #                 else:
+    #                     chem_doc.witness = "No"
+    #                 item_doc = frappe.get_doc("Item", row.material_specification)
+
+    #                 for item_chem in item_doc.custom_chemical_detail:
+    #                 chem_doc.append("test_details_chemical", {
+    #                     "test_method": row.test_method,
+    #                     "parameter": item_chem.parameter,
+    #                     "min_range": item_chem.min_range,
+    #                     "max_range": item_chem.max_range
+    #                 })
+    #                 if existing:
+    #                     chem_doc.save(ignore_permissions=True, ignore_version=True)
+    #                 else:
+    #                     chem_doc.save()
+    #***********************************************************************************
     def create_chemical_tests(self):
         for row in self.test_on_sample:
             if row.test_group == "Chemical":
-                existing = frappe.db.exists("Chemical Test",{"child_table_id": row.name})
+                test_description_text = self._get_test_description_text(row.test_description)
+                existing = frappe.db.exists("Chemical Test", {"child_table_id": row.name})
                 if existing:
                     chem_doc = frappe.get_doc("Chemical Test", existing)
-
                     chem_doc.heat_number = row.heat_number
                     chem_doc.sample_description = row.sample_description
-
-                    # 🔥 CHECK IF TEST METHOD CHANGED
+                    chem_doc.test_description = test_description_text
                     method_changed = chem_doc.test_method != row.test_method
                     chem_doc.test_method = row.test_method
-
                     if method_changed:
-                        # 🔥 CLEAR OLD CHILD TABLE
                         chem_doc.set("test_details_chemical", [])
-
-                        # 🔥 REBUILD CHILD TABLE
-                        test_method_doc = frappe.get_doc("Test Method", row.test_method)
                         item_doc = frappe.get_doc("Item", row.material_specification)
-
-                        for chem in test_method_doc.chemical_details:
-                            td = chem_doc.append("test_details_chemical", {
+                        for item_chem in item_doc.custom_chemical_detail:
+                            chem_doc.append("test_details_chemical", {
                                 "test_method": row.test_method,
-                                "parameter": chem.parameter,
-                                "method_min_range": chem.min_range,
-                                "method_max_range": chem.max_range
+                                "parameter": item_chem.parameter,
+                                "min_range": item_chem.min_range,
+                                "max_range": item_chem.max_range,
+                                "value": 0
                             })
-
-                            for item_chem in item_doc.custom_chemical_detail:
-                                if item_chem.parameter == chem.parameter:
-                                    td.min_range = item_chem.min_range
-                                    td.max_range = item_chem.max_range
+                        if row.test_method:
+                            method_doc = frappe.get_doc("Test Method", row.test_method)
+                            method_map = {
+                                d.parameter: d for d in method_doc.chemical_details
+                            }
+                            for d in chem_doc.test_details_chemical:
+                                if d.parameter in method_map:
+                                    d.method_min_range = method_map[d.parameter].min_range
+                                    d.method_max_range = method_map[d.parameter].max_range
                     chem_doc.save(ignore_permissions=True, ignore_version=True)
                 else:
                     chem_doc = frappe.new_doc("Chemical Test")
@@ -747,7 +680,7 @@ class SampleInward(Document):
                     chem_doc.material_shape = row.material_shape
                     chem_doc.heat_number = row.heat_number
                     chem_doc.test_method = row.test_method
-                    chem_doc.test_description = row.test_description
+                    chem_doc.test_description = test_description_text
                     chem_doc.sample_description = row.sample_description
                     chem_doc.material_specification = row.material_specification
                     chem_doc.customer_requirement = row.customer_requirement
@@ -760,65 +693,42 @@ class SampleInward(Document):
                     chem_doc.group = row.group
                     chem_doc.mrn_no = self.name
                     chem_doc.sample_id = row.sample_id
-
-                    # Witness
                     if self.client:
                         chem_doc.witness = "Yes"
                         chem_doc.witness_name = self.client
                     else:
                         chem_doc.witness = "No"
-
-                    test_method_doc = frappe.get_doc("Test Method", row.test_method)
                     item_doc = frappe.get_doc("Item", row.material_specification)
-
-                    # Item parameters dictionary
-                    item_params = {d.parameter: d for d in item_doc.custom_chemical_detail}
-
-                    added_params = set()
-
-                    # 1️⃣ Add parameters from Test Method
-                    for chem in test_method_doc.chemical_details:
-
-                        td = chem_doc.append("test_details_chemical", {
-                            "test_method": row.test_method,
-                            "parameter": chem.parameter,
-                            "method_min_range": chem.min_range,
-                            "method_max_range": chem.max_range
-                        })
-
-                        if chem.parameter in item_params:
-                            item_chem = item_params[chem.parameter]
-                            td.min_range = item_chem.min_range
-                            td.max_range = item_chem.max_range
-
-                        added_params.add(chem.parameter)
-
-
-                    # 2️⃣ Add extra parameters from Item (जो Test Method में नहीं हैं)
                     for item_chem in item_doc.custom_chemical_detail:
-                        if item_chem.parameter not in added_params:
-                            chem_doc.append("test_details_chemical", {
-                                "test_method": row.test_method,
-                                "parameter": item_chem.parameter,
-                                "min_range": item_chem.min_range,
-                                "max_range": item_chem.max_range
-                            })
-
-                                
-                    if existing:
-                        chem_doc.save(ignore_permissions=True, ignore_version=True)
-                    else:
-                        chem_doc.save()
+                        chem_doc.append("test_details_chemical", {
+                            "test_method": row.test_method,
+                            "parameter": item_chem.parameter,
+                            "min_range": item_chem.min_range,
+                            "max_range": item_chem.max_range,
+                            "value": 0
+                        })
+                    if row.test_method:
+                        method_doc = frappe.get_doc("Test Method", row.test_method)
+                        method_map = {
+                            d.parameter: d for d in method_doc.chemical_details
+                        }
+                        for d in chem_doc.test_details_chemical:
+                            if d.parameter in method_map:
+                                d.method_min_range = method_map[d.parameter].min_range
+                                d.method_max_range = method_map[d.parameter].max_range
+                    chem_doc.save()
 #**************************************************Physical Test ****************************
     def create_physical_tests(self):
         for row in self.test_on_sample:
             if row.test_group == "Physical":
+                test_description_text = self._get_test_description_text(row.test_description)
                 existing = frappe.db.exists("Physical Test",{"child_table_id": row.name})
                 if existing:
                     phys_doc = frappe.get_doc("Physical Test", existing)
                     phys_doc.sample_description = row.sample_description
                     phys_doc.heat_number = row.heat_number
                     phys_doc.test_method = row.test_method
+                    phys_doc.test_description = test_description_text
                     phys_doc.save()
                 else:
                     phys_doc = frappe.new_doc("Physical Test")
@@ -828,7 +738,7 @@ class SampleInward(Document):
                     phys_doc.material_shape = row.material_shape
                     phys_doc.heat_number = row.heat_number
                     phys_doc.test_method = row.test_method
-                    phys_doc.test_description = row.test_description
+                    phys_doc.test_description = test_description_text
                     phys_doc.sample_description = row.sample_description
                     phys_doc.material_specification = row.material_specification
                     phys_doc.customer_requirement = row.customer_requirement
