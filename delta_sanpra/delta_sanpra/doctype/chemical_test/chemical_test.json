@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{inward_number}/{document_id}",
+ "autoname": "naming_series:",
  "creation": "2026-01-28 14:37:57.254969",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -30,8 +30,8 @@
   "material_shape",
   "group",
   "column_break_ojvo",
-  "amended_from",
   "discipline",
+  "naming_series",
   "section_break_rpzr",
   "report_date",
   "sample_location",
@@ -53,9 +53,9 @@
   "calibration_due_date",
   "description_section",
   "column_break_yyqi",
-  "customer_specification",
-  "column_break_kiqv",
   "sample_description",
+  "column_break_kiqv",
+  "customer_specification",
   "column_break_jqqz",
   "material_description",
   "section_break_gqor",
@@ -73,7 +73,10 @@
   "tested_by",
   "witness_name",
   "observation",
+  "authorized_by",
   "section_break_eqov",
+  "amended_from",
+  "column_break_ryoa",
   "amendment_remark"
  ],
  "fields": [
@@ -139,7 +142,7 @@
   },
   {
    "fieldname": "challan_no",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Challan No",
    "permlevel": 1
   },
@@ -163,7 +166,7 @@
   {
    "fieldname": "document_id",
    "fieldtype": "Data",
-   "label": "Sample Id"
+   "label": "Sample Id / Test Id"
   },
   {
    "fieldname": "column_break_ojvo",
@@ -197,11 +200,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "test_description",
-   "fieldtype": "Data",
-   "label": " Test Description"
-  },
-  {
    "fieldname": "column_break_kiqv",
    "fieldtype": "Column Break"
   },
@@ -230,6 +228,7 @@
    "label": "Customer Requirement"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "witness_name",
    "fieldtype": "Data",
    "label": "Witness Name"
@@ -374,10 +373,12 @@
    "label": "ULR No."
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "is_print",
    "fieldtype": "Check",
-   "label": "Is Print"
+   "label": "Is Print",
+   "read_only": 1
   },
   {
    "fieldname": "challan_date",
@@ -453,17 +454,40 @@
   {
    "fieldname": "column_break_jqqz",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "authorized_by",
+   "fieldtype": "Link",
+   "label": "Authorized By",
+   "link_filters": "[[\"Employee\",\"custom_authorized_by\",\"=\",\"Authorized By\"]]",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "test_description",
+   "fieldtype": "Link",
+   "label": "Test Description",
+   "options": "Test Description"
+  },
+  {
+   "fieldname": "column_break_ryoa",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-03 17:15:56.894672",
+ "modified": "2026-06-25 18:20:15.186085",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Chemical Test",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

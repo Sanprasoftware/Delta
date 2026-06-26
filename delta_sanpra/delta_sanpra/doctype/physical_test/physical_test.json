@@ -1,12 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{inward_number}/{document_id}",
+ "autoname": "naming_series:",
  "creation": "2026-01-28 14:37:37.447350",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_0xnn",
+  "naming_series",
   "document_id",
   "challan_no",
   "witness",
@@ -19,6 +20,7 @@
   "heat_number",
   "is_print",
   "column_break_wckr",
+  "test_description",
   "customer_name",
   "test_method",
   "customer_requirement",
@@ -28,34 +30,31 @@
   "sample_id",
   "column_break_otco",
   "inward_number",
-  "amended_from",
   "column_break_ximx",
   "test_group",
   "group",
   "column_break_cwlk",
   "material_shape",
-  "discipline",
   "section_break_ospt",
   "tested_date",
-  "sample_location",
+  "test_completion_date",
+  "location_of_test",
   "method",
   "column_break_fjfk",
   "report_date",
-  "sample_preparation",
-  "location_of_test",
+  "test_completion_time",
+  "room_temp",
   "column_break_qqao",
-  "test_completion_datetime",
+  "sample_location",
   "equipment",
   "other_information",
-  "room_temp",
   "description_section",
-  "customer_specification",
-  "column_break_udcp",
-  "test_description",
   "column_break_lfma",
   "sample_description",
-  "column_break_hyjf",
+  "section_break_dwbs",
   "material_description",
+  "column_break_jqpf",
+  "customer_specification",
   "section_break_foxd",
   "type_of_test",
   "mandrel_diameter",
@@ -96,6 +95,8 @@
   "section_break_iycg",
   "add_data",
   "brinell_hardness_child",
+  "hardness_survey",
+  "hv_10",
   "section_break_oero",
   "number_of_set",
   "number_of_pices_in_each_set",
@@ -147,9 +148,12 @@
   "remark",
   "column_break_bumc",
   "tested_by",
+  "authorized_by",
   "witness_name",
   "observation",
   "section_break_fask",
+  "amended_from",
+  "column_break_sjjm",
   "amendment_remark"
  ],
  "fields": [
@@ -192,6 +196,7 @@
    "allow_on_submit": 1,
    "fieldname": "test_method",
    "fieldtype": "Link",
+   "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Test Method",
    "options": "Test Method"
@@ -211,11 +216,12 @@
   },
   {
    "fieldname": "challan_no",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Challan No",
    "permlevel": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "ulr_no",
    "fieldtype": "Data",
    "label": "ULR No.",
@@ -232,16 +238,19 @@
    "options": "\nYes\nNo"
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "is_print",
    "fieldtype": "Check",
-   "label": "Is Print"
+   "label": "Is Print",
+   "read_only": 1
   },
   {
    "fieldname": "customer_name",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "Customer Name",
+   "options": "Customer",
    "permlevel": 1
   },
   {
@@ -262,7 +271,7 @@
   {
    "fieldname": "document_id",
    "fieldtype": "Data",
-   "label": "Document Id"
+   "label": "Sample Id / Test Id"
   },
   {
    "fieldname": "column_break_qiym",
@@ -286,16 +295,14 @@
   {
    "fieldname": "customer_specification",
    "fieldtype": "Small Text",
+   "hidden": 1,
    "label": "Customer Specification"
   },
   {
-   "fieldname": "column_break_udcp",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "test_description",
-   "fieldtype": "Small Text",
-   "label": "Test Description"
+   "fieldtype": "Link",
+   "label": "Test Description",
+   "options": "Test Description"
   },
   {
    "fieldname": "column_break_lfma",
@@ -308,17 +315,13 @@
    "label": "Sample Description"
   },
   {
-   "fieldname": "column_break_hyjf",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "material_description",
    "fieldtype": "Small Text",
    "hidden": 1,
    "label": "Material Description"
   },
   {
-   "depends_on": "eval:doc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test)  BS EN 10164:2018\" ||\ndoc.test_method == \"Through Thickness Tensile Test (Z-Test) ASTM A770/A770M : 03(2025)\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8/E8M : 25\" || \ndoc.test_method == \"Tensile Test ASTM B557 : 15(2023)\" ||\ndoc.test_method == \"Tensile Test ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ASTM A370-24a & ASTM E8-25\" ||\ndoc.test_method == \"Tensile Test ISO 15614-1:2017-Amd 1:2019/ISO 4136:2022\" ||\ndoc.test_method == \"Tensile Test ASME SECTION IX-2023/QW-150\" ||\ndoc.test_method == \"Tensile Test AWS D 1.1(2025)\"",
+   "depends_on": "eval:doc.test_method == \"Brinell Hardness Test :BS EN ISO 15614-1:2017+A1:2019/BS EN ISO 9015-2:2016/BS EN ISO 6506-1:2014\" ||\ndoc.test_method == \"Vickers Hardness ISO 15614-1:2017-Amd 1:2019/ ISO 9015-1:2001(E)\" ||\ndoc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Rockwell Hardness Test ISO 6508-1 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test ISO 6506-1 : 2014\" ||\ndoc.test_method == \"Vickers Hardness Test BS EN ISO 6507-1:2023\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" ||\ndoc.test_method == \"Brinell Hardness Test ASTM E10 : 23\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a & Rockwell Hardness Test ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test IS 3848 : 24 & Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Leeb Hardness Test ASTM A370-24a & ASTM A956/A956M : 22\" ||\ndoc.test_method == \"Vickers Hardness Test ASTM E92-23\" ||\ndoc.test_method == \"Micro-Vickers Hardness Test ASTM E384 : 22\" ||\ndoc.test_method == \"Brinell Hardness Test ASTM A370-24a & ASTM E10-23\"",
    "fieldname": "image_section",
    "fieldtype": "Section Break",
    "label": "Image"
@@ -382,7 +385,7 @@
    "label": "Witness Name"
   },
   {
-   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
+   "depends_on": "eval:doc.test_method == \"Rebend Test IS 1786 Amd. 4 : 2019\" ||\ndoc.test_method == \"Bend Test IS 1599 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\n\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Bend Test ASTM A370-24a & ASTM E290 : 22\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Fracture (Rupture) Test AWS D 1.1(2020)\" ||\ndoc.test_method == \"Fracture Test ASME Sect.IX:2021/QW-182\"",
    "fieldname": "observation",
    "fieldtype": "Data",
    "label": "Observation"
@@ -481,12 +484,6 @@
    "fieldname": "number_and_size_of_any_visible_cracks_in_the_bend",
    "fieldtype": "Int",
    "label": "Number and size of any visible cracks in the bend"
-  },
-  {
-   "depends_on": "eval:doc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Rockwell Hardness Test ISO 6508-1 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test ISO 6506-1 : 2014\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test ISO 15614-1:2017-Amd 1:2019/ISO 4136:2022\" ||\ndoc.test_method == \"Brinell Hardness Test :BS EN ISO 15614-1:2017+A1:2019/BS EN ISO 9015-2:2016/BS EN ISO 6506-1:2014\" ||\ndoc.test_method == \"Vickers Hardness ISO 15614-1:2017-Amd 1:2019/ ISO 9015-1:2001(E)\"",
-   "fieldname": "test_completion_datetime",
-   "fieldtype": "Datetime",
-   "label": "Test Completion DateTime"
   },
   {
    "depends_on": "eval: doc.test_method == \"Brinell Hardness Test ASTM A370-24a and ASTM E10-23\" || \ndoc.test_method == \"Brinell Hardness Test ASTM E10 : 23\" ||\ndoc.test_method == \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Rockwell Hardness Test ISO 6508-1 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test ASTM A370-24a & ASTM E10-23\" ||\ndoc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Brinell Hardness Test ISO 6506-1 : 2014\" || \ndoc.test_method == \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a & Rockwell Hardness Test ASTM E18-25\" || \ndoc.test_method == \"Hardenability Test IS 3848 : 24 & Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Leeb Hardness Test ASTM A370-24a & ASTM A956/A956M : 22\" ||\ndoc.test_method == \"Vickers Hardness Test ASTM E92-23\" ||\ndoc.test_method == \"Micro-Vickers Hardness Test ASTM E384 : 22\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM E18-25\" ||\ndoc.test_method == \"Hardenability Test ASTM A255 : 20a\" ||\ndoc.test_method == \"Vickers Hardness Test BS EN ISO 6507-1:2023\" ||\ndoc.test_method == \"Brinell Hardness Test :BS EN ISO 15614-1:2017+A1:2019/BS EN ISO 9015-2:2016/BS EN ISO 6506-1:2014\" ||\ndoc.test_method == \"Vickers Hardness ISO 15614-1:2017-Amd 1:2019/ ISO 9015-1:2001(E)\"",
@@ -639,7 +636,7 @@
   },
   {
    "fieldname": "range1",
-   "fieldtype": "Float",
+   "fieldtype": "Data",
    "label": "Range1"
   },
   {
@@ -648,7 +645,7 @@
   },
   {
    "fieldname": "range2",
-   "fieldtype": "Float",
+   "fieldtype": "Data",
    "label": "Range2"
   },
   {
@@ -657,7 +654,7 @@
   },
   {
    "fieldname": "range3",
-   "fieldtype": "Float",
+   "fieldtype": "Data",
    "label": "Range3"
   },
   {
@@ -666,7 +663,7 @@
   },
   {
    "fieldname": "range4",
-   "fieldtype": "Float",
+   "fieldtype": "Data",
    "label": "Range4"
   },
   {
@@ -675,7 +672,7 @@
   },
   {
    "fieldname": "range5",
-   "fieldtype": "Float",
+   "fieldtype": "Data",
    "label": "Range5"
   },
   {
@@ -684,7 +681,7 @@
   },
   {
    "fieldname": "range6",
-   "fieldtype": "Float",
+   "fieldtype": "Data",
    "label": "Range6"
   },
   {
@@ -777,11 +774,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "total_magnification",
-   "fieldtype": "Data",
-   "label": "Total Magnification"
-  },
-  {
    "fieldname": "tested_by",
    "fieldtype": "Link",
    "label": "Tested By",
@@ -789,20 +781,16 @@
    "options": "Employee"
   },
   {
+   "default": "Today",
    "fieldname": "report_date",
    "fieldtype": "Date",
    "label": "Report Date"
   },
   {
+   "default": "Today",
    "fieldname": "tested_date",
    "fieldtype": "Date",
    "label": "Tested Date"
-  },
-  {
-   "fieldname": "discipline",
-   "fieldtype": "Select",
-   "label": "Discipline",
-   "options": "\nChemical\nMechanical"
   },
   {
    "fieldname": "group",
@@ -862,9 +850,8 @@
   },
   {
    "fieldname": "customer_requirement",
-   "fieldtype": "Link",
-   "label": "Customer Requirement",
-   "options": "Customer Requirement"
+   "fieldtype": "Data",
+   "label": "Customer Requirement"
   },
   {
    "depends_on": "eval:doc.test_method == \"Compression Test ASTM E9-19(2025)e1\"",
@@ -883,12 +870,6 @@
    "label": "Average Compressive Strength,N/mm2",
    "precision": "2",
    "read_only": 1
-  },
-  {
-   "fieldname": "sample_preparation",
-   "fieldtype": "Select",
-   "label": "Sample Preparation",
-   "options": "Select Sample Preparation\n120 Grit Polishing\nAs Per ASTM E3\nIn-situ Metallography\nMechanical Polishing\nMechanical Polishing with Emery Papers and Disc la"
   },
   {
    "fieldname": "mrn_no",
@@ -911,6 +892,62 @@
    "fieldname": "amendment_remark",
    "fieldtype": "Data",
    "label": "Amendment Remark"
+  },
+  {
+   "default": "Today",
+   "depends_on": "eval:doc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Rockwell Hardness Test ISO 6508-1 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test ISO 6506-1 : 2014\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test ISO 15614-1:2017-Amd 1:2019/ISO 4136:2022\" ||\ndoc.test_method == \"Brinell Hardness Test :BS EN ISO 15614-1:2017+A1:2019/BS EN ISO 9015-2:2016/BS EN ISO 6506-1:2014\" ||\ndoc.test_method == \"Vickers Hardness ISO 15614-1:2017-Amd 1:2019/ ISO 9015-1:2001(E)\"",
+   "fieldname": "test_completion_date",
+   "fieldtype": "Date",
+   "label": "Test Completion Date"
+  },
+  {
+   "default": "Now",
+   "depends_on": "eval:doc.test_method == \"Brinell Hardness Test IS 1500 : 2025 (Reaffirmed Year : 2010 )\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A370-24a & ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM E23-25\" ||\ndoc.test_method == \"Charpy Impact Test ASTM A923 : 23 Method B\" ||\ndoc.test_method == \"Tensile Test ASTM E8/E8M : 25\" ||\ndoc.test_method == \"Tensile Test IS 1608 : Part 1 : 2022\" ||\ndoc.test_method == \"Rockwell Hardness Test IS 1586 : Part 1 : 2025\" ||\ndoc.test_method == \"Rockwell Hardness Test ISO 6508-1 : 2023\" ||\ndoc.test_method == \"Brinell Hardness Test ISO 6506-1 : 2014\" ||\ndoc.test_method == \"Tensile Test ISO 6892-1 : 2019\" ||\ndoc.test_method == \"Charpy Impact Test  BS EN ISO 148-1 : 2016\" ||\ndoc.test_method == \"Rockwell Hardness Test ASTM A370-24a & ASTM E18-25\" ||\ndoc.test_method == \"Proof Load Test ASTM A370 : 24a\" ||\ndoc.test_method == \"Tensile Test ISO 15614-1:2017-Amd 1:2019/ISO 4136:2022\" ||\ndoc.test_method == \"Brinell Hardness Test :BS EN ISO 15614-1:2017+A1:2019/BS EN ISO 9015-2:2016/BS EN ISO 6506-1:2014\" ||\ndoc.test_method == \"Vickers Hardness ISO 15614-1:2017-Amd 1:2019/ ISO 9015-1:2001(E)\"",
+   "fieldname": "test_completion_time",
+   "fieldtype": "Time",
+   "label": "Test Completion Time"
+  },
+  {
+   "fieldname": "authorized_by",
+   "fieldtype": "Link",
+   "label": "Authorized By",
+   "link_filters": "[[\"Employee\",\"custom_authorized_by\",\"=\",\"Authorized By\"]]",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series"
+  },
+  {
+   "fieldname": "section_break_dwbs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jqpf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_sjjm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.hardness_survey == \"1\"",
+   "fieldname": "hv_10",
+   "fieldtype": "Table",
+   "label": "HV 10",
+   "options": "Hardness Child"
+  },
+  {
+   "default": "0",
+   "fieldname": "hardness_survey",
+   "fieldtype": "Check",
+   "label": "Hardness Survey"
+  },
+  {
+   "fieldname": "total_magnification",
+   "fieldtype": "Data",
+   "label": "Total Magnification"
   }
  ],
  "grid_page_length": 50,
@@ -919,11 +956,11 @@
  "is_submittable": 1,
  "links": [],
  "make_attachments_public": 1,
- "modified": "2026-04-03 11:27:44.263473",
+ "modified": "2026-06-26 14:33:51.407154",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Physical Test",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

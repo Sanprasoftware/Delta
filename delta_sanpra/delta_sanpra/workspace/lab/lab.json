@@ -1,7 +1,7 @@
 {
  "app": "delta_sanpra",
  "charts": [],
- "content": "[{\"id\":\"IzQ_B9PEiJ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"UZU5aC1En3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters \",\"col\":4}},{\"id\":\"gBEhmJgb_7\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Details\",\"col\":4}}]",
+ "content": "[{\"id\":\"IzQ_B9PEiJ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"UZU5aC1En3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters \",\"col\":4}},{\"id\":\"gBEhmJgb_7\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Details\",\"col\":4}},{\"id\":\"V-GjvspqKA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Chemical Test</b></span>\",\"col\":12}},{\"id\":\"pZMYbKItql\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Chemical Test (Open)\",\"col\":3}},{\"id\":\"KPL8BKmvs4\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Chemical Test (Inprocess)\",\"col\":3}},{\"id\":\"YP7U1cegEo\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Chemical Test (Closed)\",\"col\":3}},{\"id\":\"kJULW9vTW3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Chemical Test (Approved)\",\"col\":3}},{\"id\":\"WWMK_ZgVv9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Physical Test</b></span>\",\"col\":12}},{\"id\":\"h5vttHlz57\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Physial Test (Open)\",\"col\":3}},{\"id\":\"wOXEJCcP7f\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Physical Test (Inprocess)\",\"col\":3}},{\"id\":\"UqDigHp4lY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Physical Test (Closed)\",\"col\":3}},{\"id\":\"M9zJYBxEsf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Physical Test (Approved)\",\"col\":3}},{\"id\":\"hsCqQruwPs\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Metallography Test</b></span>\",\"col\":12}},{\"id\":\"m3RKdt6IBX\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Metallography Test (Open)\",\"col\":3}},{\"id\":\"R-hfLCZpX_\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Metallography Test (Inprocess)\",\"col\":3}},{\"id\":\"D7FZvsqucC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Metallography Test (Closed)\",\"col\":3}},{\"id\":\"-CFzwTUgyp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Metallography Test (Approved)\",\"col\":3}},{\"id\":\"5WuVRhAGQm\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Corrosion Test</b></span>\",\"col\":12}},{\"id\":\"ayKSpqDSci\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Corrosion Test (Open)\",\"col\":3}},{\"id\":\"mI51WWHdN6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Corrosion Test (Inprocess)\",\"col\":3}},{\"id\":\"Sgt073WmZS\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Corrosion Test (Closed)\",\"col\":3}},{\"id\":\"o-uHT99dOf\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Corrosion Test (Approved)\",\"col\":3}},{\"id\":\"Nvu0yyfgYt\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Other Test</b></span>\",\"col\":12}},{\"id\":\"GmYH8k1lhp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Other Test (Open)\",\"col\":3}},{\"id\":\"nizl7HhDEg\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Other Test (Inprocess)\",\"col\":3}},{\"id\":\"0pZ3em4sAJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Other Test (Closed)\",\"col\":3}},{\"id\":\"NO0hqme5DU\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Other Test (Approved)\",\"col\":3}}]",
  "creation": "2026-03-12 16:23:52.829749",
  "custom_blocks": [],
  "docstatus": 0,
@@ -134,11 +134,92 @@
    "type": "Link"
   }
  ],
- "modified": "2026-03-12 16:23:52.829749",
+ "modified": "2026-06-12 17:52:20.902266",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Lab",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Corrosion Test (Open)",
+   "number_card_name": "Corrosion Test (Open)"
+  },
+  {
+   "label": "Other Test (Open)",
+   "number_card_name": "Other Test (Open)"
+  },
+  {
+   "label": "Chemical Test (Approved)",
+   "number_card_name": "Chemical Test (Approved)"
+  },
+  {
+   "label": "Physial Test (Open)",
+   "number_card_name": "Physial Test (Open)"
+  },
+  {
+   "label": "Metallography Test (Open)",
+   "number_card_name": "Metallography Test (Open)"
+  },
+  {
+   "label": "Corrosion Test (Inprocess)",
+   "number_card_name": "Corrosion Test (Inprocess)"
+  },
+  {
+   "label": "Other Test (Inprocess)",
+   "number_card_name": "Other Test (Inprocess)"
+  },
+  {
+   "label": "Chemical Test (Closed)",
+   "number_card_name": "Chemical Test (Closed)"
+  },
+  {
+   "label": "Physical Test (Inprocess)",
+   "number_card_name": "Physical Test (Inprocess)"
+  },
+  {
+   "label": "Metallography Test (Inprocess)",
+   "number_card_name": "Metallography Test (Inprocess)"
+  },
+  {
+   "label": "Corrosion Test (Closed)",
+   "number_card_name": "Corrosion Test (Closed)"
+  },
+  {
+   "label": "Other Test (Closed)",
+   "number_card_name": "Other Test (Closed)"
+  },
+  {
+   "label": "Chemical Test (Inprocess)",
+   "number_card_name": "Chemical Test (Inprocess)"
+  },
+  {
+   "label": "Physical Test (Closed)",
+   "number_card_name": "Physical Test (Closed)"
+  },
+  {
+   "label": "Metallography Test (Closed)",
+   "number_card_name": "Metallography Test (Closed)"
+  },
+  {
+   "label": "Corrosion Test (Approved)",
+   "number_card_name": "Corrosion Test (Approved)"
+  },
+  {
+   "label": "Other Test (Approved)",
+   "number_card_name": "Other Test (Approved)"
+  },
+  {
+   "label": "Chemical Test (Open)",
+   "number_card_name": "Chemical Test (Open)"
+  },
+  {
+   "label": "Physical Test (Approved)",
+   "number_card_name": "Physical Test (Approved)"
+  },
+  {
+   "label": "Metallography Test (Approved)",
+   "number_card_name": "Metallography Test (Approved)"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,

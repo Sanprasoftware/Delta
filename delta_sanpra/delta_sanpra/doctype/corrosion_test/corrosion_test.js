@@ -11,14 +11,27 @@ frappe.ui.form.on("Corrosion Test", {
     // ******************************
     test_method: calc_1,
     length_of_sample: calc_1,
+    length_of_sample: calc_2,
+    length_of_sample: calc_3,
     width_of_sample: calc_1,
+    width_of_sample: calc_2,
+    width_of_sample: calc_3,
     thickness_of_sample: calc_1,
+    thickness_of_sample: calc_2,
+    thickness_of_sample: calc_3,
     initial_weight_of_sample:calc_1,
+    initial_weight_of_sample:calc_2,
+    initial_weight_of_sample:calc_3,
     final_weight_of_sample:calc_1,
-    // weight_loss: calc_1,
+    final_weight_of_sample:calc_2,
+    final_weight_of_sample:calc_3,
+    weight_loss: calc_1,
+    weight_loss: calc_2,
     total_surface_area_of_sample_dm2: calc_1 ,
     // test_duration_hrs:calc_1,    
     diameter_of_sample: calc_1,
+    corrosion_rate:calc_2,
+    pit_density:calc_2,
     
     material_shapes(frm) {
 
@@ -136,6 +149,52 @@ function calc_1(frm) {
             if (r.message.corrosion){
                 frm.set_value("corrosion_rate_mmd", r.message.corrosion);
             }
+        }
+    });
+}
+function calc_2(frm) {
+    frm.call({
+        method: "astm_A262_practice_b",
+        doc: frm.doc,
+        callback: function (r) {
+            if (!r.message) return;
+
+            if (r.message.area){
+                frm.set_value("total_surface_area_of_sample", r.message.area);
+            }
+
+            if (r.message.weight){
+                frm.set_value("weight_loss", r.message.weight);
+            }
+            if (r.message.cor_rate){
+                frm.set_value("corrosion_rate", r.message.cor_rate);
+            }
+            if (r.message.cor_rate_mpy){
+                frm.set_value("corrosion_rate_mils_year", r.message.cor_rate_mpy);
+            }
+        }
+    });
+}
+function calc_3(frm) {
+    frm.call({
+        method: "astm_A262_practice_c",
+        doc: frm.doc,
+        callback: function (r) {
+            if (!r.message) return;
+
+            if (r.message.area){
+                frm.set_value("total_surface_area_of_sample", r.message.area);
+            }
+
+            if (r.message.weight){
+                frm.set_value("weight_loss", r.message.weight);
+            }
+            // if (r.message.cor_rate){
+            //     frm.set_value("corrosion_rate", r.message.cor_rate);
+            // }
+            // if (r.message.cor_rate_mpy){
+            //     frm.set_value("corrosion_rate_mils_year", r.message.cor_rate_mpy);
+            // }
         }
     });
 }

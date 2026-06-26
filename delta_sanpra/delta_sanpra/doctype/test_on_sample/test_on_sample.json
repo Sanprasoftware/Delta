@@ -149,13 +149,6 @@
    "label": "Sample Id (Heat No)"
   },
   {
-   "fieldname": "customer_requirement",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Customer Requirement",
-   "options": "Customer Requirement"
-  },
-  {
    "fieldname": "column_break_eyrk",
    "fieldtype": "Column Break"
   },
@@ -178,13 +171,19 @@
    "fieldtype": "Int",
    "hidden": 1,
    "label": "Index ID"
+  },
+  {
+   "fieldname": "customer_requirement",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Requirement"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-03-27 13:37:16.920872",
+ "modified": "2026-06-17 16:01:24.325997",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Test On sample",

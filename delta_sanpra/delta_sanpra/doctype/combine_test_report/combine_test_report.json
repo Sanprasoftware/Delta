@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-03-02 15:00:59.552241",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_gpqv",
+  "enbl_generate_ulr",
+  "sample_inward",
+  "column_break_wlnx",
+  "enbl_ulr_no",
+  "authorized_by",
+  "column_break_ibbs",
+  "sample_id__test_id",
+  "print_status",
+  "column_break_tplu",
+  "printedready_to_printtotal_test",
+  "naming_series",
+  "section_break_ecwk",
+  "get_data",
+  "items",
+  "section_break_dopr",
+  "non_enbl__ysuts_table"
+ ],
+ "fields": [
+  {
+   "fieldname": "sample_inward",
+   "fieldtype": "Link",
+   "label": "MRN NO.",
+   "options": "Sample Inward"
+  },
+  {
+   "fieldname": "column_break_wlnx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "authorized_by",
+   "fieldtype": "Link",
+   "label": "Authorized By",
+   "link_filters": "[[\"Employee\",\"custom_authorized_by\",\"=\",\"Authorized By\"]]",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_ibbs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ecwk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "get_data",
+   "fieldtype": "Button",
+   "label": "Get Data"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Print Test Report Item"
+  },
+  {
+   "fieldname": "non_enbl__ysuts_table",
+   "fieldtype": "Table",
+   "label": "NON ENBL / YS/UTS Table",
+   "options": "YSUTS NonEnable Table"
+  },
+  {
+   "fieldname": "section_break_gpqv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_dopr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "enbl_generate_ulr",
+   "fieldtype": "Button",
+   "label": "Generate ULR"
+  },
+  {
+   "fieldname": "enbl_ulr_no",
+   "fieldtype": "Data",
+   "label": "ULR No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sample_id__test_id",
+   "fieldtype": "Data",
+   "label": "Sample Id / Test Id"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "printedready_to_printtotal_test",
+   "fieldtype": "Data",
+   "label": "Printed / Ready To Print / Total Test",
+   "read_only": 1
+  },
+  {
+   "default": "All",
+   "fieldname": "print_status",
+   "fieldtype": "Select",
+   "label": "Print Status",
+   "options": "\nAll\nPrinted\nNot Printed"
+  },
+  {
+   "fieldname": "column_break_tplu",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-18 11:13:49.115623",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Combine Test Report",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

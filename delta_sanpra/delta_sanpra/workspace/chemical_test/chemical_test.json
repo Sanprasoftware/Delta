@@ -1,0 +1,82 @@
+{
+ "app": "delta_sanpra",
+ "charts": [
+  {
+   "chart_name": "Chemical Test",
+   "label": "Chemical Test"
+  }
+ ],
+ "content": "[{\"id\":\"NPK_AfSLQ2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Chemical Test</b></span>\",\"col\":12}},{\"id\":\"Fv6yZn1aX-\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open\",\"col\":3}},{\"id\":\"XKZSVWubJJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Inprocess\",\"col\":3}},{\"id\":\"r-KuEvzg2m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Closed\",\"col\":3}},{\"id\":\"bYQTadgKo_\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved\",\"col\":3}},{\"id\":\"FcqaSIW5In\",\"type\":\"card\",\"data\":{\"card_name\":\"Chemical Test\",\"col\":4}},{\"id\":\"Mo8u0JE8dM\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Chemical Test\",\"col\":12}}]",
+ "creation": "2026-03-04 16:27:11.110917",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "integration",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Chemical_Test",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Chemical Test",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "chemical-test-view",
+   "link_count": 0,
+   "link_to": "chemical-test-view",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-06-12 17:00:21.091986",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Chemical_Test",
+ "number_cards": [
+  {
+   "label": "Open",
+   "number_card_name": "Chemical Test (Open)"
+  },
+  {
+   "label": "Inprocess",
+   "number_card_name": "Chemical Test (Inprocess)"
+  },
+  {
+   "label": "Closed",
+   "number_card_name": "Chemical Test (Closed)"
+  },
+  {
+   "label": "Approved",
+   "number_card_name": "Chemical Test (Approved)"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "Chemical Test"
+  },
+  {
+   "role": "Admin"
+  }
+ ],
+ "sequence_id": 53.0,
+ "shortcuts": [],
+ "title": "Chemical_Test",
+ "type": "Workspace"
+}

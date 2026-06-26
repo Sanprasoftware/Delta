@@ -9,14 +9,18 @@
   "location",
   "test",
   "scale",
+  "column_break_wynd",
   "load",
   "dial",
   "indentor",
+  "column_break_ngya",
   "min",
   "max",
+  "column_break_ydsn",
   "r1",
   "r2",
   "r3",
+  "column_break_mkua",
   "r4",
   "r5",
   "r6",
@@ -112,13 +116,29 @@
    "fieldtype": "Float",
    "label": "Avg",
    "precision": "1"
+  },
+  {
+   "fieldname": "column_break_wynd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ngya",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ydsn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_mkua",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-12-17 16:03:50.075167",
+ "modified": "2026-06-23 16:30:31.924792",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Brinell Hardness Child",

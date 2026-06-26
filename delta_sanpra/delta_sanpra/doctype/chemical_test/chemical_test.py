@@ -11,6 +11,19 @@ import pdfplumber
 import re
 
 class ChemicalTest(Document):
+	def get_chemical_value_color(self, row):
+		value = float(row.value) if row.value not in (None, "") else None
+		min_range = float(row.min_range) if row.min_range not in (None, "") else None
+		max_range = float(row.max_range) if row.max_range not in (None, "") else None
+
+		if value is None or min_range is None or max_range is None:
+			return ""
+
+		if value < min_range or value > max_range:
+			return "#FF7A7A"
+
+		return "#7CFF7C"
+
 	@frappe.whitelist()
 	def get_highlight_colors(self):
 		tables = ["test_details_chemical"]
@@ -20,19 +33,8 @@ class ChemicalTest(Document):
 				continue
 			for row in getattr(self, table):
 				try:
-					value = float(row.value) if row.value not in (None, "") else None
-					min_range = float(row.min_range) if row.min_range not in (None, "") else None
-					max_range = float(row.max_range) if row.max_range not in (None, "") else None
-
-					# Highlight if value < min_range OR value > max_range
-					if value is not None and min_range is not None and max_range is not None:
-						if value < min_range or value > max_range:
-							colors[row.name] = "#FF7A7A"     # RED
-						else:
-							colors[row.name] = "#7CFF7C"     # GREEN
-					else:
-						colors[row.name] = ""
-				except:
+					colors[row.name] = self.get_chemical_value_color(row)
+				except (TypeError, ValueError):
 					colors[row.name] = ""
 		return colors
 	#*************************************************************************************
@@ -134,3 +136,72 @@ class ChemicalTest(Document):
 				})
 		self.save()
 #***************************************************************************	
+	def on_update(self):
+		self.update_sample_inward_printed()
+		self.update_sample_inward_counters()
+
+	def update_sample_inward_printed(self):
+		# SAME code as above
+		inward = self.inward_number
+		if not inward:
+			return
+		
+		test_doctypes = [
+			"Physical Test",
+			"Chemical Test", 
+			"Corrosion Test",
+			"Metallography Test",
+			"Other Test"
+		]
+		
+		printed_count = 0
+		for dt in test_doctypes:
+			tests = frappe.get_all(dt, filters={"inward_number": inward, "is_print": 1}, fields=["name"])
+			printed_count += len(tests)
+		
+		frappe.db.set_value("Sample Inward", inward, "printed", printed_count)
+		frappe.db.commit()
+#*************************************************************************
+	def update_sample_inward_counters(self):
+		"""Dono counters update karo - NO RECURSION"""
+		
+		inward = self.inward_number
+		if not inward:
+			return
+		
+		# =========================================
+		# 1. PRINTED COUNT
+		# =========================================
+		test_doctypes = [
+			"Physical Test",
+			"Chemical Test",
+			"Corrosion Test",
+			"Metallography Test",
+			"Other Test"
+		]
+		
+		printed_count = 0
+		for dt in test_doctypes:
+			count = frappe.db.count(dt, {
+				"inward_number": inward,
+				"is_print": 1
+			})
+			printed_count += count
+		
+		frappe.db.set_value("Sample Inward", inward, "printed", printed_count)
+		
+		# =========================================
+		# 2. READY TO PRINT COUNT (NEW)
+		# =========================================
+		ready_count = 0
+		for dt in test_doctypes:
+			count = frappe.db.count(dt, {
+				"inward_number": inward,
+				"workflow_state": ["in", ["Approved"]]
+			})
+			ready_count += count
+		
+		frappe.db.set_value("Sample Inward", inward, "ready_to_print", ready_count)
+		
+		# Commit karo
+		frappe.db.commit()

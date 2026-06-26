@@ -26,7 +26,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/delta_sanpra/css/delta_sanpra.css"
-# app_include_js = "/assets/delta_sanpra/js/delta_sanpra.js"
+app_include_js = "/assets/delta_sanpra/js/combine_test_report_print.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/delta_sanpra/css/delta_sanpra.css"
@@ -50,7 +50,6 @@ doctype_js = {
     "Interview": "public/js/skillset.js",
     "Sales Invoice": "public/js/create_sales_invoice.js"
 }
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
@@ -153,9 +152,10 @@ doc_events = {
     "Employee": {
         "before_save": "delta_sanpra.public.py.custom_employee.before_save"
     },
-    "Sales Invoice":{
-        "on_submit": "delta_sanpra.public.py.create_sales_invoice.set_inward_flag",
-        "on_cancel": "delta_sanpra.public.py.create_sales_invoice.re_set_inward_flag"
+    "Sales Invoice": {
+        "validate": "delta_sanpra.public.py.create_sales_invoice.set_inward_flag",
+        "on_cancel": "delta_sanpra.public.py.create_sales_invoice.re_set_inward_flag",
+        "on_submit": "delta_sanpra.public.py.create_sales_invoice.generate_upi_qr"
     }
     
 }
@@ -256,4 +256,3 @@ doc_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

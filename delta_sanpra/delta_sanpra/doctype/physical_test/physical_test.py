@@ -20,25 +20,35 @@ class PhysicalTest(Document):
 
 	@frappe.whitelist()
 	def read_pdf(self):
+
 		# Always clear table first
 		# self.set("test_details_physical", [])
+
 		if not self.pdf_file:
 			return
+
 		if not self.specimen_shape:
 			frappe.throw("Please select Specimen Shape first")
+
 		file_doc = frappe.get_doc("File", {"file_url": self.pdf_file})
 		pdf_path = file_doc.get_full_path()
+
 		reader = PdfReader(pdf_path)
+
 		text = ""
+
 		for page in reader.pages:
 			page_text = page.extract_text()
 			if page_text:
 				text += page_text + "\n"
+
 		full_text_lower = text.lower()
+
 		# CHECK Specimen Shape match in PDF
 		if self.specimen_shape.lower() not in full_text_lower:
 			frappe.throw(f"Specimen Shape '{self.specimen_shape}' not found in attached PDF")
-		#Required Parameters based on Shape
+
+		# Required Parameters based on Shape
 		solid_round_params = [
 			"Specimen Shape",
 			"Initial G.L. For % elong",
@@ -55,6 +65,7 @@ class PhysicalTest(Document):
 			"Proof Stress 1( 0.2 %)",
 			"YS/UTS"
 		]
+
 		flat_params = [
 			"Specimen Shape",
 			"Specimen Width",
@@ -69,6 +80,7 @@ class PhysicalTest(Document):
 			"% Elongation",
 			"YS/UTS"
 		]
+
 		hollow_round_params = [
 			"Specimen Shape",
 			"Initial G.L. For % elong",
@@ -83,6 +95,7 @@ class PhysicalTest(Document):
 			"% Elongation",
 			"YS/UTS"
 		]
+
 		Odd_Shape_params = [
 			"SpecimenType",
 			"Initial G.L. For % elong",
@@ -96,59 +109,93 @@ class PhysicalTest(Document):
 			"weight/meter",
 			"YS/UTS"
 		]
+
 		if self.specimen_shape.lower() == "solid round":
 			required_params = solid_round_params
+
 		elif self.specimen_shape.lower() == "flat":
 			required_params = flat_params
+
 		elif self.specimen_shape.lower() == "hollow round":
 			required_params = hollow_round_params
+
 		elif self.specimen_shape.lower() == "odd shape":
 			required_params = Odd_Shape_params
+
 		else:
 			frappe.throw("Unsupported Specimen Shape")
+
 		required_params_lower = [p.lower().strip() for p in required_params]
-		# Extract Only Required Parameters (Case Insensitive)
-		# Only keep rows not from PDF (manual or Excel edits stay)
+
+		# Only keep rows not from PDF
 		new_table = []
 		added_params = set()
 
 		for row in self.test_details_physical:
 			if getattr(row, "from_pdf", 0):
-				continue  # skip old PDF rows
+				continue
+
 			new_table.append(row)
-			added_params.add(row.parameter.lower().strip())
+
+			if row.parameter:
+				added_params.add(row.parameter.lower().strip())
 
 		self.set("test_details_physical", new_table)
 
+		# Read line by line
 		for line in text.split("\n"):
+
 			if ":" not in line:
 				continue
+
 			param, val = line.split(":", 1)
+
 			param = param.strip()
 			val = val.strip()
+
 			normalized_param = param.lower().strip()
-			# match ignoring capital/small
+
+			# Match required parameters only
 			if normalized_param not in required_params_lower:
-				continue			# Skip if already added
-			if normalized_param in added_params:
 				continue
+
+			# Skip duplicate
+			if normalized_param in added_params:
+				continue 
+
+			# Rename Tensile Strength
+			if normalized_param == "tensile strength":
+				param = "Ultimate Tensile Strength"
+			if param.startswith("% "):
+				param = param[2:]
+
 			uom = ""
+
 			if val:
 				match = re.match(r"^\s*([-+]?\d*\.?\d+)\s*([^\s]+)", val)
+
 				if match:
 					val = match.group(1)
 					uom = match.group(2).strip()
-					# Remove junk words like Output, Data etc.
+
+					# Remove junk words
 					uom = re.split(r'(output|data)', uom, flags=re.IGNORECASE)[0]
-					# Keep only valid unit characters
-					uom = re.match(r'[a-zA-Z0-9/%²³]+', uom)
-					uom = uom.group(0) if uom else ""
+
+					# Keep valid unit chars only
+					uom_match = re.match(r'[a-zA-Z0-9/%²³]+', uom)
+
+					if uom_match:
+						uom = uom_match.group(0)
+					else:
+						uom = ""
+
 			self.append("test_details_physical", {
 				"parameter": param,
 				"value": val,
 				"uom": uom,
-    			"from_pdf": 1
+				"from_pdf": 1
 			})
+
 			added_params.add(normalized_param)
 
 #**************************************************************************
@@ -266,3 +313,89 @@ class PhysicalTest(Document):
 				except:
 					colors[row.name] = ""
 		return colors
+    
+    
+	def on_update(self):
+		self.update_sample_inward_printed()
+		self.update_sample_inward_counters()
+
+	def update_sample_inward_printed(self):
+		
+		inward = self.inward_number
+		if not inward:
+			return
+		
+		# ============================================
+		# METHOD 1: Direct DB update (NO doc load/save)
+		# ============================================
+		
+		# Sab test doctype ke names
+		test_doctypes = [
+			"Physical Test",
+			"Chemical Test", 
+			"Corrosion Test",
+			"Metallography Test",
+			"Other Test"
+		]
+		
+		printed_count = 0
+		
+		# Har test doctype me check karo
+		for dt in test_doctypes:
+			# Sample Inward ke sab test records dhundo
+			tests = frappe.get_all(
+				dt,
+				filters={"inward_number": inward, "is_print": 1},
+				fields=["name"]
+			)
+			printed_count += len(tests)
+		
+		# Direct DB update - NO doc save, NO recursion
+		frappe.db.set_value("Sample Inward", inward, "printed", printed_count)
+		
+		# Commit karo taaki immediately dikhe
+		frappe.db.commit()
+#*****************************************************************************
+	def update_sample_inward_counters(self):
+		"""Dono counters update karo - NO RECURSION"""
+		
+		inward = self.inward_number
+		if not inward:
+			return
+		
+		# =========================================
+		# 1. PRINTED COUNT
+		# =========================================
+		test_doctypes = [
+			"Physical Test",
+			"Chemical Test",
+			"Corrosion Test",
+			"Metallography Test",
+			"Other Test"
+		]
+		
+		printed_count = 0
+		for dt in test_doctypes:
+			count = frappe.db.count(dt, {
+				"inward_number": inward,
+				"is_print": 1
+			})
+			printed_count += count
+		
+		frappe.db.set_value("Sample Inward", inward, "printed", printed_count)
+		
+		# =========================================
+		# 2. READY TO PRINT COUNT (NEW)
+		# =========================================
+		ready_count = 0
+		for dt in test_doctypes:
+			count = frappe.db.count(dt, {
+				"inward_number": inward,
+				"workflow_state": ["in", ["Approved"]]
+			})
+			ready_count += count
+		
+		frappe.db.set_value("Sample Inward", inward, "ready_to_print", ready_count)
+		
+		# Commit karo
+		frappe.db.commit()

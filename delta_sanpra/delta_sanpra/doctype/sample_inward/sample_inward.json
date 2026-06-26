@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2025-10-27 10:59:35.638413",
+ "creation": "2026-05-21 17:01:34.825525",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -11,8 +11,8 @@
   "sample_received_date",
   "customer",
   "challan_no",
-  "amended_from",
   "sample_received",
+  "si_flag",
   "column_break_iugo",
   "naming_series",
   "received_by",
@@ -20,6 +20,12 @@
   "challan_date",
   "courier_name",
   "quantity",
+  "hidden_section_section",
+  "printed",
+  "column_break_nmdx",
+  "ready_to_print",
+  "column_break_xkge",
+  "total_test",
   "section_break_rahy",
   "wittness",
   "column_break_cecu",
@@ -32,6 +38,7 @@
   "attach_image",
   "section_break_fxwu",
   "remark_for_accounts",
+  "amended_from",
   "sample_details_tab",
   "material_details",
   "section_break_vmzw",
@@ -41,17 +48,19 @@
   "process_charges_tab",
   "cutting_charge_section",
   "cutting_charge_table",
+  "cutting_total",
   "machining_charge_section",
   "machining_charge_table",
+  "machining_total",
   "section_break_rzce",
   "column_break_gkjb",
-  "print_sticker",
+  "select_all",
   "column_break_wazv",
+  "print_sticker",
   "mrn_no",
   "column_break_egly",
   "mail_send",
   "section_break_uczp",
-  "select_all",
   "sticker_print"
  ],
  "fields": [
@@ -72,8 +81,7 @@
    "no_copy": 1,
    "options": "Sample Inward",
    "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "read_only": 1
   },
   {
    "fieldname": "customer",
@@ -258,6 +266,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "No",
    "fieldname": "wittness",
    "fieldtype": "Select",
    "label": "Wittness",
@@ -317,13 +326,69 @@
    "fieldname": "mail_send",
    "fieldtype": "Check",
    "label": "Mail Send"
+  },
+  {
+   "fieldname": "hidden_section_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Hidden Section"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "printed",
+   "fieldtype": "Int",
+   "label": "Printed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nmdx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "ready_to_print",
+   "fieldtype": "Int",
+   "label": "Ready To Print",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xkge",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_test",
+   "fieldtype": "Int",
+   "label": "Total Test",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "si_flag",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "SI Flag",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cutting_total",
+   "fieldtype": "Float",
+   "label": "Cutting Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "machining_total",
+   "fieldtype": "Float",
+   "label": "Machining Total",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-01 15:09:44.496162",
+ "modified": "2026-06-24 14:35:03.101908",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Sample Inward",

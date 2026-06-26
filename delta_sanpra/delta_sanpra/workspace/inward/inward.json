@@ -1,7 +1,16 @@
 {
  "app": "delta_sanpra",
- "charts": [],
- "content": "[{\"id\":\"ndoVcRJ5Wk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Print Test Report\",\"col\":3}},{\"id\":\"BqEEnHPHYk\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Inward Department&nbsp;</span>\",\"col\":12}},{\"id\":\"mM9FnVY2rr\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sample Inward (Under Verification)\",\"col\":4}},{\"id\":\"6OJF9_8vaX\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sample Inward (Verified)\",\"col\":4}},{\"id\":\"S0lpI68oYT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sample Inward (Approved)\",\"col\":4}},{\"id\":\"IzQ_B9PEiJ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters</b></span>\",\"col\":12}},{\"id\":\"UZU5aC1En3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"gBEhmJgb_7\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Details\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Total Sales Month Wise",
+   "label": "Total Sales Month Wise"
+  },
+  {
+   "chart_name": "Sample Inward",
+   "label": "Sample Inward"
+  }
+ ],
+ "content": "[{\"id\":\"FTo1iXLQce\",\"type\":\"card\",\"data\":{\"card_name\":\"Sample Inward Page\",\"col\":4}},{\"id\":\"ndoVcRJ5Wk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Print Test Report\",\"col\":3}},{\"id\":\"BqEEnHPHYk\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Inward Department&nbsp;</span>\",\"col\":12}},{\"id\":\"mM9FnVY2rr\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sample Inward (Under Verification)\",\"col\":4}},{\"id\":\"6OJF9_8vaX\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sample Inward (Verified)\",\"col\":4}},{\"id\":\"S0lpI68oYT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sample Inward (Approved)\",\"col\":4}},{\"id\":\"HVUZfmOEam\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h3\\\">Masters</span>\",\"col\":12}},{\"id\":\"UZU5aC1En3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"gBEhmJgb_7\",\"type\":\"card\",\"data\":{\"card_name\":\"Master Details\",\"col\":4}},{\"id\":\"0eP0D1kJ0u\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Total Sales Month Wise\",\"col\":12}},{\"id\":\"7ECl2GXOsR\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Sample Inward\",\"col\":12}}]",
  "creation": "2026-03-12 16:23:44.647209",
  "custom_blocks": [],
  "docstatus": 0,
@@ -132,9 +141,28 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sample Inward Page",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "sample-inward-view",
+   "link_count": 0,
+   "link_to": "sample-inward-view",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-03-19 10:39:44.399610",
+ "modified": "2026-06-13 10:44:12.660424",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Inward",
@@ -163,7 +191,7 @@
    "color": "Grey",
    "doc_view": "List",
    "label": "Print Test Report",
-   "link_to": "Print Test Report",
+   "link_to": "Combine Test Report",
    "stats_filter": "[]",
    "type": "DocType"
   }

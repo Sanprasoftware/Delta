@@ -1,0 +1,135 @@
+.sample-inward-screen {
+	height: calc(100vh - 120px);
+	min-height: 520px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	overflow: hidden;
+}
+.sample-inward-filter.filter-narrow {
+    width: 120px;  /* Adjust as needed */
+    /* ya */
+    flex: 0 0 120px;
+}
+.sample-inward-filter {
+    flex: 1 1 150px;  /* default width for other filters */
+    min-width: 100px;
+}
+
+.sample-inward-filter.filter-narrow {
+    flex: 0 0 120px;  /* fixed narrow width */
+}
+
+.sample-inward-toolbar {
+	display: grid;
+	/* grid-template-columns: minmax(180px, 1.3fr) 150px 150px auto auto 1fr; */
+	grid-template-columns: 140px 150px 150px auto auto 1fr;
+	padding: 10px 12px;
+	background: var(--card-bg);
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+
+.sample-inward-filter label {
+	display: block;
+	margin-bottom: 4px;
+	color: var(--text-muted);
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.sample-inward-filter .form-control {
+	height: 32px;
+}
+
+.sample-inward-table-wrap {
+	flex: 1;
+	min-height: 0;
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	overflow: auto;
+	background: var(--card-bg);
+}
+
+.sample-inward-table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	font-size: 12px;
+}
+
+.sample-inward-table thead {
+	background: var(--subtle-fg);
+}
+
+.sample-inward-table th,
+.sample-inward-table td {
+	padding: 7px 8px;
+	border-bottom: 1px solid var(--border-color);
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	vertical-align: middle;
+}
+
+.sample-inward-table th {
+	color: var(--text-muted);
+	font-weight: 700;
+}
+
+.sample-inward-table tbody tr:hover {
+	background: var(--control-bg);
+}
+
+.sample-inward-empty,
+.sample-inward-loading {
+	text-align: center;
+	color: var(--text-muted);
+}
+
+.sample-inward-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	min-height: 34px;
+}
+
+.sample-inward-pagination {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.sample-inward-page,
+.sample-inward-count {
+	color: var(--text-muted);
+	font-size: 12px;
+}
+
+@media (max-width: 1200px) {
+	.sample-inward-table {
+		font-size: 12px;
+	}
+
+	.sample-inward-table th,
+	.sample-inward-table td {
+		padding: 6px;
+	}
+}
+
+@media (max-width: 900px) {
+	.sample-inward-screen {
+		height: auto;
+		min-height: calc(100vh - 120px);
+	}
+
+	.sample-inward-toolbar {
+		grid-template-columns: 1fr 1fr;
+	}
+}

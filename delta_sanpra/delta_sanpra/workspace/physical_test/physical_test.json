@@ -1,0 +1,82 @@
+{
+ "app": "delta_sanpra",
+ "charts": [
+  {
+   "chart_name": "Physical Test",
+   "label": "Physical Test"
+  }
+ ],
+ "content": "[{\"id\":\"NPK_AfSLQ2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Physical Test</b></span>\",\"col\":12}},{\"id\":\"KLAo_oh2AJ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open\",\"col\":3}},{\"id\":\"dOFTCydrDo\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Inprocess\",\"col\":3}},{\"id\":\"_F7Y2Rb-ue\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Closed\",\"col\":3}},{\"id\":\"b0LE4-vRRk\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved\",\"col\":3}},{\"id\":\"Bi8_NFvXVb\",\"type\":\"card\",\"data\":{\"card_name\":\"Physical Test View\",\"col\":4}},{\"id\":\"UsvTSd5u17\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Physical Test\",\"col\":12}}]",
+ "creation": "2026-03-04 16:39:57.341416",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "integration",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Physical_Test",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Physical Test View",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "physical-test-view",
+   "link_count": 0,
+   "link_to": "physical-test-view",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-27 15:40:24.570314",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Physical_Test",
+ "number_cards": [
+  {
+   "label": "Open",
+   "number_card_name": "Physial Test (Open)"
+  },
+  {
+   "label": "Inprocess",
+   "number_card_name": "Physical Test (Inprocess)"
+  },
+  {
+   "label": "Closed",
+   "number_card_name": "Physical Test (Closed)"
+  },
+  {
+   "label": "Approved",
+   "number_card_name": "Physical Test (Approved)"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "Physical Test"
+  },
+  {
+   "role": "Admin"
+  }
+ ],
+ "sequence_id": 54.0,
+ "shortcuts": [],
+ "title": "Physical_Test",
+ "type": "Workspace"
+}

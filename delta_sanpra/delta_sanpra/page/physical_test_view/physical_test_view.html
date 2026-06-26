@@ -1,0 +1,92 @@
+<div class="sample-inward-screen">
+	<div class="sample-inward-toolbar">
+		<div class="sample-inward-filter">
+			<label for="sample-inward-id">ID</label>
+			<input id="sample-inward-id" class="form-control" type="text" placeholder="Physical Test ID">
+		</div>
+		<div class="sample-inward-filter">
+			<label for="sample-inward-from-date">From Date</label>
+			<input id="sample-inward-from-date" class="form-control" type="date">
+		</div>
+		<div class="sample-inward-filter">
+			<label for="sample-inward-to-date">To Date</label>
+			<input id="sample-inward-to-date" class="form-control" type="date">
+		</div>
+		<div class="sample-inward-filter">
+			<label for="sample-inward-customer">Customer</label>
+			<input id="sample-inward-customer" class="form-control" type="text" placeholder="Customer Name">
+		</div>
+		<div class="sample-inward-filter">
+			<label for="sample-inward-challan_no">Challan No</label>
+			<input id="sample-inward-challan_no" class="form-control" type="text" placeholder="Challan No">
+		</div>
+		<div class="sample-inward-filter">
+			<label for="sample-inward-material_specification">Material Specification</label>
+			<input id="sample-inward-material_specification" class="form-control" type="text" placeholder="Material Specification">
+		</div>
+		<div class="sample-inward-filter">
+			<label for="sample-inward-document_id">Test Id</label>
+			<input id="sample-inward-document_id" class="form-control" type="text" placeholder="Test Id">
+		</div>
+		<div class="sample-inward-filter">
+			<label for="sample-inward-docstatus">Group By</label>
+			<select id="sample-inward-docstatus" class="form-control">
+				<option value="">By Inward Id</option>
+			</select>
+		</div>
+		<div class="sample-inward-filter">
+			<label for="sample-inward-workflow_state">Status</label>
+			<select id="sample-inward-workflow_state" class="form-control">
+				<option value=""></option>
+				<option value="Open">Open</option>
+				<option value="InProcess">In Process</option>
+				<option value="Close">Close</option>
+				<option value="Approved">Approved</option>
+			</select>
+		</div>
+		<div class="sample-inward-filter">
+			<label for="sample-inward-test_method">Test Method</label>
+			<input id="sample-inward-test_method" class="form-control" type="text" placeholder="Test Method">
+		</div>
+		<button class="btn btn-primary btn-sm sample-inward-apply" type="button">Apply</button>
+		<button class="btn btn-default btn-sm sample-inward-reset" type="button">Reset</button>
+	</div>
+
+	<div class="sample-inward-table-wrap">
+		<table class="sample-inward-table">
+			<thead>
+				<tr>
+					<th>MRN No</th>
+					<th>Customer</th>
+					<th>Challan No</th>
+					<th>Sample Id / Test Id</th>
+					<th>Heat No</th>
+					<th>Material Specification</th>
+					<th>Test Method</th>
+					<th>Wittness</th>
+					<th>Approved Status</th>
+					<th>Test Description</th>
+					<th>Inward Date</th>
+					<!-- <th>Received Date</th>
+					<th>Challan Date</th>
+					<th>Qty</th>
+					<th>Received By</th>
+					<th>Mode</th>
+					<th>Courier</th>
+					<th>Inspector</th>
+					<th>Client</th> -->
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+
+	<div class="sample-inward-footer">
+		<div class="sample-inward-count"></div>
+		<div class="sample-inward-pagination">
+			<button class="btn btn-default btn-sm sample-inward-prev" type="button">Previous</button>
+			<span class="sample-inward-page"></span>
+			<button class="btn btn-default btn-sm sample-inward-next" type="button">Next</button>
+		</div>
+	</div>
+</div>

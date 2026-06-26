@@ -4,6 +4,7 @@ let items = [];
 frappe.ui.form.on("Chemical Test", {
 	refresh(frm) {
         apply_highlight_from_backend(frm);
+        bind_chemical_grid_highlight(frm);
         set_test_method_filter(frm);
         if (!frm.is_new() && !frm.doc.ulr_no) {
             frm.add_custom_button("Generate ULR", function () {
@@ -40,12 +41,17 @@ frappe.ui.form.on("Chemical Test", {
         }
     },
     onload(frm) {
+        apply_highlight_from_backend(frm);
+        bind_chemical_grid_highlight(frm);
         let original_print = frm.print_doc || frm.print_preview;
         frm.print_doc = function () {
             frm.set_value("is_print", 1);
             frm.save_or_update();
             original_print.call(frm);
         };
+    },
+    on_change(frm){
+        apply_highlight_from_backend(frm);
     },
     test_group(frm){
         frm.set_value('test_method',null),
@@ -163,7 +169,7 @@ frappe.ui.form.on("Test Details", {
             }
                 frappe.model.set_value(cdt, cdn, "status", status);
         }
-        apply_highlight_from_backend(frm);
+        apply_highlight_from_doc(frm);
     },
     //*************************************************************
     parameter(frm, cdt, cdn) {
@@ -213,7 +219,7 @@ frappe.ui.form.on("Test Details", {
                     frm.refresh_field("test_details_chemical");
                 }
             }
-        });
+        });        
         calculate_pren(frm);
     },
 });
@@ -317,24 +323,78 @@ function apply_highlight_from_backend(frm) {
                 const grid = grid_field.grid;
 
                 grid.grid_rows.forEach(row => {
-                    const cell = $(row.columns["value"]);
-                    const input = cell.find("input");
                     const color = colors[row.doc.name] || "";
-
-                    if (input.length) {
-                        input.css({
-                            "background-color": color,
-                            "transition": "background-color 0.2s ease"
-                        });
-                    } else {
-                        cell.css({
-                            "background-color": color,
-                            "transition": "background-color 0.2s ease"
-                        });
-                    }
+                    apply_color_to_grid_row(row, color);
                 });
             });
         }
     });
 }
 
+function apply_highlight_from_doc(frm) {
+    const grid = frm.fields_dict.test_details_chemical && frm.fields_dict.test_details_chemical.grid;
+    if (!grid) return;
+
+    const apply = () => {
+        grid.grid_rows.forEach((grid_row) => {
+            const row_doc = get_chemical_row_doc(grid_row);
+            const color = get_chemical_value_color(row_doc);
+            apply_color_to_grid_row(grid_row, color);
+        });
+    };
+
+    apply();
+    setTimeout(apply, 50);
+    setTimeout(apply, 200);
+}
+
+function bind_chemical_grid_highlight(frm) {
+    if (frm.chemical_grid_highlight_bound) return;
+
+    frm.chemical_grid_highlight_bound = true;
+    $(frm.wrapper).on("grid-row-render", function(e, grid_row) {
+        if (!grid_row || !grid_row.grid || grid_row.grid.df.fieldname !== "test_details_chemical") {
+            return;
+        }
+
+        const row_doc = get_chemical_row_doc(grid_row);
+        const color = get_chemical_value_color(row_doc);
+        apply_color_to_grid_row(grid_row, color);
+    });
+}
+
+function get_chemical_row_doc(grid_row) {
+    if (!grid_row || !grid_row.doc) return null;
+
+    return (
+        (locals[grid_row.doc.doctype] && locals[grid_row.doc.doctype][grid_row.doc.name])
+        || grid_row.doc
+    );
+}
+
+function get_chemical_value_color(row) {
+    if (!row) return "";
+
+    const value = parseFloat(row.value);
+    const min = parseFloat(row.min_range);
+    const max = parseFloat(row.max_range);
+
+    if ([value, min, max].some((number) => isNaN(number))) {
+        return "";
+    }
+
+    return value < min || value > max ? "#FF7A7A" : "#7CFF7C";
+}
+
+function apply_color_to_grid_row(grid_row, color) {
+    if (!grid_row || !grid_row.columns || !grid_row.columns.value) return;
+
+    const cell = $(grid_row.columns.value);
+    const css = {
+        "background-color": color,
+        "transition": "background-color 0.2s ease"
+    };
+
+    cell.css(css);
+    cell.find("input, .static-area, .control-input, .field-area").css(css);
+}

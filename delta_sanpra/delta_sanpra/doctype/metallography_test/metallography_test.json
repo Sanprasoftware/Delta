@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{inward_number}/{document_id}",
+ "autoname": "naming_series:",
  "creation": "2026-01-28 14:37:03.827082",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -19,6 +19,7 @@
   "heat_number",
   "is_print",
   "column_break_sext",
+  "test_description",
   "customer_name",
   "test_method",
   "customer_requirement",
@@ -29,8 +30,8 @@
   "child_table_id",
   "status",
   "column_break_wayd",
-  "amended_from",
   "material_shape",
+  "naming_series",
   "column_break_nrsh",
   "test_group",
   "group",
@@ -57,13 +58,12 @@
   "model",
   "sensitization_treatement_options",
   "description_section",
-  "customer_specification",
-  "column_break_jfig",
-  "test_description",
   "column_break_ebjk",
   "sample_description",
-  "column_break_bgnu",
+  "section_break_qngl",
   "material_description",
+  "column_break_mpfr",
+  "customer_specification",
   "section_break_xmmo",
   "product_image_1",
   "total_magnification",
@@ -137,9 +137,12 @@
   "remark",
   "column_break_sgvx",
   "tested_by",
+  "authorized_by",
   "witness_name",
   "observation",
   "section_break_ixly",
+  "amended_from",
+  "column_break_qmza",
   "amendment_remark"
  ],
  "fields": [
@@ -197,6 +200,7 @@
    "options": "Test Method"
   },
   {
+   "columns": 1,
    "fieldname": "material_specification",
    "fieldtype": "Link",
    "in_standard_filter": 1,
@@ -221,7 +225,7 @@
   },
   {
    "fieldname": "challan_no",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Challan No",
    "permlevel": 1
   },
@@ -235,10 +239,12 @@
    "label": "ULR No."
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "is_print",
    "fieldtype": "Check",
-   "label": "Is Print"
+   "label": "Is Print",
+   "read_only": 1
   },
   {
    "fieldname": "customer_name",
@@ -262,7 +268,7 @@
   {
    "fieldname": "document_id",
    "fieldtype": "Data",
-   "label": "Document Id"
+   "label": "Sample Id / Test Id"
   },
   {
    "fieldname": "column_break_kzwh",
@@ -286,16 +292,14 @@
   {
    "fieldname": "customer_specification",
    "fieldtype": "Small Text",
+   "hidden": 1,
    "label": "Customer Specification"
   },
   {
-   "fieldname": "column_break_jfig",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "test_description",
-   "fieldtype": "Small Text",
-   "label": "Test Description"
+   "fieldtype": "Link",
+   "label": "Test Description",
+   "options": "Test Description"
   },
   {
    "fieldname": "column_break_ebjk",
@@ -308,15 +312,11 @@
    "label": "Sample Description"
   },
   {
-   "fieldname": "column_break_bgnu",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "material_description",
    "fieldtype": "Small Text",
+   "hidden": 1,
    "in_list_view": 1,
-   "label": "Material Description",
-   "reqd": 1
+   "label": "Material Description"
   },
   {
    "fieldname": "section_break_mhaw",
@@ -345,13 +345,8 @@
   {
    "depends_on": "eval:doc.test_method ==\"Coating Thickness Measurement IS 3203 : 1982 (Reaffirmed Year : 2021 )\" ||\ndoc.test_method == \"MacroTech Test ASTM E381 : 22 & JDQ89\" ||\ndoc.test_method == \"Copper Sulfate Test ASTM A380/A380M : 25\" ||\ndoc.test_method == \"MacroTech Test ASTM E381 : 22 & JDQ89\" ||\ndoc.test_method == \"Smut Test : MIL-DTL-13924F\" ||\ndoc.test_method == \"Oxalic Acid Spot Test : MIL-DTL-13924F\" ||\ndoc.test_method == \"Decarburization Depth Analysis ASTM E1077 : 14(2021)\" ||\ndoc.test_method == \"Visual Test IS 3618 : 1966     (Reaffirmed Year : 2021 )\" ||\ndoc.test_method == \"Inclusion content Analysis DIN 50602 : 1985 Method K3\" ||\ndoc.test_method == \"Microstructure Analysis ASTM A262 : 15(2021) Practice A\" ||\ndoc.test_method == \"MacroTech Test ASTM E381 : 22\" ||\ndoc.test_method == \"Microstructure Analysis ASTM A247 : 24 & ASM Handbook Vol.9-2004\" ||\ndoc.test_method == \"Microstructure Analysis IS 7754:1975 (Reaffirmed Year:2018 ) & ASM Handbook Vol.9-2004\" ||\ndoc.test_method == \"Determination of Non-Metallic Inclusions IS 4163 : 2021 ( ISO 4967:2013)\" ||\ndoc.test_method == \"Case Depth Measurement IS 6416 : 2022\" ||\ndoc.test_method == \"Decarburization Depth Analysis IS 6396 : 2023 ( ISO 3887 : 2017)\" ||\ndoc.test_method == \"Inclusion content Analysis ASTM E45 : 25 Method A\" ||\ndoc.test_method == \"Microstructure Analysis ASTM A 923 : 25 Method A\" ||\ndoc.test_method == \"Microstructure Analysis ASTM E407-23 & ASM Handbook Vol.9-2004\" ||\ndoc.test_method == \"Macro Test AWS D 1.1(2025)\" ||\ndoc.test_method == \"Macro Test ASME Sect.IX:2023/QW-183/QW-184\" ||\ndoc.test_method == \"Macro Test IS 17307(Part 1) - 1974 (RA 1997)\" ||\ndoc.test_method == \"Macroscopic Examination BS EN ISO 15614-1:2017+A1:2019/BS EN ISO 17639:2022\"",
    "fieldname": "observation",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Observation"
-  },
-  {
-   "fieldname": "customer_requirement",
-   "fieldtype": "Data",
-   "label": "Customer Requirement"
   },
   {
    "fieldname": "section_break_xgus",
@@ -422,7 +417,7 @@
    "depends_on": "eval:doc.test_method !== \"Banding Microstructure Analysis ASTM E1268 : 19\"",
    "fieldname": "grain_size_index_to",
    "fieldtype": "Float",
-   "label": "Grain Size Index To"
+   "label": "ASTM Grain Size Index To"
   },
   {
    "fieldname": "type_of_grain_determined",
@@ -444,7 +439,7 @@
    "depends_on": "eval:doc.test_method !== \"Banding Microstructure Analysis ASTM E1268 : 19\"",
    "fieldname": "grain_size_index_from",
    "fieldtype": "Float",
-   "label": "Grain Size Index From"
+   "label": "ASTM Grain Size Index From"
   },
   {
    "depends_on": "eval:doc.test_method !== \"Banding Microstructure Analysis ASTM E1268 : 19\" &&\ndoc.test_method !== \"Grain size Analysis ASTM E112 : 2025\" &&\ndoc.test_method !== \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E112 : 2025\"",
@@ -856,17 +851,47 @@
    "fieldname": "sample_id",
    "fieldtype": "Data",
    "label": "Sample Id"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "customer_requirement",
+   "fieldtype": "Small Text",
+   "label": "Customer Requirement"
+  },
+  {
+   "fieldname": "section_break_qngl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_mpfr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "authorized_by",
+   "fieldtype": "Link",
+   "label": "Authorized By",
+   "link_filters": "[[\"Employee\",\"custom_authorized_by\",\"=\",\"Authorized By\"]]",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_qmza",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-03 11:25:58.216896",
+ "modified": "2026-06-25 18:20:46.167482",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Metallography Test",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

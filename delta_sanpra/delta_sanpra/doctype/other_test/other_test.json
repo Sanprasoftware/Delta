@@ -56,7 +56,6 @@
   "material_shape",
   "column_break_busu",
   "discipline",
-  "amended_from",
   "section_break_npci",
   "customer_specification",
   "column_break_etgn",
@@ -70,12 +69,15 @@
   "parameters",
   "section_break_hruu",
   "remark",
+  "customer_requirements",
   "column_break_exfw",
   "tested_by",
-  "customer_requirements",
   "witness_name",
   "observation",
+  "authorized_by",
   "section_break_iygf",
+  "amended_from",
+  "column_break_vwhx",
   "amendment_remark"
  ],
  "fields": [
@@ -141,10 +143,12 @@
    "label": "Heat Number"
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "is_print",
    "fieldtype": "Check",
-   "label": "Is Print"
+   "label": "Is Print",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_hsvn",
@@ -164,9 +168,8 @@
   },
   {
    "fieldname": "customer_requirement",
-   "fieldtype": "Link",
-   "label": "Customer Requirement",
-   "options": "Customer Requirement"
+   "fieldtype": "Data",
+   "label": "Customer Requirement"
   },
   {
    "collapsible": 1,
@@ -281,6 +284,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Today",
    "fieldname": "report_date",
    "fieldtype": "Date",
    "label": "Report Date"
@@ -325,7 +329,7 @@
   },
   {
    "fieldname": "customer_requirements",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Customer Requirement",
    "options": "Customer Requirement"
   },
@@ -448,13 +452,25 @@
    "fieldname": "amendment_remark",
    "fieldtype": "Data",
    "label": "Amendment Remark"
+  },
+  {
+   "fieldname": "authorized_by",
+   "fieldtype": "Link",
+   "label": "Authorized By",
+   "link_filters": "[[\"Employee\",\"custom_authorized_by\",\"=\",\"Authorized By\"]]",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_vwhx",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-03 12:17:51.444624",
+ "modified": "2026-06-24 14:34:06.012465",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Other Test",

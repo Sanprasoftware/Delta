@@ -1,0 +1,82 @@
+{
+ "app": "delta_sanpra",
+ "charts": [
+  {
+   "chart_name": "Metallography Test",
+   "label": "Metallography Test"
+  }
+ ],
+ "content": "[{\"id\":\"NPK_AfSLQ2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Metallography Test</b></span>\",\"col\":12}},{\"id\":\"kOvT1vmzR9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open\",\"col\":3}},{\"id\":\"bjzF1G7nOp\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Inprocess\",\"col\":3}},{\"id\":\"Cfcogtd99P\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Closed\",\"col\":3}},{\"id\":\"gpNVUZ6TPz\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Approved\",\"col\":3}},{\"id\":\"dINW1u-DO0\",\"type\":\"card\",\"data\":{\"card_name\":\"Metallography Test View\",\"col\":4}},{\"id\":\"IDMRgiXa8c\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Metallography Test\",\"col\":12}}]",
+ "creation": "2026-03-04 16:41:54.516110",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "integration",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Metallography_Test",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Metallography Test View",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "metallography-test-view",
+   "link_count": 0,
+   "link_to": "metallography-test-v",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-27 15:52:08.432026",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Metallography_Test",
+ "number_cards": [
+  {
+   "label": "Open",
+   "number_card_name": "Metallography Test (Open)"
+  },
+  {
+   "label": "Inprocess",
+   "number_card_name": "Metallography Test (Inprocess)"
+  },
+  {
+   "label": "Closed",
+   "number_card_name": "Metallography Test (Closed)"
+  },
+  {
+   "label": "Approved",
+   "number_card_name": "Metallography Test (Approved)"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "Metallography Test"
+  },
+  {
+   "role": "Admin"
+  }
+ ],
+ "sequence_id": 54.0,
+ "shortcuts": [],
+ "title": "Metallography_Test",
+ "type": "Workspace"
+}

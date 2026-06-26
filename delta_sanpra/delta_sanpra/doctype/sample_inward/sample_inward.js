@@ -38,20 +38,20 @@ frappe.ui.form.on("Sample Inward", {
         });
     },
     refresh: function (frm) {
-           if (!frm.is_new()) {
-            frm.add_custom_button("Sales Invoice", function() {
-                frm.call({
-                    method: "create_sales_invoice",
-                    doc: frm.doc,
-                    callback: function(r) {
-                        if (r.message) {
-                            let doc = frappe.model.sync(r.message)[0];
-                            frappe.set_route("Form", doc.doctype, doc.name);
+           if (frm.doc.workflow_state == "Approved") {
+                frm.add_custom_button("Sales Invoice", function() {
+                    frm.call({
+                        method: "create_sales_invoice",
+                        doc: frm.doc,
+                        callback: function(r) {
+                            if (r.message) {
+                                let doc = frappe.model.sync(r.message)[0];
+                                frappe.set_route("Form", doc.doctype, doc.name);
+                            }
                         }
-                    }
-                });
-            }, "Create"); 
-        }
+                    });
+                }, "Create"); 
+            }
 // ************************************************************************
 // add row ka button hide
         frm.get_field("sticker_print").grid.cannot_add_rows = true;
@@ -127,22 +127,22 @@ frappe.ui.form.on("Sample Inward", {
             };
         });
 
-        frm.set_query("customer_requirement", "sticker_print", function(doc, cdt, cdn) {
-            let row = locals[cdt][cdn];
-            return {
-                filters: {
-                    test_method: row.test_method
-                }
-            };
-        });
-        frm.set_query("customer_requirement", "test_on_sample", function(doc, cdt, cdn) {
-            let row = locals[cdt][cdn];
-            return {
-                filters: {
-                    test_method: row.test_method
-                }
-            };
-        });
+        // frm.set_query("customer_requirement", "sticker_print", function(doc, cdt, cdn) {
+        //     let row = locals[cdt][cdn];
+        //     return {
+        //         filters: {
+        //             test_method: row.test_method
+        //         }
+        //     };
+        // });
+        // frm.set_query("customer_requirement", "test_on_sample", function(doc, cdt, cdn) {
+        //     let row = locals[cdt][cdn];
+        //     return {
+        //         filters: {
+        //             test_method: row.test_method
+        //         }
+        //     };
+        // });
         ensure_test_description_titles(frm);
 
     },
@@ -199,7 +199,7 @@ frappe.ui.form.on("Material Details", {
         const parse_sample_num = (val) => {
             const v = String(val || "").trim();
             if (!v) return 0;
-            return parseInt(v.replace("S", ""), 10) || 0;
+            return parseInt(v.replace(/^S-?/, ""), 10) || 0;
         };
         const current_material_idx = (frm.doc.material_details || [])
             .map((r) => parseInt(r.idx || 0, 10))
@@ -231,7 +231,7 @@ frappe.ui.form.on("Material Details", {
             (frm.doc.material_details || []).forEach((r) => {
                 const current_num = parse_sample_num(r.sample_id || r.counter);
                 if (current_num > removed_sample_num) {
-                    const new_sample = `S${current_num - 1}`;
+                    const new_sample = `S-${current_num - 1}`;
                     r.counter = new_sample;
                     r.sample_id = new_sample;
                 }
@@ -240,7 +240,7 @@ frappe.ui.form.on("Material Details", {
             (frm.doc.test_on_sample || []).forEach((r) => {
                 const current_num = parse_sample_num(r.sample_id);
                 if (current_num > removed_sample_num) {
-                    r.sample_id = `S${current_num - 1}`;
+                    r.sample_id = `S-${current_num - 1}`;
                     r.sample_idtest_id = r.test_id ? `${r.sample_id}/${r.test_id}` : r.sample_id;
                 }
             });
@@ -254,6 +254,7 @@ frappe.ui.form.on("Material Details", {
     material_dimension(frm, cdt, cdn) {
         // frappe.model.set_value(cdt, cdn, "new_record_flag", 0);
         call_cutting_row_update(frm);
+        
     },
     material_specification(frm, cdt, cdn) {
         // frappe.model.set_value(cdt, cdn, "new_record_flag", 0);
@@ -344,13 +345,13 @@ frappe.ui.form.on("Material Details", {
                         );
 
                         // 2️⃣ Customer Requirement filter
-                        d.fields_dict.customer_requirement.get_query = function() {
-                            return {
-                                filters: {
-                                    test_method: method
-                                }
-                            };
-                        };
+                        // d.fields_dict.customer_requirement.get_query = function() {
+                        //     return {
+                        //         filters: {
+                        //             test_method: method
+                        //         }
+                        //     };
+                        // };
 
                         // 3️⃣ Test Description filter
                         d.fields_dict.test_description.get_query = function() {
@@ -398,8 +399,7 @@ frappe.ui.form.on("Material Details", {
                 {
                     label: "Customer Requirement",
                     fieldname: "customer_requirement",
-                    fieldtype: "Link",
-                    options: "Customer Requirement"
+                    fieldtype: "Data",
                 }
 
 
@@ -451,9 +451,13 @@ function capture_material_idx_snapshot(frm) {
 // **************************************************************************************************
 function get_next_sample_id_from_company(frm, callback) {
     const company_name = "DELTAA METALLIX SOLUTIONS PRIVATE LIMITED";
+    const parse_sample_counter = (value) => {
+        return parseInt(String(value || "S0").replace(/^S-?/, ""), 10) || 0;
+    };
+
     if (typeof frm._sample_counter_seed === "number") {
         frm._sample_counter_seed += 1;
-        callback(`S${frm._sample_counter_seed}`);
+        callback(`S-${frm._sample_counter_seed}`);
         return;
     }
     frappe.call({
@@ -465,9 +469,9 @@ function get_next_sample_id_from_company(frm, callback) {
         },
         callback: function (r) {
             const current = (r.message && r.message.custom_sample_counter) || "S0";
-            const num = parseInt(String(current).replace("S", ""), 10) || 0;
+            const num = parse_sample_counter(current);
             frm._sample_counter_seed = num + 1;
-            callback(`S${frm._sample_counter_seed}`);
+            callback(`S-${frm._sample_counter_seed}`);
         }
     });
 }
@@ -673,6 +677,8 @@ frappe.ui.form.on("Machining Charge", {
     },
     materials(frm,cdt,cdn){
         set_machining_charge(frm, cdt, cdn);
+    },
+    total(frm, cdt, cdn) {
     }
 });
 
@@ -686,10 +692,12 @@ function calculate_total(cdt, cdn) {
     );
 }
 
+
 frappe.ui.form.on("Cutting Charge", {
 
     quantity(frm, cdt, cdn) {
         calculate_cutting_total(cdt, cdn);
+       
     },
 
     total(frm, cdt, cdn) {
@@ -742,4 +750,4 @@ function set_machining_charge(frm, cdt, cdn) {
         }
     });
 }
-
+// ***********************************calc total cutting and m/c****************************
