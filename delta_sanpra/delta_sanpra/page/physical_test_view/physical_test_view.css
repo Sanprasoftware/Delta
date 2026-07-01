@@ -78,12 +78,71 @@
 }
 
 .sample-inward-table th {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background: var(--subtle-fg);
 	color: var(--text-muted);
 	font-weight: 700;
 }
 
 .sample-inward-table tbody tr:hover {
 	background: var(--control-bg);
+}
+
+.sample-inward-open {
+	cursor: pointer;
+}
+
+.sample-inward-status {
+	display: inline-flex;
+	align-items: center;
+	max-width: 100%;
+	padding: 2px 8px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1.4;
+	color: #475569;
+	background: #e2e8f0;
+}
+
+.sample-inward-status-open,
+.sample-inward-status-under-verification {
+	color: #0070cc;
+	background: #edf6fd;
+}
+
+.sample-inward-status-inprocess,
+.sample-inward-status-verified {
+	color: #52525B;
+	background: #F4F4F5;
+}
+
+.sample-inward-status-close,
+.sample-inward-status-closed {
+	color: #bd3f0d;
+	background: #fff1e7;
+}
+
+.sample-inward-status-approved {
+	color: #16794c;
+	background: #e4f5e9;
+}
+
+.sample-inward-status-return {
+	color: #fff;
+	background: #b52a2a;
+}
+
+.sample-inward-status-returned {
+	color: #b52a2a;
+	background: #fff0f0;
+}
+
+.sample-inward-table tbody tr.sample-inward-row-overdue,
+.sample-inward-table tbody tr.sample-inward-row-overdue:hover {
+	background: #FFC3B8;
 }
 
 .sample-inward-empty,

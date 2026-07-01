@@ -157,6 +157,8 @@
   "section_break_hond",
   "remark",
   "column_break_iqby",
+  "tested_by",
+  "authorized_by",
   "witness_name",
   "observation",
   "micro_e407_section",
@@ -173,10 +175,8 @@
   "img_2",
   "section_break_adtz",
   "amended_from",
-  "amendment_remark",
   "column_break_vmat",
-  "tested_by",
-  "authorized_by"
+  "amendment_remark"
  ],
  "fields": [
   {
@@ -1146,7 +1146,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-25 18:21:06.525045",
+ "modified": "2026-06-27 18:22:33.298425",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Corrosion Test",

@@ -104,6 +104,7 @@ class CombineTestReport(Document):
                 filters["is_print"] = 0
             if self.sample_id__test_id:
                 filters["document_id"] = self.sample_id__test_id
+            filters["docstatus"] = ["!=", 2]
             records = frappe.get_all(
                 dt,
                 filters=filters,
