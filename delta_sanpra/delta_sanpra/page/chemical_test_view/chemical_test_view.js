@@ -40,8 +40,10 @@ frappe.pages['chemical-test-view'].on_page_load = function(wrapper) {
 		"test_method",
 		"witness_name",
 		"docstatus",
+		"workflow_state",
 		"test_description",
 		"report_date",
+		"modified",
 	];
 
 	function set_default_dates() {
@@ -98,6 +100,30 @@ frappe.pages['chemical-test-view'].on_page_load = function(wrapper) {
 		return frappe.utils.escape_html(text == null || text === "" ? "-" : text);
 	}
 
+	function workflow_state_badge(workflow_state) {
+		const status = value(workflow_state);
+		const status_class = (workflow_state || "")
+			.toLowerCase()
+			.replace(/[^a-z0-9]+/g, "-")
+			.replace(/^-|-$/g, "") || "empty";
+
+		return `<span class="sample-inward-status sample-inward-status-${status_class}">${status}</span>`;
+	}
+
+	function is_open_for_48_hours(row) {
+		const workflow_state = (row.workflow_state || "").toLowerCase();
+		if (workflow_state !== "open" || !row.modified) {
+			return false;
+		}
+
+		const modified = new Date(String(row.modified).replace(" ", "T"));
+		if (Number.isNaN(modified.getTime())) {
+			return false;
+		}
+
+		return Date.now() - modified.getTime() >= 48 * 60 * 60 * 1000;
+	}
+
 	function render_rows(rows) {
 		if (!rows.length) {
 			$tbody.html(`<tr><td class="sample-inward-empty" colspan="13">${__("No Chemical Test records found")}</td></tr>`);
@@ -105,8 +131,8 @@ frappe.pages['chemical-test-view'].on_page_load = function(wrapper) {
 		}
 
 		$tbody.html(rows.map(row => `
-			<tr data-name="${value(row.name)}">
-				<td title="${value(row.inward_number)}">${value(row.inward_number)}</td>
+			<tr data-name="${value(row.name)}" class="${is_open_for_48_hours(row) ? "sample-inward-row-overdue" : ""}">
+				<td class="sample-inward-open" title="${value(row.inward_number)}">${value(row.inward_number)}</td>
 				<td title="${value(row.customer_name)}">${value(row.customer_name)}</td>
 				<td title="${value(row.challan_no)}">${value(row.challan_no)}</td>
 				<td title="${value(row.document_id)}">${value(row.document_id)}</td>
@@ -114,7 +140,7 @@ frappe.pages['chemical-test-view'].on_page_load = function(wrapper) {
 				<td title="${value(row.material_specification)}">${value(row.material_specification)}</td>
 				<td title="${value(row.test_method)}">${value(row.test_method)}</td>
 				<td title="${value(row.witness_name)}">${value(row.witness_name)}</td>
-				<td title="${value(row.docstatus)}">${value(row.docstatus)}</td>
+				<td title="${value(row.workflow_state)}">${workflow_state_badge(row.workflow_state)}</td>
 				<td title="${value(row.test_description_text)}">${value(row.test_description_text)}</td>
 				<td title="${value(row.report_date)}">${value(row.report_date)}</td>
 				
@@ -216,8 +242,8 @@ frappe.pages['chemical-test-view'].on_page_load = function(wrapper) {
 		}
 	});
 
-	$tbody.on("click", "tr[data-name]", function() {
-		frappe.set_route("Form", "Chemical Test", $(this).data("name"));
+	$tbody.on("click", ".sample-inward-open", function() {
+		frappe.set_route("Form", "Chemical Test", $(this).closest("tr").data("name"));
 	});
 
 	set_default_dates();

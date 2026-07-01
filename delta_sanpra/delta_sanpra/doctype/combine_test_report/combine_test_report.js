@@ -157,30 +157,50 @@ function fetch_sample_inward_data(frm) {
             }
         });
 }
+// function update_test_docs_is_print(frm) {
+//     return new Promise((resolve, reject) => {
+//         let promises = [];
+        
+//         (frm.doc.items || []).forEach(row => {
+//             if (row.test_group_id && row.form_name) {
+//                 promises.push(
+//                     frappe.db.set_value(row.form_name, row.test_group_id, "is_print", 1)
+//                 );
+//             }
+//         });
+        
+//         (frm.doc.non_enbl__ysuts_table || []).forEach(row => {
+//             if (row.test_group_id && row.form_name) {
+//                 promises.push(
+//                     frappe.db.set_value(row.form_name, row.test_group_id, "is_print", 1)
+//                 );
+//             }
+//         });
+        
+//         Promise.all(promises).then(() => resolve()).catch(err => reject(err));
+//     });
+// }
 function update_test_docs_is_print(frm) {
-    return new Promise((resolve, reject) => {
-        let promises = [];
-        
-        (frm.doc.items || []).forEach(row => {
-            if (row.test_group_id && row.form_name) {
-                promises.push(
-                    frappe.db.set_value(row.form_name, row.test_group_id, "is_print", 1)
-                );
-            }
-        });
-        
-        (frm.doc.non_enbl__ysuts_table || []).forEach(row => {
-            if (row.test_group_id && row.form_name) {
-                promises.push(
-                    frappe.db.set_value(row.form_name, row.test_group_id, "is_print", 1)
-                );
-            }
-        });
-        
-        Promise.all(promises).then(() => resolve()).catch(err => reject(err));
-    });
-}
+    let promises = [];
 
+    (frm.doc.items || []).forEach(row => {
+        if (row.test_group_id && row.form_name && row.workflow_state != "Returned") {
+            promises.push(
+                frappe.db.set_value(row.form_name, row.test_group_id, "is_print", 1)
+            );
+        }
+    });
+
+    (frm.doc.non_enbl__ysuts_table || []).forEach(row => {
+        if (row.test_group_id && row.form_name && row.workflow_state != "Returned") {
+            promises.push(
+                frappe.db.set_value(row.form_name, row.test_group_id, "is_print", 1)
+            );
+        }
+    });
+
+    return Promise.all(promises);
+}
 function generate_ulr(frm, fieldname, label) {
     if (frm.doc[fieldname]) {
         frappe.msgprint(`${label} ULR already generated`);

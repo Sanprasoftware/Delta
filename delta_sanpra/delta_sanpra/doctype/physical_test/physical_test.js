@@ -56,12 +56,7 @@ frappe.ui.form.on("Physical Test", {
             }
         })
     },
-    range1: calculate_avg,
-    range2: calculate_avg,
-    range3: calculate_avg,
-    range4: calculate_avg,
-    range5: calculate_avg,
-    range6: calculate_avg,
+    
 
     upload_excel(frm) {
         if (frm.doc.excel_file) {
@@ -85,7 +80,7 @@ frappe.ui.form.on("Physical Test", {
             // frm.clear_table("test_details_physical");
             frm.refresh_field("test_details_physical");
         }
-    },
+    }
 });
 function set_test_method_filter(frm) {
     frm.set_query('test_method', function () {
@@ -96,28 +91,7 @@ function set_test_method_filter(frm) {
         };
     });
 }
-function calculate_avg(frm) {
-    let total = 0;
-    let count = 0;
-    let ranges = [
-        frm.doc.range1,
-        frm.doc.range2,
-        frm.doc.range3,
-        frm.doc.range4,
-        frm.doc.range5,
-        frm.doc.range6
-    ];
-    ranges.forEach(value => {
-        if (value) {  
-            total += value;
-            count++;
-        }
-    });
-    frm.set_value(
-        "average_aboserbed_energy_of_one_set",
-        count ? total / count : 0
-    );
-}
+
 // ****************************************************************************
 frappe.ui.form.on('Test Parameter Details', {
     observed_value: function(frm, cdt, cdn) {
@@ -182,4 +156,36 @@ function apply_highlight_from_backend(frm) {
             });
         }
     });
+}
+// **********************************************************************************************
+frappe.ui.form.on("Charpy Impact Test Child", {
+    range1: calculate_absorbed_average,
+    range2: calculate_absorbed_average,
+    range3: calculate_absorbed_average,
+    range4: calculate_absorbed_average,
+    range5: calculate_absorbed_average,
+    range6: calculate_absorbed_average,
+});
+
+function calculate_absorbed_average(frm, cdt, cdn) {
+    let row = locals[cdt][cdn];
+
+    let total = 0;
+    let count = 0;
+
+    ["range1", "range2", "range3", "range4", "range5", "range6"].forEach(field => {
+      let value = flt(row[field]);
+
+        if (value > 0) {
+            total += value;
+            count++;
+        }
+    });
+
+    frappe.model.set_value(
+        cdt,
+        cdn,
+        "average_aboserbed_energy_of_one_set",
+        count ? (total / count) : 0
+    );
 }

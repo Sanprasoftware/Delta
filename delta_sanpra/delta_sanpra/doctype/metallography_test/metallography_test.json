@@ -83,7 +83,6 @@
   "visual_test_table",
   "microstructure_analysis_section",
   "specimen_dimention",
-  "no_of_fields",
   "column_break_tawi",
   "etchant",
   "type_of_method_used",
@@ -92,6 +91,7 @@
   "etching_condition",
   "confidence_intervals",
   "section_break_jmhc",
+  "no_of_fields",
   "metallography_test_pp",
   "section_break_hkvh",
   "estimated_valume",
@@ -610,7 +610,6 @@
    "label": "Time at Temperature used in Establishing The Grain Size"
   },
   {
-   "depends_on": "eval:doc.test_method == \"In-Situ Metallography ASTM E1351 : 01(2020) & ASTM E562 : 19e1\" ||\ndoc.test_method == \"Inclusion content Analysis ASTM E45 : 25 Method D\"",
    "fieldname": "no_of_fields",
    "fieldtype": "Int",
    "label": "No Of Fields"
@@ -826,6 +825,7 @@
    "options": "\nChemical\nMechanical"
   },
   {
+   "default": "Today",
    "fieldname": "tested_date",
    "fieldtype": "Date",
    "label": "Tested Date"
@@ -887,7 +887,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-25 18:20:46.167482",
+ "modified": "2026-06-26 17:37:18.950274",
  "modified_by": "Administrator",
  "module": "Delta Sanpra",
  "name": "Metallography Test",

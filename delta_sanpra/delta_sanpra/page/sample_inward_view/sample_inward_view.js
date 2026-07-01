@@ -74,6 +74,16 @@ frappe.pages["sample-inward-view"].on_page_load = function(wrapper) {
 		return frappe.utils.escape_html(text == null || text === "" ? "-" : text);
 	}
 
+	function workflow_state_badge(workflow_state) {
+		const status = value(workflow_state);
+		const status_class = (workflow_state || "")
+			.toLowerCase()
+			.replace(/[^a-z0-9]+/g, "-")
+			.replace(/^-|-$/g, "") || "empty";
+
+		return `<span class="sample-inward-status sample-inward-status-${status_class}">${status}</span>`;
+	}
+
 	function render_rows(rows) {
 		if (!rows.length) {
 			$tbody.html(`<tr><td class="sample-inward-empty" colspan="9">${__("No Sample Inward records found")}</td></tr>`);
@@ -82,14 +92,14 @@ frappe.pages["sample-inward-view"].on_page_load = function(wrapper) {
 
 		$tbody.html(rows.map(row => `
 			<tr data-name="${value(row.name)}">
-				<td title="${value(row.name)}">${value(row.name)}</td>
+				<td class="sample-inward-open" title="${value(row.name)}">${value(row.name)}</td>
 				<td title="${value(row.sample_received_date)}">${value(row.sample_received_date)}</td>
 				<td title="${value(row.customer)}">${value(row.customer)}</td>
 				<td title="${value(row.sample_received)}">${value(row.sample_received)}</td>
 				<td title="${value(row.challan_no)}">${value(row.challan_no)}</td>
 				<td title="${value(row.challan_date)}">${value(row.challan_date)}</td>
 				<td title="${value(row.quantity)}">${value(row.quantity)}</td>
-				<td title="${value(row.workflow_state)}">${value(row.workflow_state)}</td>
+				<td title="${value(row.workflow_state)}">${workflow_state_badge(row.workflow_state)}</td>
 				<td title="${value(row.remark_for_accounts)}">${value(row.remark_for_accounts)}</td>
 				
 			</tr>
@@ -155,8 +165,8 @@ frappe.pages["sample-inward-view"].on_page_load = function(wrapper) {
 		}
 	});
 
-	$tbody.on("click", "tr[data-name]", function() {
-		frappe.set_route("Form", "Sample Inward", $(this).data("name"));
+	$tbody.on("click", ".sample-inward-open", function() {
+		frappe.set_route("Form", "Sample Inward", $(this).closest("tr").data("name"));
 	});
 
 	set_default_dates();

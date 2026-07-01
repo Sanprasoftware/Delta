@@ -1,0 +1,202 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-06-29 11:32:31.835449",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "number_of_sets",
+  "number_of_pieces_in_each_set",
+  "column_break_zusl",
+  "dimension_of_the_specimen",
+  "type_of_notch",
+  "column_break_kauq",
+  "nominal_striking_energy_of_the_pendulum",
+  "radius_of_striker",
+  "absorbed_energy_in_joules_of_each_specimen_section",
+  "range1",
+  "column_break_alkz",
+  "range2",
+  "column_break_fwnm",
+  "range3",
+  "column_break_lson",
+  "range4",
+  "column_break_vnnj",
+  "range5",
+  "column_break_lcty",
+  "range6",
+  "section_break_cuwd",
+  "average_aboserbed_energy_of_one_set",
+  "lateral_expansion",
+  "column_break_hsqs",
+  "test_temperature",
+  "fracture_appearance__shear",
+  "column_break_uqlb",
+  "unbroken_specimens"
+ ],
+ "fields": [
+  {
+   "fieldname": "number_of_sets",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Number of Sets"
+  },
+  {
+   "fieldname": "number_of_pieces_in_each_set",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Number of Pieces in Each Set"
+  },
+  {
+   "fieldname": "column_break_zusl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dimension_of_the_specimen",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Dimension of the Specimen"
+  },
+  {
+   "fieldname": "type_of_notch",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Type of Notch"
+  },
+  {
+   "fieldname": "column_break_kauq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nominal_striking_energy_of_the_pendulum",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Nominal Striking Energy of the Pendulum",
+   "options": "\nNominal Striking Energy of the Pendulum\n300J"
+  },
+  {
+   "fieldname": "radius_of_striker",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Radius of Striker"
+  },
+  {
+   "fieldname": "absorbed_energy_in_joules_of_each_specimen_section",
+   "fieldtype": "Section Break",
+   "label": "Absorbed Energy in Joules of Each Specimen"
+  },
+  {
+   "fieldname": "range1",
+   "fieldtype": "Float",
+   "label": "Range1",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_alkz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range2",
+   "fieldtype": "Float",
+   "label": "Range2",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_fwnm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range3",
+   "fieldtype": "Float",
+   "label": "Range3",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_lson",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range4",
+   "fieldtype": "Float",
+   "label": "Range4",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_vnnj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range5",
+   "fieldtype": "Float",
+   "label": "Range5",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_lcty",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "range6",
+   "fieldtype": "Float",
+   "label": "Range6",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_cuwd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "average_aboserbed_energy_of_one_set",
+   "fieldtype": "Float",
+   "label": "Average Aboserbed Energy of One Set"
+  },
+  {
+   "fieldname": "lateral_expansion",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lateral Expansion"
+  },
+  {
+   "fieldname": "column_break_hsqs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "test_temperature",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Test Temperature (\u00b0C)"
+  },
+  {
+   "fieldname": "fracture_appearance__shear",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Fracture Appearance (% shear)"
+  },
+  {
+   "fieldname": "column_break_uqlb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "unbroken_specimens",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Unbroken Specimens"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-06-29 14:03:00.487134",
+ "modified_by": "Administrator",
+ "module": "Delta Sanpra",
+ "name": "Charpy Impact Test Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

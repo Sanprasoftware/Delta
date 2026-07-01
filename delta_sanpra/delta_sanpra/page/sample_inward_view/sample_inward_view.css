@@ -69,6 +69,56 @@
 	background: var(--control-bg);
 }
 
+.sample-inward-open {
+	cursor: pointer;
+}
+
+.sample-inward-status {
+	display: inline-flex;
+	align-items: center;
+	max-width: 100%;
+	padding: 2px 8px;
+	border-radius: 999px;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1.4;
+	color: #475569;
+	background: #e2e8f0;
+}
+
+.sample-inward-status-open,
+.sample-inward-status-under-verification {
+	color: #0070cc;
+	background: #edf6fd;
+}
+
+.sample-inward-status-inprocess,
+.sample-inward-status-verified {
+	color: #39ac39;
+	background: #e4f5e9;
+}
+
+.sample-inward-status-close,
+.sample-inward-status-closed {
+	color: #fff;
+	background: #bd3f0d;
+}
+
+.sample-inward-status-approved {
+	color: #065F46;
+	background: #e4f5e9;
+}
+
+.sample-inward-status-return {
+	color: #fff;
+	background: #b52a2a;
+}
+
+.sample-inward-status-returned {
+	color: #fff;
+	background: #c92424;
+}
+
 .sample-inward-empty,
 .sample-inward-loading {
 	text-align: center;
